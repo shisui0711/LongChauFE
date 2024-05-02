@@ -1,0 +1,9 @@
+{
+    "include": ["src/**/*.ts"],
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "CommonJS",
+        "sourceMap": true,
+        "outDir": "./public/js"
+    },
+}
