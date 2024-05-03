@@ -1,92 +1,81 @@
-class Carousel{
-    private _currentPage:number = 0;
-    private readonly _preBtn:HTMLElement;
-    private readonly _nextBtn:HTMLElement;
-    private readonly _wrapper:HTMLElement;
-    private readonly _items:NodeListOf<Element>;
-    private readonly _itemsPerPage:number;
-    private _totalPages:number = 0;
-    private _widthOfItem:number;
-    constructor(preBtn:HTMLElement, nextBtn:HTMLElement, wrapper:HTMLElement, items:NodeListOf<Element>,itemsPerPage:number,widthOfItem:number) {
-        this._preBtn = preBtn;
-        this._nextBtn = nextBtn;
-        this._wrapper = wrapper;
-        this._items = items;
-        this._itemsPerPage = itemsPerPage;
-        this._totalPages = Math.ceil(this._items.length / this._itemsPerPage);
-        this._widthOfItem = widthOfItem;
 
-        this.Next = this.Next.bind(this);
-        this.Previous = this.Previous.bind(this);
-
-        this._preBtn.addEventListener('click', this.Previous);
-        this._nextBtn.addEventListener('click',this.Next);
-    }
-    private Next():void {
-        if (this._currentPage < this._totalPages){
-            this._currentPage++;
-            if(this._currentPage == this._totalPages -1){
-                if(!this._nextBtn.classList.contains('invisible')){
-                    this._nextBtn.classList.add('invisible');
-                }
-            }
-            if(this._currentPage > 0){
-                if(this._preBtn.classList.contains('invisible')){
-                    this._preBtn.classList.remove('invisible');
-                }
-            }
+//Generic Carousel
+$(
+function(){
+    for(const prev of $('.mycarousel-prev')){
+        let target = $(prev).attr('mycarousel-target');
+        if(target === null){
+            continue;
         }
-
-        this._wrapper.style.transform = `translateX(-${this._widthOfItem*this._itemsPerPage*this._currentPage}px)`;
+        $(`${target} .mycarousel-prev`).on('click',function(){
+            let carouselTarget:string = $(prev).attr('mycarousel-target');
+            let itemsPerPage:number = Number($(carouselTarget).attr('display-item'));
+            let totalItems:number = $(carouselTarget.concat(' .mycarousel-item')).length;
+            let totalPages:number = Math.ceil(totalItems / itemsPerPage);
+            let maxWidth = $(carouselTarget).width();
+            let currentPage:number = Number($(carouselTarget).attr('current-page')??'0');
+            if(currentPage > 0){
+            $(carouselTarget).attr('current-page',--currentPage);
+            if(currentPage === 0){
+                $(carouselTarget.concat(' .mycarousel-prev')).css('visibility','hidden');
+            }
+            if(currentPage !== totalPages){
+                $(carouselTarget.concat(' .mycarousel-next')).css('visibility','visible');
+            }
+            $(carouselTarget.concat(' .mycarousel-wrapper')).css('transform',`translateX(-${maxWidth*currentPage}px)`)
+            }
+        });
     }
-    private Previous():void{
-        if (this._currentPage > 0){
-            this._currentPage--;
-            if  (this._currentPage != this._totalPages){
-                if(this._nextBtn.classList.contains('invisible')){
-                    this._nextBtn.classList.remove('invisible');
-                }
-            }
-            if(this._currentPage == 0){
-                if(!this._preBtn.classList.contains('invisible')){
-                    this._preBtn.classList.add('invisible');
-                }
-            }
+    for(const next of $('.mycarousel-next')){
+        let target = $(next).attr('mycarousel-target');
+        if(target === null){
+            continue;
         }
-        this._wrapper.style.transform = `translateX(-${this._widthOfItem*this._itemsPerPage*this._currentPage}px)`;
+        $(`${target} .mycarousel-next`).on('click',function(){
+            let carouselTarget:string = $(next).attr('mycarousel-target');
+            let itemsPerPage:number = Number($(carouselTarget).attr('display-item'));
+            let totalItems:number = $(carouselTarget.concat(' .mycarousel-item')).length;
+            let totalPages:number = Math.ceil(totalItems / itemsPerPage);
+            let maxWidth = $(carouselTarget).width();
+            let currentPage:number = Number($(carouselTarget).attr('current-page')??'0');
+            if(currentPage < totalPages){
+            $(carouselTarget).attr('current-page',++currentPage);
+            if(currentPage === totalPages-1){
+                $(carouselTarget.concat(' .mycarousel-next')).css('visibility','hidden');
+            }
+            if(currentPage > 0){
+                $(carouselTarget.concat(' .mycarousel-prev')).css('visibility','visible');
+            }
+            $(carouselTarget.concat(' .mycarousel-wrapper')).css('transform',`translateX(-${maxWidth*currentPage}px)`);
+            }
+        });
     }
+        
 }
-const preBrand:HTMLElement = document.getElementById('pre_brand');
-const nextBrand:HTMLElement = document.getElementById('next_brand');
-const brandWrapper:HTMLElement = document.querySelector('.brand-wrapper');
-const brands:NodeListOf<Element> = document.querySelectorAll('.brand');
+)
 
-const brandCarousel:Carousel = new Carousel(preBrand, nextBrand, brandWrapper,brands,5,262);
 
-const preHealthCheck:HTMLElement = document.getElementById('pre_health_check');
-const nextHealthCheck:HTMLElement = document.getElementById('next_health_check');
-const healthCheckWrapper:HTMLElement = document.querySelector('.health-check-wrapper');
-const healthCheckItems:NodeListOf<Element> = document.querySelectorAll('.health-check-item');
-
-const healthCheckCarousel:Carousel = new Carousel(preHealthCheck,nextHealthCheck,healthCheckWrapper,healthCheckItems,3,295);
-
-const preSubject:HTMLElement = document.getElementById('pre_subject');
-const nextSubject:HTMLElement = document.getElementById('next_subject');
-const subjectWrapper:HTMLElement = document.querySelector('.subject-wrapper');
-const subjectItems:NodeListOf<Element> = document.querySelectorAll('.subject-item');
-
-const subjectCarousel:Carousel = new Carousel(preSubject,nextSubject,subjectWrapper,subjectItems,6,215);
-
-const preOutstanding:HTMLElement = document.getElementById('pre_outstanding');
-const nextOutstanding:HTMLElement = document.getElementById('next_outstanding');
-const outstandingWrapper:HTMLElement = document.querySelector('.outstanding-wrapper');
-const outstandingItems:NodeListOf<Element> = document.querySelectorAll('.outstanding-item');
-
-const outstandingCarousel:Carousel = new Carousel(preOutstanding,nextOutstanding,outstandingWrapper,outstandingItems,6,215);
-
-const preSick:HTMLElement = document.getElementById('pre_sick');
-const nextSick:HTMLElement = document.getElementById('next_sick');
-const sickWrapper:HTMLElement = document.querySelector('.sick-wrapper');
-const sickItems:NodeListOf<Element> = document.querySelectorAll('.sick');
-
-const sickCarousel:Carousel = new Carousel(preSick,nextSick,sickWrapper,sickItems,4,286);
+$('#txtSearch')
+    .on('focusin',()=>{
+        $('.search-extend')
+        .css('visibility','visible')
+        .css('opacity','1');
+    })
+    .on('focusout',()=>{
+        $('.search-extend')
+        .css('visibility','hidden')
+        .css('opacity','0');
+    })
+    .on('input',()=>{
+        let inputValue = $('#txtSearch').val();
+        if(inputValue !== ''){
+            $('#remove_search').css('visibility','visible');
+        }else{
+            $('#remove_search').css('visibility','hidden');
+        }
+    });
+$('#remove_search')
+    .on('click',()=>{
+        $('#txtSearch').val('');
+        $('#remove_search').css('visibility','hidden');
+    })

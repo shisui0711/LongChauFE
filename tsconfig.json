@@ -1,9 +1,16 @@
 {
     "include": ["src/**/*.ts"],
     "compilerOptions": {
-        "target": "ES6",
-        "module": "CommonJS",
+        "target": "ES2022",
+        "module": "ES2022",
         "sourceMap": true,
-        "outDir": "./public/js"
+        "outDir": "./public/js",
+        // "esModuleInterop": true,
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "lib": [
+            "ES2022",
+            "dom"
+          ]
     },
 }

@@ -176,11 +176,11 @@ img.header {
         border: none;
         color: $blue;
         background-color: #c1d0f6;
-        flex-shrink: 0;
         width: 40px;
         height: 40px;
         cursor: pointer;
-        margin-top: 8px;
+        margin-top: 4px;
+        margin-bottom: 4px;
         &:hover{
             color: #fff;
             background-color: rgb(32, 94, 224);
@@ -196,7 +196,6 @@ img.header {
         width: 192px;
     }
     &-pre{
-        box-shadow: rgba(0, 39, 102, 0.1) 0px 0px 8px -2px, rgba(0, 39, 102, 0.06) 0px 0px 4px -2px;
         border: 1px solid #c1c8d1;
         display: flex;
         transition-property: all;
@@ -207,12 +206,10 @@ img.header {
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        transform: translate(-50%,-50%) rotate(0) skew(0,0) scale(1,1);
         width: 2.5rem;
         height: 2.5rem;
         top: 50%;
         left: 0;
-        touch-action: manipulation;
         &:hover{
             border: 1px solid $blue;
         }
@@ -272,7 +269,7 @@ img.header {
     transition-timing-function: ease;
     box-shadow: 0 100vh 0 100vh rgba(2, 11, 39, 0.5);
     padding: 16px;
-    width: 1111px !important;
+    width: 1200px !important;
     height: fit-content;
     z-index: 3;
     & a{
@@ -316,6 +313,12 @@ img.header {
     border-radius: 10px;
     height: fit-content;
     width: 190px;
+    &-short{
+        background-color: transparent;
+        border-radius: 10px;
+        height: fit-content;
+        width: 165px;
+    }
     &-mini{
         background-color: $white;
         border-radius: 1rem;
@@ -372,7 +375,7 @@ img.header {
         }
     }
     &-buy{
-        color: $white;
+        color: $white !important;
         font-weight: 500;
         font-size: .875rem;
         line-height: 1.25rem;
@@ -476,6 +479,10 @@ img, video{
     display: flex;
 }
 .col{
+    &-1p25{
+        flex: 0 0 auto;
+        width: 10.41666666%
+    }
     &-1p5{
         flex: 0 0 auto;
         width: 12.5%
@@ -562,10 +569,9 @@ img, video{
     display: inline-flex;
     -webkit-box-pack: center;
     border-radius: 50px;
-    margin-inline-end: 0px;
     background-color: $white;
-    padding-left: 16px;
-    padding-right: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
     border: 1px solid $gray;
     color: $gray;
     position: relative;
@@ -598,22 +604,6 @@ img, video{
     }
     &-item{
         @extend .product;
-    }
-}
-.outstanding{
-    &-item{
-        @extend .product;
-    }
-    &-pre{
-        @extend .btn-pre;
-        left: 1.5%;
-    }
-    &-next{
-        @extend .btn-next;
-        right: -1.5%;
-    }
-    &-wrapper{
-        transition: transform 0.6s ease;
     }
 }
 .new-event{
@@ -674,6 +664,62 @@ img, video{
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
+    }
+}
+#txtSearch{
+    width: 100%;
+}
+#remove_search{
+    visibility: hidden;
+}
+.search-extend{
+    visibility: hidden;
+    opacity: 0;
+    transition-property: opacity, visibility;
+    transition-duration: 0.4s;
+    transition-delay: 0.2s;
+    transition-timing-function: ease;
+    box-shadow: 0 112vh 0 100vh rgba(2, 11, 39, 0.5);
+    z-index: 3;
+}
+.mycarousel{
+    overflow: hidden;
+    &-wrapper{
+        transition: transform .8s ease;
+        flex-wrap: nowrap !important;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    &-prev{
+        visibility: hidden;
+        border: 1px solid #c1c8d1;
+        display: flex;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        transition-duration: .15s;
+        background-color: white;
+        border-radius: 9999px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        width: 2.5rem;
+        height: 2.5rem;
+        top: 50%;
+    }
+    &-next{
+        border: 1px solid #c1c8d1;
+        display: flex;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        transition-duration: .15s;
+        background-color: white;
+        border-radius: 9999px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        width: 2.5rem;
+        height: 2.5rem;
+        top: 50%;
     }
 }
 @media only screen and (max-width: 1238px) {
