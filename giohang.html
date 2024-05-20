@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nhà thuốc FPT Long Châu - Hệ thống chuỗi nhà thuốc lớn</title>
+        <link rel="shortcut icon" href="/public/img/favicon.ico" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/public/css/style.css">
+        <script src="public/js/jquery.min.js"></script>
+        <script src="public/js/bootstrap.min.js"></script>
+        <script defer src="/public/js/cart.bundle.js"></script>
+    </head>
+<body>
+    <header></header>
+    <!-- Begin Navigation -->
+    <nav></nav>
+    <main class="bg-gray-light pb-3">
+        <div class="container">
+            <button class="btn text-blue">
+                <svg viewBox="0 0 25 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5"><path d="M16.668 4.29289C17.0586 4.68342 17.0586 5.31658 16.668 5.70711L10.3752 12L16.668 18.2929C17.0586 18.6834 17.0586 19.3166 16.668 19.7071C16.2775 20.0976 15.6444 20.0976 15.2538 19.7071L8.25383 12.7071C7.86331 12.3166 7.86331 11.6834 8.25383 11.2929L15.2538 4.29289C15.6444 3.90237 16.2775 3.90237 16.668 4.29289Z" fill="currentColor"></path></svg>
+                <span><a class="text-blue text-decoration-none" href="/index.html">Tiếp tục mua sắm</a></span>
+            </button>
+            <div class="row gap-4">
+                <div class="col-8 box-white rounded-4 p-4">
+                    <div class="row">
+                        <div class="col-5p5">
+                            <input id="checkAll" class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label text-small-2 fw-medium"for="flexCheckChecked">
+                            Chọn tất cả (<span id="totalProduct">1</span>)
+                            </label>
+                        </div>
+                        <div class="col-1p5">
+                            <div class="text-small-2 fw-medium text-center">Giá thành</div>
+                        </div>
+                        <div class="col-1p75">
+                            <div class="text-small-2 fw-medium text-center">Số lượng</div>
+                        </div>
+                        <div class="col-2">
+                            <div class="text-small-2 fw-medium text-center">Đơn vị</div>
+                        </div>
+                        <div class="col-1p5"> </div>
+                    </div>
+                    <hr>
+                    <div id="order_container" class="row">
+                    </div>
+                </div>
+                <div class="col-3p75 box-white rounded-4 p-4">
+                    <div class="row box-blue-light text-blue justify-content-between">
+                        <div class="col-10"><span class="text-small fw-medium">Áp dụng ưu đãi để được giảm giá</span></div>
+                        <div class="col-auto">
+                            <svg viewBox="0 0 25 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-1 shrink-0 text-icon-primary"><path d="M9.25383 4.29289C8.86331 4.68342 8.86331 5.31658 9.25383 5.70711L15.5467 12L9.25383 18.2929C8.86331 18.6834 8.86331 19.3166 9.25383 19.7071C9.64436 20.0976 10.2775 20.0976 10.668 19.7071L17.668 12.7071C18.0586 12.3166 18.0586 11.6834 17.668 11.2929L10.668 4.29289C10.2775 3.90237 9.64435 3.90237 9.25383 4.29289Z" fill="currentColor"></path></svg>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between mt-2">
+                        <div class="col-auto"><span class="text-gray">Tổng tiền</span></div>
+                        <div class="col-auto"><span class="fw-medium text-medium" id="totalPrice">0đ</span></div>
+                    </div>
+                    <div class="row justify-content-between mt-2">
+                        <div class="col-auto"><span class="text-gray">Giảm giá trực tiếp</span></div>
+                        <div class="col-auto"><span class="text-yellow-8">0đ</span></div>
+                    </div>
+                    <div class="row justify-content-between mt-2">
+                        <div class="col-auto">
+                            <span class="text-gray">Giảm giá voucher</span>
+                            <svg class="text-gray-light" width="20" height="20" class="w-4 h-4 text-icon-tertiary" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4C35.0457 4 44 12.9543 44 24C44 35.0457 35.0457 44 24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4ZM24.25 32C23.4216 32 22.75 32.6716 22.75 33.5C22.75 34.3284 23.4216 35 24.25 35C25.0784 35 25.75 34.3284 25.75 33.5C25.75 32.6716 25.0784 32 24.25 32ZM24.25 13C20.8864 13 18 15.8846 18 19.25C18 19.9404 18.5596 20.5 19.25 20.5C19.8541 20.5 20.358 20.0715 20.4746 19.5019L20.4935 19.3778L20.5055 19.0587C20.6142 17.1536 22.3307 15.5 24.25 15.5C26.2346 15.5 28 17.2634 28 19.25C28.0011 20.437 27.5794 21.29 26.3804 22.6455L26.1734 22.8762L25.1461 23.9739C23.5147 25.7467 22.8251 26.9703 22.8379 28.7589C22.8428 29.4493 23.4065 30.0049 24.0968 30.0001C24.6577 29.996 25.1297 29.6231 25.2843 29.1132L25.3143 28.9932L25.3323 28.8689L25.3379 28.7411L25.3409 28.5793C25.377 27.7786 25.7351 27.0936 26.6221 26.0726L26.8066 25.8638L27.8216 24.7772C29.7314 22.7192 30.502 21.3691 30.5 19.2488C30.5 15.8821 27.6147 13 24.25 13Z" fill="currentColor"></path></svg>
+                        </div>
+                        <div class="col-auto"><span class="text-yellow-8">0đ</span></div>
+                    </div>
+                    <hr>
+                    <div class="row justify-content-between mt-2">
+                        <div class="col-auto"><span class="text-black text-semilarge-2 fw-semibold">Thành tiền</span></div>
+                        <div class="col-auto"><span id="finalPrice" class="text-blue fw-medium text-semilarge-2">0đ</span></div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <button id="btnOrderConfirm" class="btn bg-blue text-white rounded-5 m-2 py-3">Mua hàng</button>
+                    </div>
+                    <div class="text-small-2 text-gray text-center">Bằng việc tiến hành đặt mua hàng, bạn đồng ý với</div>
+                    <div class="text-small-2 text-center"><a href="#">Điều khoản dịch vụ</a> và <a href="#">Chính sách xử lý dữ liệu cá nhân</a></div>
+                    <div class="text-small-2 text-gray text-center">của Nhà thuốc FPT Long Châu</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>

@@ -5,7 +5,7 @@
         "module": "ES2022",
         "sourceMap": true,
         "outDir": "./public/js",
-        // "esModuleInterop": true,
+        "esModuleInterop": true,
         "moduleResolution": "node",
         "importHelpers": true,
         "lib": [

@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nhà thuốc FPT Long Châu - Hệ thống chuỗi nhà thuốc lớn</title>
+        <link rel="shortcut icon" href="/public/img/favicon.ico" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/public/css/style.css">
+        <script src="public/js/jquery.min.js"></script>
+        <script src="public/js/bootstrap.min.js"></script>
+    </head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-7 mt-2">
+                    <img src="public/img/megaphone.png" alt="megaphone">
+                    <a href="#" class="text-white fw-semibold text-decoration-none mx-1">Trung tâm tiêm chủng Long Châu
+                        <span><u>Xem chi tiết</u></span></a>
+                </div>
+                <div class="col-5 d-inline-flex mt-2 justify-content-end">
+                    <svg class="estore-icon text-white" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        fill="none" viewBox="0 0 20 20">
+                        <path fill="currentColor"
+                            d="M6.5 2A1.5 1.5 0 005 3.5v13A1.5 1.5 0 006.5 18h7a1.5 1.5 0 001.5-1.5v-13A1.5 1.5 0 0013.5 2h-7zM9 14h2a.5.5 0 010 1H9a.5.5 0 010-1z">
+                        </path>
+                    </svg>
+                    <div class="text-white fw-semibold mx-1">
+                        Tải ứng dụng
+                    </div>
+                    <svg class="text-white" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        width="20" height="20">
+                        <path
+                            d="M22.0946 6.8943C21.3154 5.33601 19.6859 4.0754 17.6833 4.29774C15.892 4.49664 13.2323 5.16288 11.4203 7.34634C9.55886 9.58932 8.86485 13.0882 10.2943 18.3285C11.8196 23.9201 14.0861 29.4313 16.9028 33.8791C19.6988 38.2941 23.143 41.8273 27.094 43.1824C30.5884 44.3808 33.2596 43.8808 35.2093 42.5645C37.0881 41.2961 38.1215 39.3872 38.6554 38.0646C39.2533 36.5839 38.8592 35.0433 38.0787 33.9082L35.2017 29.7238C33.8969 27.8261 31.5078 27.0003 29.3096 27.6872L25.3345 28.9294C25.047 29.0193 24.769 28.9283 24.6108 28.7429C22.8418 26.6702 20.8583 23.7785 20.3188 20.8526C20.3009 20.7555 20.3204 20.6759 20.3522 20.6224C20.9367 19.6397 21.9435 18.5257 22.9446 17.551C24.642 15.8984 25.2844 13.273 24.1652 11.035L22.0946 6.8943Z"
+                            fill="currentColor"></path>
+                    </svg>
+                    <div class="text-white fw-semibold mx-1">
+                        Tư vấn ngay: 1800 6928
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-2p25">
+                    <a href="/"><img src="/public/img/logo.svg" alt="logo"></a>
+                </div>
+                <div class="col-6 position-relative">
+                    <div class="row align-items-center bg-white rounded-5">
+                        <div class="col-10 pe-0">
+                            <input id="txtSearch" type="text" class="border-none" placeholder="Tìm tên thuốc, bệnh lý, thực phẩm chức năng..." style="background-color: transparent;">
+                        </div>
+                        <div class="col-2 d-inline-flex justify-content-end px-0">
+                            <button id="remove_search" class="bg-transparent border-none me-1">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.0033 2.4C17.3053 2.4 21.6033 6.69807 21.6033 12C21.6033 17.3019 17.3053 21.6 12.0033 21.6C6.70139 21.6 2.40332 17.3019 2.40332 12C2.40332 6.69807 6.70139 2.4 12.0033 2.4ZM9.37464 8.53646C9.1408 8.37447 8.81749 8.39761 8.60921 8.60589L8.53978 8.68899C8.37779 8.92283 8.40093 9.24614 8.60921 9.45442L11.1548 12L8.60921 14.5456L8.53978 14.6287C8.37779 14.8625 8.40093 15.1858 8.60921 15.3941L8.69231 15.4635C8.92615 15.6255 9.24946 15.6024 9.45774 15.3941L12.0033 12.8485L14.5489 15.3941L14.632 15.4635C14.8658 15.6255 15.1892 15.6024 15.3974 15.3941L15.4669 15.311C15.6289 15.0772 15.6057 14.7539 15.3974 14.5456L12.8518 12L15.3974 9.45442L15.4669 9.37132C15.6289 9.13748 15.6057 8.81417 15.3974 8.60589L15.3143 8.53646C15.0805 8.37447 14.7572 8.39761 14.5489 8.60589L12.0033 11.1515L9.45774 8.60589L9.37464 8.53646Z" fill="currentColor"></path></svg>
+                            </button>
+                            <button class="rounded-full btn-search me-2">
+                                <svg viewBox="0 2 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M10.9414 1.93125C5.98269 1.93125 1.94336 5.97057 1.94336 10.9293C1.94336 15.888 5.98269 19.9352 10.9414 19.9352C13.0594 19.9352 15.0074 19.193 16.5469 17.9606L20.2949 21.7066C20.4841 21.888 20.7367 21.988 20.9987 21.9853C21.2607 21.9826 21.5112 21.8775 21.6966 21.6923C21.882 21.5072 21.9875 21.2569 21.9906 20.9949C21.9936 20.7329 21.8939 20.4801 21.7129 20.2907L17.9648 16.5427C19.1983 15.0008 19.9414 13.0498 19.9414 10.9293C19.9414 5.97057 15.9001 1.93125 10.9414 1.93125ZM10.9414 3.93128C14.8192 3.93128 17.9395 7.05148 17.9395 10.9293C17.9395 14.8071 14.8192 17.9352 10.9414 17.9352C7.06357 17.9352 3.94336 14.8071 3.94336 10.9293C3.94336 7.05148 7.06357 3.93128 10.9414 3.93128Z" fill="currentColor"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row mt-1 pb-2 bg-white rounded-3 position-absolute search-extend">
+                        <span class="ms-2 py-2 fw-medium">Tra cứu hàng đầu</span>
+                        <div class="col-auto pe-0 my-1">
+                            <div>
+                                <span class="subject">
+                                    <p class="segoeui fw-medium text-small my-auto text-black">canxi</p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-auto pe-0 my-1">
+                            <div>
+                                <span class="subject">
+                                    <p class="segoeui fw-medium text-small my-auto text-black">kem chống nắng</p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-auto pe-0 my-1">
+                            <div>
+                                <span class="subject">
+                                    <p class="segoeui fw-medium text-small my-auto text-black">dha</p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-auto pe-0 my-1">
+                            <div>
+                                <span class="subject">
+                                    <p class="segoeui fw-medium text-small my-auto text-black">men vi sinh</p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-auto pe-0 my-1">
+                            <div>
+                                <span class="subject">
+                                    <p class="segoeui fw-medium text-small my-auto text-black">sữa rửa mặt</p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-auto pe-0 my-1">
+                            <div>
+                                <span class="subject">
+                                    <p class="segoeui fw-medium text-small my-auto text-black">sắt</p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-auto pe-0 my-1">
+                            <div>
+                                <span class="subject">
+                                    <p class="segoeui fw-medium text-small my-auto text-black">collagen</p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-auto pe-0 my-1">
+                            <div>
+                                <span class="subject">
+                                    <p class="segoeui fw-medium text-small my-auto text-black">dung dịch vệ sinh</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 d-inline-flex justify-content-center align-items-center px-0">
+                    <svg class="text-white" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M24 4C18.4772 4 14 8.47715 14 14C14 19.5228 18.4772 24 24 24C29.5228 24 34 19.5228 34 14C34 8.47715 29.5228 4 24 4ZM12.2499 28C9.90326 28 8.00002 29.9013 8 32.2489L8 33C8 36.7555 9.94167 39.5669 12.9202 41.3802C15.8491 43.1633 19.7861 44 24 44C28.2139 44 32.1509 43.1633 35.0798 41.3802C38.0583 39.5669 40 36.7555 40 33L40 32.2487C40 29.9011 38.0967 28 35.7502 28H12.2499Z" fill="currentColor"></path></svg>
+                    <div class="text-white fw-semibold mx-1">
+                        Đăng nhập
+                    </div>
+                </div>
+                <div class="col-1p25 d-inline-flex cart justify-content-center align-items-center">
+                    <svg class="text-white" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M0 0.857143C0 0.383756 0.383756 0 0.857143 0H1.49516C2.58141 0 3.2318 0.730277 3.60371 1.40914C3.85162 1.86165 4.03095 2.38649 4.17123 2.86166C4.20922 2.85867 4.2477 2.85714 4.28663 2.85714H18.5692C19.518 2.85714 20.2032 3.76505 19.943 4.67748L17.8542 12.0022C17.4692 13.3522 16.2357 14.2832 14.8319 14.2832H8.03402C6.61861 14.2832 5.37783 13.337 5.00323 11.9721L4.1341 8.8052L2.6957 3.94946L2.69337 3.94096C2.51542 3.29201 2.34842 2.68577 2.10026 2.2328C1.85927 1.79292 1.66716 1.71429 1.49516 1.71429H0.857143C0.383756 1.71429 0 1.33053 0 0.857143ZM7.42857 20C8.69094 20 9.71429 18.9767 9.71429 17.7143C9.71429 16.4519 8.69094 15.4286 7.42857 15.4286C6.16621 15.4286 5.14286 16.4519 5.14286 17.7143C5.14286 18.9767 6.16621 20 7.42857 20ZM15.4286 20C16.6909 20 17.7143 18.9767 17.7143 17.7143C17.7143 16.4519 16.6909 15.4286 15.4286 15.4286C14.1662 15.4286 13.1429 16.4519 13.1429 17.7143C13.1429 18.9767 14.1662 20 15.4286 20Z" fill="currentColor"></path></svg>
+                    <span class="cart-badge">0</span>
+                    <div class="text-white fw-semibold ms-2">
+                        Giỏ hàng
+                    </div>
+                </div>
+            </div>
+            <div class="row cart-extend position-absolute w-25 z-2" style="right:10%; top:17%;">
+                <div class="cart-wrapper bg-white rounded-4 p-3">
+                    <span class="text-gray text-small fw-semibold">Giỏ hàng</span>
+                    <div class="cart-container my-4">
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-4"><span class="text-small-2 text-gray-light fw-bold"><span class="cart-total">0</span> sản phẩm</span></div>
+                        <div class="col-auto"><a class="bg-blue text-decoration-none rounded-4 p-2" href="/giohang.html"><span class="segoeui text-small fw-medium text-white">Xem giỏ hàng</span></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">canxi</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">kem chống nắng</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">dha</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">omega 3</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">thuốc nhỏ mắt</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">sắt</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">kẽm</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">sữa rửa mặt</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- Begin Navigation -->
+    <nav>
+        <div class="row">
+            <ul class="nav position-relative justify-content-center flex-nowrap my-nav gap-4">
+                <li class="nav-item">
+                    <a class="nav-link text-black d-inline-flex border-bottom my-nav px-0" href="#">
+                        <span class="menu-item fw-medium text-small">Thực phẩm chức năng<i class="fa-solid fa-chevron-up semi-rotate mx-2"></i></span>
+                    </a>
+                    <div class="position-absolute panel">
+                        <div class="row">
+                            <div class="col-2p75">
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/tpcn_vitamin_khoang_chat.png" alt="">
+                                        <span class="fw-semibold">Vitamin & khoáng chất</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/sinh_li_noi_tiet_to.png" alt="">
+                                        <span class="fw-semibold">Sinh lý - Nội tiết tố</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <div class="">
+                                        <a class="line-clamp-1 text-decoration-none my-2" ref="#">
+                                            <img src="/public/img/cai_thien_tang_cuong_chuc_nang.png" alt="">
+                                            <span class=" fw-semibold">Cải thiện tăng cường chức năng</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/ho_tro_dieu_tri.png" alt="">
+                                        <span class="fw-semibold">Hỗ trợ điều trị</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/ho_tro_tieu_hoa.png" alt="">
+                                        <span class="fw-semibold">Hỗ trợ tiêu hóa</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/than_kinh_nao.png" alt="">
+                                        <span class="fw-semibold">Thần kinh não</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/ho_tro_lam_dep.png" alt="">
+                                        <span class="fw-semibold">Hỗ trợ làm đẹp</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/suc_khoe_tim_mach.png" alt="">
+                                        <span class="fw-semibold">Sức khỏe tim mạch</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/dinh_duong.png" alt="">
+                                        <span class="fw-semibold">Dinh dưỡng</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-9 bg-gray rounded-end-4">
+                                <div class="row mt-3 mx-2 gap-3">
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/bo_sung_canxi_vitamin_d.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Bổ sung Canxi & Vitamin D</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/tpcn_vitamin_tong_hop.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Vitamin tổng hợp</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/dau_ca_omega_3_dha.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Dầu cá, Omega 3, DHA</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/tpcn_vitamin_c_cac_loai.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Vitamin C các loại</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/bo_sung_sat_axit_folic.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Bổ sung Sắt & Axit Folic</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/show-more-dot-icon.svg" alt="#">
+                                            <span class="text-black text-small fw-medium">Xem thêm</span>
+                                        </a>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto pe-0 text-center d-inline-flex">
+                                        <p class="fw-semibold text-medium ms-2">Bán chạy nhất</p>
+                                        <p class="mx-2 text-gray-light">|</p>
+                                        <a class="text-decoration-none text-blue text-small" href="#">Xem tất cả</a>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-evenly">
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09006.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên nang mềm NatureCare Omega 369 bổ sung Omega, giảm nguy cơ xơ vữa động mạch (6 vỉ x 20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">484.500đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Hộp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through">570.000đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_0958.png" alt="">
+                                            </div> 
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên uống Precare Mama Diamond cung cấp các vitamin, khoáng chất cho phụ nữ mang thai (30 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">157.250đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Hộp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through">185.000đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2 invisible">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09365.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên sủi Kudos Kids Multivitamins Plus Calcium & D3 hương dưa hấu giúp bổ sung calci và vitamin cho cơ thể (20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">146.000đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Tuýp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through invisible">126.500đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2 invisible">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09335.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam giúp bổ sung vitamin cho cơ thể (20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">126.500đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Tuýp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through invisible">126.500đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2 invisible">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09324.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên sủi Kudos Vitamin C 1000mg hương chanh giúp bổ sung vitamin C cho cơ thể (20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">113.000đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Tuýp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through invisible">126.500đ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black d-inline-flex border-bottom my-nav px-0" href="#">
+                        <span class="menu-item fw-medium text-small">Dược mỹ phẩm<i class="fa-solid fa-chevron-up semi-rotate mx-2"></i></span>
+                    </a>
+                    <div class="position-absolute panel">
+                        <div class="row">
+                            <div class="col-2p75">
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/tpcn_vitamin_khoang_chat.png" alt="">
+                                        <span class="fw-semibold">Vitamin & khoáng chất</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/sinh_li_noi_tiet_to.png" alt="">
+                                        <span class="fw-semibold">Sinh lý - Nội tiết tố</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <div class="">
+                                        <a class="line-clamp-1 text-decoration-none my-2" ref="#">
+                                            <img src="/public/img/cai_thien_tang_cuong_chuc_nang.png" alt="">
+                                            <span class=" fw-semibold">Cải thiện tăng cường chức năng</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/ho_tro_dieu_tri.png" alt="">
+                                        <span class="fw-semibold">Hỗ trợ điều trị</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/ho_tro_tieu_hoa.png" alt="">
+                                        <span class="fw-semibold">Hỗ trợ tiêu hóa</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/than_kinh_nao.png" alt="">
+                                        <span class="fw-semibold">Thần kinh não</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/ho_tro_lam_dep.png" alt="">
+                                        <span class="fw-semibold">Hỗ trợ làm đẹp</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/suc_khoe_tim_mach.png" alt="">
+                                        <span class="fw-semibold">Sức khỏe tim mạch</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/dinh_duong.png" alt="">
+                                        <span class="fw-semibold">Dinh dưỡng</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-9 bg-gray rounded-end-4">
+                                <div class="row mt-3 mx-2 gap-3">
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/bo_sung_canxi_vitamin_d.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Bổ sung Canxi & Vitamin D</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/tpcn_vitamin_tong_hop.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Vitamin tổng hợp</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/dau_ca_omega_3_dha.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Dầu cá, Omega 3, DHA</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/tpcn_vitamin_c_cac_loai.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Vitamin C các loại</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/bo_sung_sat_axit_folic.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Bổ sung Sắt & Axit Folic</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/show-more-dot-icon.svg" alt="#">
+                                            <span class="text-black text-small fw-medium">Xem thêm</span>
+                                        </a>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto pe-0 text-center d-inline-flex">
+                                        <p class="fw-semibold text-medium ms-2">Bán chạy nhất</p>
+                                        <p class="mx-2 text-gray-light">|</p>
+                                        <a class="text-decoration-none text-blue text-small" href="#">Xem tất cả</a>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-evenly">
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09006.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên nang mềm NatureCare Omega 369 bổ sung Omega, giảm nguy cơ xơ vữa động mạch (6 vỉ x 20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">484.500đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Hộp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through">570.000đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_0958.png" alt="">
+                                            </div> 
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên uống Precare Mama Diamond cung cấp các vitamin, khoáng chất cho phụ nữ mang thai (30 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">157.250đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Hộp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through">185.000đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2 invisible">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09365.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên sủi Kudos Kids Multivitamins Plus Calcium & D3 hương dưa hấu giúp bổ sung calci và vitamin cho cơ thể (20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">146.000đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Tuýp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through invisible">126.500đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2 invisible">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09335.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam giúp bổ sung vitamin cho cơ thể (20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">126.500đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Tuýp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through invisible">126.500đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2 invisible">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09324.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên sủi Kudos Vitamin C 1000mg hương chanh giúp bổ sung vitamin C cho cơ thể (20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">113.000đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Tuýp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through invisible">126.500đ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black d-inline-flex border-bottom my-nav px-0" href="#">
+                        <span class="menu-item fw-medium text-small">Chăm sóc cá nhân<i class="fa-solid fa-chevron-up semi-rotate mx-2"></i></span>
+                    </a>
+                    <div class="position-absolute panel">
+                        <div class="row">
+                            <div class="col-2p75">
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/tpcn_vitamin_khoang_chat.png" alt="">
+                                        <span class="fw-semibold">Vitamin & khoáng chất</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/sinh_li_noi_tiet_to.png" alt="">
+                                        <span class="fw-semibold">Sinh lý - Nội tiết tố</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <div class="">
+                                        <a class="line-clamp-1 text-decoration-none my-2" ref="#">
+                                            <img src="/public/img/cai_thien_tang_cuong_chuc_nang.png" alt="">
+                                            <span class=" fw-semibold">Cải thiện tăng cường chức năng</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/ho_tro_dieu_tri.png" alt="">
+                                        <span class="fw-semibold">Hỗ trợ điều trị</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/ho_tro_tieu_hoa.png" alt="">
+                                        <span class="fw-semibold">Hỗ trợ tiêu hóa</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/than_kinh_nao.png" alt="">
+                                        <span class="fw-semibold">Thần kinh não</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/ho_tro_lam_dep.png" alt="">
+                                        <span class="fw-semibold">Hỗ trợ làm đẹp</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/suc_khoe_tim_mach.png" alt="">
+                                        <span class="fw-semibold">Sức khỏe tim mạch</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/dinh_duong.png" alt="">
+                                        <span class="fw-semibold">Dinh dưỡng</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-9 bg-gray rounded-end-4">
+                                <div class="row mt-3 mx-2 gap-3">
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/bo_sung_canxi_vitamin_d.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Bổ sung Canxi & Vitamin D</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/tpcn_vitamin_tong_hop.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Vitamin tổng hợp</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/dau_ca_omega_3_dha.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Dầu cá, Omega 3, DHA</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/tpcn_vitamin_c_cac_loai.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Vitamin C các loại</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/bo_sung_sat_axit_folic.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Bổ sung Sắt & Axit Folic</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/show-more-dot-icon.svg" alt="#">
+                                            <span class="text-black text-small fw-medium">Xem thêm</span>
+                                        </a>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto pe-0 text-center d-inline-flex">
+                                        <p class="fw-semibold text-medium ms-2">Bán chạy nhất</p>
+                                        <p class="mx-2 text-gray-light">|</p>
+                                        <a class="text-decoration-none text-blue text-small" href="#">Xem tất cả</a>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-evenly">
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09006.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên nang mềm NatureCare Omega 369 bổ sung Omega, giảm nguy cơ xơ vữa động mạch (6 vỉ x 20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">484.500đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Hộp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through">570.000đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_0958.png" alt="">
+                                            </div> 
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên uống Precare Mama Diamond cung cấp các vitamin, khoáng chất cho phụ nữ mang thai (30 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">157.250đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Hộp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through">185.000đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2 invisible">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09365.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên sủi Kudos Kids Multivitamins Plus Calcium & D3 hương dưa hấu giúp bổ sung calci và vitamin cho cơ thể (20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">146.000đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Tuýp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through invisible">126.500đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2 invisible">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09335.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam giúp bổ sung vitamin cho cơ thể (20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">126.500đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Tuýp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through invisible">126.500đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2 invisible">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09324.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên sủi Kudos Vitamin C 1000mg hương chanh giúp bổ sung vitamin C cho cơ thể (20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">113.000đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Tuýp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through invisible">126.500đ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black d-inline-flex border-bottom my-nav px-0" href="#">
+                        <span class="menu-item fw-medium text-small">Thuốc<i class="fa-solid fa-chevron-up semi-rotate mx-2"></i></span>
+                    </a>
+                    <div class="position-absolute panel">
+                        <div class="row">
+                            <div class="col-2p75">
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/tpcn_vitamin_khoang_chat.png" alt="">
+                                        <span class="fw-semibold">Vitamin & khoáng chất</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/sinh_li_noi_tiet_to.png" alt="">
+                                        <span class="fw-semibold">Sinh lý - Nội tiết tố</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <div class="">
+                                        <a class="line-clamp-1 text-decoration-none my-2" ref="#">
+                                            <img src="/public/img/cai_thien_tang_cuong_chuc_nang.png" alt="">
+                                            <span class=" fw-semibold">Cải thiện tăng cường chức năng</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/ho_tro_dieu_tri.png" alt="">
+                                        <span class="fw-semibold">Hỗ trợ điều trị</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/ho_tro_tieu_hoa.png" alt="">
+                                        <span class="fw-semibold">Hỗ trợ tiêu hóa</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/than_kinh_nao.png" alt="">
+                                        <span class="fw-semibold">Thần kinh não</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/ho_tro_lam_dep.png" alt="">
+                                        <span class="fw-semibold">Hỗ trợ làm đẹp</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/suc_khoe_tim_mach.png" alt="">
+                                        <span class="fw-semibold">Sức khỏe tim mạch</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/dinh_duong.png" alt="">
+                                        <span class="fw-semibold">Dinh dưỡng</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-9 bg-gray rounded-end-4">
+                                <div class="row mt-3 mx-2 gap-3">
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/bo_sung_canxi_vitamin_d.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Bổ sung Canxi & Vitamin D</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/tpcn_vitamin_tong_hop.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Vitamin tổng hợp</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/dau_ca_omega_3_dha.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Dầu cá, Omega 3, DHA</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/tpcn_vitamin_c_cac_loai.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Vitamin C các loại</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/bo_sung_sat_axit_folic.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Bổ sung Sắt & Axit Folic</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/show-more-dot-icon.svg" alt="#">
+                                            <span class="text-black text-small fw-medium">Xem thêm</span>
+                                        </a>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto pe-0 text-center d-inline-flex">
+                                        <p class="fw-semibold text-medium ms-2">Bán chạy nhất</p>
+                                        <p class="mx-2 text-gray-light">|</p>
+                                        <a class="text-decoration-none text-blue text-small" href="#">Xem tất cả</a>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-evenly">
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09006.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên nang mềm NatureCare Omega 369 bổ sung Omega, giảm nguy cơ xơ vữa động mạch (6 vỉ x 20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">484.500đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Hộp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through">570.000đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_0958.png" alt="">
+                                            </div> 
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên uống Precare Mama Diamond cung cấp các vitamin, khoáng chất cho phụ nữ mang thai (30 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">157.250đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Hộp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through">185.000đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2 invisible">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09365.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên sủi Kudos Kids Multivitamins Plus Calcium & D3 hương dưa hấu giúp bổ sung calci và vitamin cho cơ thể (20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">146.000đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Tuýp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through invisible">126.500đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2 invisible">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09335.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam giúp bổ sung vitamin cho cơ thể (20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">126.500đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Tuýp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through invisible">126.500đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2 invisible">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09324.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên sủi Kudos Vitamin C 1000mg hương chanh giúp bổ sung vitamin C cho cơ thể (20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">113.000đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Tuýp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through invisible">126.500đ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black d-inline-flex border-bottom my-nav px-0" href="#">
+                        <span class="menu-item fw-medium text-small">Thiết bị y tế<i class="fa-solid fa-chevron-up semi-rotate mx-2"></i></span>
+                    </a>
+                    <div class="position-absolute panel">
+                        <div class="row">
+                            <div class="col-2p75">
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/tpcn_vitamin_khoang_chat.png" alt="">
+                                        <span class="fw-semibold">Vitamin & khoáng chất</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/sinh_li_noi_tiet_to.png" alt="">
+                                        <span class="fw-semibold">Sinh lý - Nội tiết tố</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <div class="">
+                                        <a class="line-clamp-1 text-decoration-none my-2" ref="#">
+                                            <img src="/public/img/cai_thien_tang_cuong_chuc_nang.png" alt="">
+                                            <span class=" fw-semibold">Cải thiện tăng cường chức năng</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/ho_tro_dieu_tri.png" alt="">
+                                        <span class="fw-semibold">Hỗ trợ điều trị</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/ho_tro_tieu_hoa.png" alt="">
+                                        <span class="fw-semibold">Hỗ trợ tiêu hóa</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/than_kinh_nao.png" alt="">
+                                        <span class="fw-semibold">Thần kinh não</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/ho_tro_lam_dep.png" alt="">
+                                        <span class="fw-semibold">Hỗ trợ làm đẹp</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/suc_khoe_tim_mach.png" alt="">
+                                        <span class="fw-semibold">Sức khỏe tim mạch</span>
+                                    </a>
+                                </div>
+                                <div class="row panel-item">
+                                    <a class="text-decoration-none my-2" ref="#">
+                                        <img src="/public/img/dinh_duong.png" alt="">
+                                        <span class="fw-semibold">Dinh dưỡng</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-9 bg-gray rounded-end-4">
+                                <div class="row mt-3 mx-2 gap-3">
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/bo_sung_canxi_vitamin_d.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Bổ sung Canxi & Vitamin D</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/tpcn_vitamin_tong_hop.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Vitamin tổng hợp</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/dau_ca_omega_3_dha.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Dầu cá, Omega 3, DHA</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/tpcn_vitamin_c_cac_loai.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Vitamin C các loại</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/bo_sung_sat_axit_folic.png" alt="#">
+                                            <span class="text-black text-small fw-medium">Bổ sung Sắt & Axit Folic</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-3p75 product-mini py-3">
+                                        <a class="text-decoration-none" ref="#">
+                                            <img src="/public/img/show-more-dot-icon.svg" alt="#">
+                                            <span class="text-black text-small fw-medium">Xem thêm</span>
+                                        </a>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto pe-0 text-center d-inline-flex">
+                                        <p class="fw-semibold text-medium ms-2">Bán chạy nhất</p>
+                                        <p class="mx-2 text-gray-light">|</p>
+                                        <a class="text-decoration-none text-blue text-small" href="#">Xem tất cả</a>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-evenly">
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09006.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên nang mềm NatureCare Omega 369 bổ sung Omega, giảm nguy cơ xơ vữa động mạch (6 vỉ x 20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">484.500đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Hộp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through">570.000đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_0958.png" alt="">
+                                            </div> 
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên uống Precare Mama Diamond cung cấp các vitamin, khoáng chất cho phụ nữ mang thai (30 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">157.250đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Hộp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through">185.000đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2 invisible">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09365.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên sủi Kudos Kids Multivitamins Plus Calcium & D3 hương dưa hấu giúp bổ sung calci và vitamin cho cơ thể (20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">146.000đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Tuýp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through invisible">126.500đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2 invisible">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09335.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam giúp bổ sung vitamin cho cơ thể (20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">126.500đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Tuýp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through invisible">126.500đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 product-short pe-0">
+                                        <div class="bg-white px-2 rounded-4">
+                                            <div class="row">
+                                                <div class="col-3 p-0 ms-1">
+                                                    <span class="product-discount text-small-2 invisible">-15%</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <img class="rounded-5" src="/public/img/DSC_09324.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <a class="text-decoration-none product-link" href="#"><h6 class="text-small text-black fw-medium">Viên sủi Kudos Vitamin C 1000mg hương chanh giúp bổ sung vitamin C cho cơ thể (20 viên)</h6></a>
+                                        </div>
+                                        <div class="row d-inline-block">
+                                            <span class="text-small text-blue fw-semibold pe-0">113.000đ</span>
+                                            <span class="text-small-3 text-blue fw-semibold ps-0">/ Tuýp</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="text-gray text-small-2 fw-normal text-decoration-line-through invisible">126.500đ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black d-inline-flex border-bottom my-nav px-0" href="#">
+                        <span class="menu-item fw-medium text-small">Tiêm chủng</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black d-inline-flex border-bottom my-nav px-0" href="#">
+                        <span class="menu-item fw-medium text-small">Bệnh</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black d-inline-flex border-bottom my-nav px-0" href="#">
+                        <span class="menu-item fw-medium text-small">Góc sức khỏe</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black d-inline-flex border-bottom my-nav px-0" href="#">
+                        <span class="menu-item fw-medium text-small">Hệ thống nhà thuốc</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="bg-gray-light pb-3">
+        <div class="container">
+            <button class="btn text-blue">
+                <svg viewBox="0 0 25 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5"><path d="M16.668 4.29289C17.0586 4.68342 17.0586 5.31658 16.668 5.70711L10.3752 12L16.668 18.2929C17.0586 18.6834 17.0586 19.3166 16.668 19.7071C16.2775 20.0976 15.6444 20.0976 15.2538 19.7071L8.25383 12.7071C7.86331 12.3166 7.86331 11.6834 8.25383 11.2929L15.2538 4.29289C15.6444 3.90237 16.2775 3.90237 16.668 4.29289Z" fill="currentColor"></path></svg>
+                <span><a class="text-blue text-decoration-none" href="/index.html">Tiếp tục mua sắm</a></span>
+            </button>
+            <div class="row justify-content-center">
+                <img style="width:300px; height: 160px;" src="/public/img/cart_empty.png" alt="">
+                <p class="text-center text-gray text-semilarge-2 fw-semibold">Chưa có sản phẩm nào trong giỏ</p>
+                <p class="text-center text-gray-light">Cùng khám phá hàng ngàn sản phẩm tại Nhà thuốc FPT Long Châu nhé!</p>
+                <a href="/index.html" class="btn bg-blue text-white w-fit rounded-5">Khám phá ngay</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- Begin Script -->
+        <script src="/public/js/Carousel.js"></script>
+        <!-- End Script -->
+        <div class="bg-blue">
+            <div class="container">
+                <div class="row align-items-center justify-content-between py-3">
+                    <div class="col-auto pt-3">
+                        <a class="text-decoration-none text-white d-inline-flex " href="#">
+                            <span>
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.4189 2C16.8372 2 20.4189 5.64568 20.4189 10.1429C20.4189 13.5133 17.8948 17.0459 12.9523 20.819C12.6362 21.0603 12.2017 21.0603 11.8856 20.819C6.94304 17.0459 4.41895 13.5133 4.41895 10.1429C4.41895 5.64568 8.00067 2 12.4189 2ZM12.4189 7.42857C10.9462 7.42857 9.75228 8.6438 9.75228 10.1429C9.75228 11.6419 10.9462 12.8571 12.4189 12.8571C13.8917 12.8571 15.0856 11.6419 15.0856 10.1429C15.0856 8.6438 13.8917 7.42857 12.4189 7.42857Z" fill="currentColor"></path></svg>
+                            </span>
+                            <p class="mx-2 text-semilarge">Xem hệ thống nhà thuốc trên toàn quốc</p>
+                        </a>
+                    </div>
+                    <div class="col-auto">
+                        <a class="box-white text-decoration-none rounded-5" href="#"><span class="text-blue text-medium fw-medium ms-2">Xem danh sách nhà thuốc</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container py-3">
+            <div class="row">
+                <div class="col-2">
+                    <p class="text-small text-gray-light fw-bold">VỀ CHÚNG TÔI</p>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Giới thiệu</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Hệ thống cửa hàng</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Giấy phép kinh doanh</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Quy chế hoạt động</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Chính sách đặt cọc</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Chính sách nội dung</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Chính sách đổi trả thuốc</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Chính sách giao hàng</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Chính sách bảo mật</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Chính sách thanh toán</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Kiểm tra hóa đơn điện tử</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Chính sách thu thập và xử lý dữ liệu cá nhân</a></li>
+                    </ul>
+                </div>
+                <div class="col-2">
+                    <p class="text-small text-gray-light fw-bold">DANH MỤC</p>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Thực phẩm chức năng</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Dược mỹ phẩm</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Chăm sóc cá nhân</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Thuốc</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Trang thiết bị y tế</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Đặt thuốc online</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Trung tâm Tiêm chủng</a></li>
+                    </ul>
+                </div>
+                <div class="col-2">
+                    <p class="text-small text-gray-light fw-bold">TÌM HIỂU THÊM</p>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Góc sức khỏe</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Tra cứu thuốc</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Tra cứu dược chất</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Tra cứu dược liệu</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Bệnh thường gặp</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Bệnh viện</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Hoạt động xã hội</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Tin tức tuyển dụng</a></li>
+                        <li class="nav-item"><a class="nav-link px-0 text-blue text-small" href="#">Tin tức sự kiện</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <p class="text-small text-gray-light fw-bold">TỔNG ĐÀI</p>
+                    <div class="text-small fw-medium mb-3">
+                        <p class="mb-1">Tư vấn mua hàng</p>
+                        <a class="text-decoration-none" href="#">18006928 <span class="text-gray-light">(Nhánh 1)</span></a>
+                    </div>
+                    <div class="text-small fw-medium mb-3">
+                        <p class="mb-1">Trung tâm Vắc xin</p>
+                        <a class="text-decoration-none" href="#">18006928 <span class="text-gray-light">(Nhánh 2)</span></a>
+                    </div>
+                    <div class="text-small fw-medium mb-3">
+                        <p class="mb-1">Gợi ý, khiếu nại</p>
+                        <a class="text-decoration-none" href="#">18006928 <span class="text-gray-light">(Nhánh 3)</span></a>
+                    </div>
+                    <p class="text-small text-gray-light fw-bold">CHỨNG NHẬN BỞI</p>
+                    <div class="row align-items-center mb-3">
+                        <div class="col-auto">
+                            <img src="/public/img/bo_cong_thuong.svg" alt="">
+                        </div>
+                        <div class="col-auto">
+                            <img src="/public/img/DMCA.svg" alt="">
+                        </div>
+                    </div>
+                    <p class="text-small text-gray-light fw-bold">HỖ TRỢ THANH TOÁN</p>
+                    <div class="row">
+                        <div class="col-auto mb-3 pe-0">
+                            <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/public/img/visa.svg" alt=""></a>
+                        </div>
+                        <div class="col-auto mb-3 pe-0">
+                            <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/public/img/mtc.svg" alt=""></a>
+                        </div>
+                        <div class="col-auto mb-3 pe-0">
+                            <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/public/img/jcb.svg" alt=""></a>
+                        </div>
+                        <div class="col-auto mb-3 pe-0">
+                            <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/public/img/amex.svg" alt=""></a>
+                        </div>
+                        <div class="col-auto mb-3 pe-0">
+                            <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/public/img/vnpay.svg" alt=""></a>
+                        </div>
+                        <div class="col-auto mb-3 pe-0">
+                            <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/public/img/zalopay.svg" alt=""></a>
+                        </div>
+                        <div class="col-auto mb-3 pe-0">
+                            <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/public/img/momo.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <p class="text-small text-gray-light fw-bold">KẾT NỐI VỚI CHÚNG TÔI</p>
+                    <div class="row">
+                        <div class="col-auto mb-3 pe-0">
+                            <a href="#"><img class="px-0" style="width: 28px; height: 28px;" src="/public/img/facebook.svg" alt=""></a>
+                        </div>
+                        <div class="col-auto mb-3 pe-0">
+                            <a href="#"><img class="px-0" style="width: 28px; height: 28px;" src="/public/img/zalo.svg" alt=""></a>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-small text-gray-light fw-bold">TẢI ỨNG DỤNG LONG CHÂU</p>
+                        <img src="/public/img/QR_100x100.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <hr>
+                <p class="text-center text-gray text-small fw-normal">© 2007 - 2022 Công ty Cổ Phần Dược Phẩm FPT Long Châu Số ĐKKD 0315275368 cấp ngày 17/09/2018 tại Sở Kế hoạch Đầu tư TPHCM</p>
+                <div class="col-auto">
+                    <p class="text-gray text-small fw-normal mt-1">Địa chỉ: 379-381 Hai Bà Trưng, P. Võ Thị Sáu, Q.3, TP. HCM</p>
+                </div>
+                <div class="col-auto">
+                    <ul>
+                        <li class="d-inline-block text-gray text-small fw-normal me-2"><span>&#8226; Số điện thoại:</span><a class="text-decoration-none" href="#">(028)73023456</a></li>
+                        <li class="d-inline-block text-gray text-small fw-normal me-2"><span>&#8226; Email:</span> <a class="text-decoration-none" href="#">sale@nhathuoclongchau.com.vn</a></li>
+                        <li class="d-inline-block text-gray text-small fw-normal"><span>&#8226; Người quản lý nội dung: Nguyễn Bách Điệp</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

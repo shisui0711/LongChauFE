@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhà thuốc FPT Long Châu - Hệ thống chuỗi nhà thuốc lớn</title>
+    <link rel="shortcut icon" href="/public/img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/detail.css">
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
+    <script defer src="./public/js/detail.bundle.js"></script>
+</head>
+<body>
+    <header></header>
+    <!-- Begin Navigation -->
+    <nav></nav>
+    <!-- End Navigation -->
+    <detail>
+        <div class="detail pb-4">
+            <div class="container">
+                <div class="row pt-3">
+                    <div class="col-8 pe-0 text-center d-inline-flex">
+                        <a class="text-decoration-none text-blue text-small" href="#">Trang chủ</a>
+                        <p class="mx-2 text-gray text-small">/</p>
+                        <a class="text-decoration-none text-blue text-small" href="#">Thực phẩm chức năng</a>
+                        <p class="mx-2 text-gray text-small">/</p>
+                        <p class="text-small">Vitamin & khoáng chất</p>
+                    </div>
+                </div>
+                <div class="row bg-white align-items-center rounded-4 gap-5 pb-3">
+                    <div class="col-4">
+                        <div id="detailCarousel" class="row mycarousel ps-3 m-5" display-item="1" style="width: 90%;">
+                            <div class="row mycarousel-wrapper ">
+                                <div class="mycarousel-item ps-3">
+                                    <img src="/public/img/viensuibig.png" alt="">
+                                </div>
+                                <div class="mycarousel-item">
+                                    <img src="/public/img/hdsd.png" alt="">
+                                </div>
+                                <div class="mycarousel-item">
+                                    <img src="/public/img/viensuiback.png" alt="">
+                                </div>
+                                <div class="mycarousel-item">
+                                    <img src="/public/img/viensuiback2.png" alt="">
+                                </div>
+                                <div class="mycarousel-item">
+                                    <img src="/public/img/viensuibig2.png" alt="">
+                                </div>
+                                <div class="mycarousel-item ps-5">
+                                    <img src="/public/img/viensuibig3.png" alt="">
+                                </div>
+                            </div>
+                            <div class="mycarousel-indicators">
+                                <button class="product-mini" mycarousel-target="#detailCarousel" mycarousel-target-page="0"><img src="/public//img/viensuimini.png" alt=""></button>
+                                <button class="product-mini" mycarousel-target="#detailCarousel" mycarousel-target-page="1"><img src="/public/img/hdsd.png" alt=""></button>
+                                <button class="product-mini" mycarousel-target="#detailCarousel" mycarousel-target-page="2"><img src="/public/img/viensuiback.png" alt=""></button>
+                                <button class="product-mini" mycarousel-target="#detailCarousel" mycarousel-target-page="3"><img src="/public/img/viensuiback2.png" alt=""></button>
+                                <!-- <button mycarousel-target="#detailCarousel" mycarousel-target-page="4"><img src="/public/img/viensuibig2.png" alt=""></button> -->
+                                <!-- <button mycarousel-target="#detailCarousel" mycarousel-target-page="5"><img src="/public/img/viensuibig3.png" alt=""></button> -->
+                            </div>
+                            <button class="mycarousel-prev position-absolute " mycarousel-target="#detailCarousel" style="left: 0%;">
+                                <svg class="text-blue" width="20" height="20" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-text-focus"><path d="M16.668 4.29289C17.0586 4.68342 17.0586 5.31658 16.668 5.70711L10.3752 12L16.668 18.2929C17.0586 18.6834 17.0586 19.3166 16.668 19.7071C16.2775 20.0976 15.6444 20.0976 15.2538 19.7071L8.25383 12.7071C7.86331 12.3166 7.86331 11.6834 8.25383 11.2929L15.2538 4.29289C15.6444 3.90237 16.2775 3.90237 16.668 4.29289Z" fill="currentColor"></path></svg>
+                            </button>
+                            <button class="mycarousel-next position-absolute" mycarousel-target="#detailCarousel" style="right: 0%">
+                                <svg class="text-blue" width="20" height="20" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-text-focus"><path d="M9.25383 4.29289C8.86331 4.68342 8.86331 5.31658 9.25383 5.70711L15.5467 12L9.25383 18.2929C8.86331 18.6834 8.86331 19.3166 9.25383 19.7071C9.64436 20.0976 10.2775 20.0976 10.668 19.7071L17.668 12.7071C18.0586 12.3166 18.0586 11.6834 17.668 11.2929L10.668 4.29289C10.2775 3.90237 9.64435 3.90237 9.25383 4.29289Z" fill="currentColor"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <p class="text-medium fw-semibold mt-3">Thương hiệu: <span class="text-blue fw-semibold">KUDOS</span></p>
+                        <h4>Viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam giúp bổ sung vitamin cho cơ thể (20 viên)</h4>
+                        <p>
+                            <span class="text-gray after-dotted">00039927</span>
+                            <span class="text-gray after-dotted">5 <span></span><svg height="16" width="16" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.803 6.08569C22.7017 4.26474 25.2983 4.26473 26.197 6.08568L31.0493 15.9177L41.8996 17.4943C43.9091 17.7863 44.7115 20.2558 43.2574 21.6732L35.4061 29.3264L37.2595 40.1327C37.6028 42.1342 35.5021 43.6604 33.7047 42.7155L24 37.6134L14.2952 42.7155C12.4978 43.6604 10.3971 42.1342 10.7404 40.1327L12.5938 29.3264L4.74255 21.6732C3.28843 20.2558 4.09083 17.7863 6.10037 17.4943L16.9506 15.9177L21.803 6.08569Z" fill="url(#paint0_linear_4531_177138)"></path><defs><linearGradient id="paint0_linear_4531_177138" x1="43.9999" y1="43.0023" x2="5.75441" y2="3.04089" gradientUnits="userSpaceOnUse"><stop stop-color="#F79009"></stop><stop offset="1" stop-color="#FDB022"></stop></linearGradient></defs></svg></span>
+                            <span class="text-small text-blue after-dotted">24 đánh giá</span>
+                            <span class="text-small text-blue">31 bình luận</span>
+                        </p>
+                        <span class="product-price fs-4">126.500đ/Tuýp</span>
+                        <div class="row mt-3 align-items-center">
+                            <div class="col-3"><span class="text-gray">Chọn đơn vị tính</span></div>
+                            <div class="col-8">
+                                <span class="subject-seleted">
+                                    <p class="segoeui fw-medium text-medium px-2 mt-1">Tuýp</p>
+                                    <div class="icon-sticky">
+                                        <span class="subject-icon text-white">
+                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 16.5858L4.70711 12.7929C4.31658 12.4024 3.68342 12.4024 3.29289 12.7929C2.90237 13.1834 2.90237 13.8166 3.29289 14.2071L7.79289 18.7071C8.18342 19.0976 8.81658 19.0976 9.20711 18.7071L20.2071 7.70711C20.5976 7.31658 20.5976 6.68342 20.2071 6.29289C19.8166 5.90237 19.1834 5.90237 18.7929 6.29289L8.5 16.5858Z" fill="currentColor"></path></svg>
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-3"><span class="text-gray">Danh mục</span></div>
+                            <div class="col-8"><a class="text-decoration-none" href="#">Vitamin & Khoáng chất</a></div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-3"><span class="text-gray">Dạng bào chế</span></div>
+                            <div class="col-8">Viên sủi</div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-3"><span class="text-gray">Quy cách</span></div>
+                            <div class="col-8">Tuýp 20 viên</div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-3"><span class="text-gray">Xuất xứ thương hiệu</span></div>
+                            <div class="col-8">Singarpore</div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-3"><span class="text-gray">Nhà sản xuất</span></div>
+                            <div class="col-8">SANOTACT GMBH</div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-3"><span class="text-gray">Nước sản xuất</span></div>
+                            <div class="col-8">Đức</div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-3"><span class="text-gray">Thành phần</span></div>
+                            <div class="col-8">
+                                <a class="text-decoration-none" href="#">Vitamin C</a>,
+                                <span>Chiết xuất nhân sâm</span>,
+                                <a class="text-decoration-none" href="#">Niacin</a>,
+                                <a class="text-decoration-none" href="#">Vitamin E</a>,
+                                <span>Acid pantothenic</span>,
+                                <a class="text-decoration-none" href="#">Vitamin B2</a>,
+                                <span>Vitamin B6</span>,
+                                <a class="text-decoration-none" href="#">Vitamin B1</a>,
+                                <a class="text-decoration-none" href="#">Vitamin A</a>,
+                                <span>Acid folic</span>,
+                                <a class="text-decoration-none" href="#">Biotin</a>,
+                                <a class="text-decoration-none" href="#">Vitamin D3</a>,
+                                <a class="text-decoration-none" href="#">Vitamin B12</a>,
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-3"><span class="text-gray">Mô tả ngắn</span></div>
+                            <div class="col-8">Kudos Daily Vitamins Plus Biotin & Ginseng hương cam giúp bổ sung vitamin (A, C, D, E, B1, B2, B3, B5, B6, B8, B9, B12) cho cơ thể.</div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-3"><span class="text-gray">Số đăng ký</span></div>
+                            <div class="col-8">3806/2023/ĐKSP</div>
+                        </div>
+                        <div class="row bg-gray rounded-2 mt-3 mx-2 py-2">
+                            <span class="text-gray">Lưu ý: đơn hàng sau 21:00 dự kiến sẽ giao từ 8:00 sáng mai. Hoặc Quý khách có thể</span>
+                            <a class="text-decoration-none text-blue fw-semibold text-small" href="#">Tìm nhà thuốc có hàng gần nhất</a>
+                        </div>
+                        <div class="row mt-4 align-items-center">
+                            <div class="col-3"><span class="text-gray">Chọn số lượng</span></div>
+                            <div class="col-3">
+                                <div class="row align-items-center">
+                                    <div class="col-2"><span disalbe id="decresseQuantity" class="border-gray rounded-start-4 p-2" ><svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path  d="M3.75 12H20.25" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></div>
+                                    <div class="col-2p5"><input id="productQuantity" class="border-gray text-center" type="number" min="1" max="999" maxlength="3" value="1" style="width: 40px;height: 38px;"></div>
+                                    <div class="col-2"><span id="increseQuantity" class="border-gray rounded-end-4 p-2" ><svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.8834 3.00673L12 3C12.5128 3 12.9355 3.38604 12.9933 3.88338L13 4V11H20C20.5128 11 20.9355 11.386 20.9933 11.8834L21 12C21 12.5128 20.614 12.9355 20.1166 12.9933L20 13H13V20C13 20.5128 12.614 20.9355 12.1166 20.9933L12 21C11.4872 21 11.0645 20.614 11.0067 20.1166L11 20V13H4C3.48716 13 3.06449 12.614 3.00673 12.1166L3 12C3 11.4872 3.38604 11.0645 3.88338 11.0067L4 11H11V4C11 3.48716 11.386 3.06449 11.8834 3.00673L12 3L11.8834 3.00673Z" fill="currentColor"></path></svg></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-content-center mt-3">
+                            <div class="col-6">
+                                <button type="button" class="btn product-buy text-semilarge h-100 py-2 mt-1" product-target="#product1">Chọn mua</button>
+                            </div>
+                            <div class="col-5 mt-3">
+                                <a class="box-blue-light text-decoration-none rounded-5" href="#"><span class="text-blue text-medium fw-medium ms-2">Xem danh sách nhà thuốc</span></a>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-auto"><span><svg width="16" height="16" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.40596 2.85168C8.60483 2.33834 9.09874 2 9.64925 2H18.1645C19.0913 2 19.7354 2.92219 19.4163 3.79234L17.3235 9.5H22.1608C23.3391 9.5 23.9382 10.9163 23.1177 11.7618L9.78392 25.5031C8.64373 26.6782 6.67801 25.6201 7.03091 24.0212L8.69106 16.5H5.91652C4.56947 16.5 3.64267 15.147 4.12929 13.8909L8.40596 2.85168Z" fill="url(#paint0_linear_4601_180268)"></path><defs><linearGradient id="paint0_linear_4601_180268" x1="23.4968" y1="26.0035" x2="0.00265493" y2="6.91843" gradientUnits="userSpaceOnUse"><stop stop-color="#F79009"></stop><stop offset="1" stop-color="#FDB022"></stop></linearGradient></defs></svg></span></div>
+                            <div class="col-auto mb-2">
+                                <span class="text-yellow-8">Sản phẩm đang được chú ý,</span>
+                                <span>có 5 người thêm vào giỏ hàng & 13 người đang xem</span>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <svg viewBox="0 0 32 32" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.6698 13.9732H20.5481C20.3 13.9732 20.0995 13.7727 20.0995 13.5246V11.7043L15.0391 15.3192L20.0995 18.934V17.1138C20.0995 16.8657 20.3 16.6652 20.5481 16.6652H20.7725C24.1123 16.6652 26.8294 19.3822 26.8294 22.7221C26.8294 24.3906 26.1515 25.9035 25.0563 27C27.1834 25.8093 28.624 23.5337 28.624 20.9274C28.624 17.0927 25.5045 13.9732 21.6698 13.9732Z" fill="#7EB5FF"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M13.3463 7.90195C13.0745 8.17369 12.9218 8.54226 12.9218 8.92656V10.3839C12.9218 10.8795 13.3236 11.2812 13.8192 11.2812C14.3147 11.2812 14.7165 10.8795 14.7165 10.3839V8.8864C14.7165 8.52563 14.8488 8.17738 15.0884 7.90766L17.6713 5H16.2482L13.3463 7.90195ZM24.1383 18.8142C23.2872 18.0802 22.1947 17.619 20.9977 17.5674V19.8058C20.9977 19.974 20.9039 20.1279 20.7545 20.2051C20.6042 20.2809 20.4248 20.2688 20.2884 20.171L14.0071 15.6844C13.8892 15.6 13.8192 15.4641 13.8192 15.3192C13.8192 15.1742 13.8892 15.0383 14.0071 14.9544L20.2884 10.4678C20.4248 10.3696 20.6042 10.3565 20.7545 10.4337C20.9039 10.5104 20.9977 10.6643 20.9977 10.8326V13.0759H21.6707C22.5335 13.0759 23.3612 13.2208 24.1383 13.4792V8.58927H16.6138C16.0615 8.58927 15.6138 9.03699 15.6138 9.58927V11.7299C15.6138 11.978 15.4132 12.1785 15.1651 12.1785H12.4732C12.2251 12.1785 12.0245 11.978 12.0245 11.7299V9.58927C12.0245 9.03699 11.5768 8.58927 11.0245 8.58927H3.5V22.741C3.5 23.8456 4.39543 24.741 5.5 24.741H22.1383C23.2429 24.741 24.1383 23.8456 24.1383 22.741V18.8142ZM10.6785 22.4977C10.6785 22.7455 10.4777 22.9464 10.2299 22.9464H5.7433C5.49551 22.9464 5.29464 22.7455 5.29464 22.4977C5.29464 22.2499 5.49551 22.049 5.7433 22.049H10.2299C10.4777 22.049 10.6785 22.2499 10.6785 22.4977ZM10.6785 20.7031C10.6785 20.9509 10.4777 21.1517 10.2299 21.1517H5.7433C5.49551 21.1517 5.29464 20.9509 5.29464 20.7031C5.29464 20.4553 5.49551 20.2544 5.7433 20.2544H10.2299C10.4777 20.2544 10.6785 20.4553 10.6785 20.7031ZM5.36225 6.46447C6.29994 5.52678 7.57171 5 8.89779 5H14.9798L12.2878 7.69196H4.13477L5.36225 6.46447ZM16.2482 7.69196H24.4013L27.0932 5H18.9402L16.2482 7.69196ZM27.7271 5.6344V14.6462L25.0352 13.3002V8.32635L27.7271 5.6344Z" fill="url(#paint0_linear_4723_154886)"></path><defs><linearGradient id="paint0_linear_4723_154886" x1="15.8371" y1="26.1511" x2="7.14707" y2="8.52384" gradientUnits="userSpaceOnUse"><stop stop-color="#1B5EEB"></stop><stop offset="1" stop-color="#4987FF"></stop></linearGradient></defs></svg>
+                            </div>
+                            <div class="col-auto">
+                                <div class="row">
+                                    <span class="fw-semibold">Đổi trả trong 30 ngày</span>
+                                </div>
+                                <div class="row">
+                                    <span class="text-gray">kể từ ngày mua hàng</span>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <svg viewBox="0 0 32 32" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 14.7622H5.16079V25.1344H1.5V14.7622Z" fill="#7EB5FF"></path><path d="M29.3645 18.8073C29.143 18.3815 28.763 18.0598 28.3065 17.9114C27.85 17.7631 27.3535 17.8 26.924 18.0142L20.0478 21.5163C19.1753 22.8769 17.7537 23.7555 16.3199 23.0661L11.506 20.8025C11.3719 20.7262 11.2716 20.6019 11.2255 20.4547C11.1793 20.3075 11.1906 20.1483 11.2571 20.0091C11.3236 19.8699 11.4404 19.7611 11.5839 19.7045C11.7275 19.6479 11.8871 19.6478 12.0307 19.7042C17.2717 22.1448 16.9544 22.0715 17.3632 22.0837C18.8092 22.1509 19.7244 19.9056 18.1442 19.2039C9.52914 15.1587 10.7494 15.2869 6.38086 15.8299V23.9141C7.04486 23.8626 7.71132 23.9757 8.32108 24.2436C17.2046 28.2766 14.7031 28.362 28.5713 21.2723C28.7853 21.1626 28.9756 21.0118 29.1313 20.8285C29.287 20.6452 29.405 20.4331 29.4787 20.2041C29.5523 19.9752 29.5802 19.7341 29.5606 19.4944C29.541 19.2547 29.4744 19.0212 29.3645 18.8073Z" fill="url(#paint0_linear_4723_154899)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M19.6878 18.8835C19.4058 18.552 19.0561 18.2847 18.6622 18.0995C17.2036 17.4142 16.0447 16.8626 15.1079 16.4169C11.7499 14.8188 11.248 14.58 10.041 14.4082V5H15.5322V8.66079C15.5325 8.7648 15.5594 8.86699 15.6103 8.95768C15.6613 9.04837 15.7345 9.12453 15.8232 9.17894C15.9118 9.23334 16.0129 9.26419 16.1168 9.26854C16.2207 9.27289 16.324 9.25061 16.4169 9.20381L18.5829 8.12387C19.0587 8.35989 19.4394 8.55355 19.7474 8.71021C20.9363 9.31491 21.0415 9.36839 21.3468 9.1794C21.6535 8.98954 21.6533 8.96282 21.6407 6.94829C21.6375 6.43803 21.6335 5.80025 21.6335 5H27.1247V16.6596C27.0631 16.6708 27.0143 16.6786 26.9659 16.6887C26.593 16.7667 26.2496 16.9859 20.2973 20.0214C20.1776 19.603 19.9698 19.215 19.6878 18.8835ZM24.6842 14.7621H22.2436C22.0818 14.7621 21.9266 14.8264 21.8122 14.9408C21.6978 15.0552 21.6335 15.2104 21.6335 15.3722C21.6335 15.5341 21.6978 15.6892 21.8122 15.8037C21.9266 15.9181 22.0818 15.9824 22.2436 15.9824H24.6842C24.846 15.9824 25.0012 15.9181 25.1156 15.8037C25.23 15.6892 25.2943 15.5341 25.2943 15.3722C25.2943 15.2104 25.23 15.0552 25.1156 14.9408C25.0012 14.8264 24.846 14.7621 24.6842 14.7621ZM19.3993 7.16896C18.722 6.83039 18.722 6.83039 18.5823 6.83039C18.446 6.83039 18.446 6.83039 17.8142 7.14588C17.5696 7.26801 17.2304 7.4374 16.752 7.67238V5H20.4127V7.67238C19.9653 7.45186 19.6397 7.28909 19.3993 7.16896Z" fill="url(#paint1_linear_4723_154899)"></path><defs><linearGradient id="paint0_linear_4723_154899" x1="18.1877" y1="27.8176" x2="14.7038" y2="16.1535" gradientUnits="userSpaceOnUse"><stop stop-color="#1B5EEB"></stop><stop offset="1" stop-color="#4987FF"></stop></linearGradient><linearGradient id="paint1_linear_4723_154899" x1="18.7405" y1="21.0944" x2="11.8273" y2="8.09924" gradientUnits="userSpaceOnUse"><stop stop-color="#1B5EEB"></stop><stop offset="1" stop-color="#4987FF"></stop></linearGradient></defs></svg>
+                            </div>
+                            <div class="col-auto">
+                                <div class="row">
+                                    <span class="fw-semibold">Miễn phí 100%</span>
+                                </div>
+                                <div class="row">
+                                    <span class="text-gray">đổi thuốc</span>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                               <svg viewBox="0 0 32 32" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_4723_154911)"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.6544 22.1987C22.0338 20.3237 23.805 18.8337 25.7087 18.8337C27.5419 18.8337 28.8631 20.2156 28.8269 21.9925C30.8094 22.0444 31.3612 19.4338 31.3612 19.4338C31.5281 18.7038 31.7775 17.2806 31.9863 15.8837C32.0547 15.4525 32.0021 15.0107 31.8344 14.6075C31.3161 13.3978 30.6899 12.2372 29.9631 11.14C29.2756 10.1144 28.1225 9.50688 26.8062 9.485C26.0212 9.4725 25.2506 9.465 24.6687 9.465L24.6637 9.46C24.5887 8.205 23.6737 7.24375 22.3894 7.12875C21.5537 7.05437 18.2437 7 16.655 7C16.0237 7 15.1181 7.00875 14.2019 7.02375V7.02H14.1944H3.17813C3.03792 7.01992 2.89907 7.04747 2.76951 7.10109C2.63996 7.15471 2.52225 7.23334 2.42311 7.33248C2.32396 7.43162 2.24533 7.54934 2.19172 7.67889C2.1381 7.80844 2.11054 7.94729 2.11063 8.0875V8.0925C2.11063 8.37429 2.22257 8.64454 2.42182 8.8438C2.62108 9.04306 2.89133 9.155 3.17313 9.155H5.39375C5.66114 9.17471 5.91119 9.29479 6.09376 9.49115C6.27633 9.68751 6.3779 9.94563 6.37812 10.2137V10.2194C6.37854 10.3597 6.35127 10.4988 6.29788 10.6286C6.2445 10.7584 6.16605 10.8763 6.06701 10.9758C5.96797 11.0752 5.8503 11.1542 5.72073 11.2081C5.59115 11.262 5.45222 11.2898 5.31187 11.29H4.17312C3.89017 11.29 3.61881 11.4024 3.41873 11.6025C3.21865 11.8026 3.10625 12.0739 3.10625 12.3569C3.10617 12.497 3.1337 12.6358 3.18728 12.7653C3.24086 12.8949 3.31943 13.0125 3.41851 13.1117C3.51759 13.2108 3.63523 13.2894 3.76471 13.3431C3.89419 13.3968 4.03297 13.4244 4.17312 13.4244H5.31187C5.59499 13.4244 5.86652 13.5368 6.06671 13.737C6.26691 13.9372 6.37937 14.2088 6.37937 14.4919C6.37937 14.775 6.26691 15.0465 6.06671 15.2467C5.86652 15.4469 5.59499 15.5594 5.31187 15.5594H1.05187C0.768865 15.5594 0.497437 15.6718 0.297259 15.8718C0.0970823 16.0719 -0.0154593 16.3432 -0.015625 16.6262C-0.015625 16.9094 0.0968434 17.1809 0.297038 17.3811C0.497234 17.5813 0.768756 17.6937 1.05187 17.6937H5.31187C5.59499 17.6937 5.86652 17.8062 6.06671 18.0064C6.26691 18.2066 6.37937 18.4781 6.37937 18.7612C6.37904 19.0442 6.26643 19.3154 6.06627 19.5153C5.86611 19.7152 5.59478 19.8275 5.31187 19.8275H3.99437C3.71142 19.8275 3.44006 19.9399 3.23998 20.14C3.0399 20.3401 2.9275 20.6114 2.9275 20.8944C2.9275 21.1774 3.03988 21.4488 3.23994 21.649C3.44 21.8492 3.71136 21.9617 3.99437 21.9619L8.19812 21.9587L8.5475 21.0881C9.26313 19.7681 10.6869 18.8331 12.1944 18.8331C14.0988 18.8331 15.4513 20.3244 15.3025 22.2006H21.6537L21.6544 22.1987ZM24.5706 10.945C25.1287 10.945 25.8512 10.9525 26.5763 10.9644C27.455 10.9787 28.2237 11.3825 28.685 12.0712C29.1777 12.814 29.6205 13.5886 30.0106 14.39C30.2169 14.81 29.8375 15.3569 29.3406 15.3569H24.0125L24.5706 10.945ZM1.40508 11.3086C1.99447 11.3086 2.47227 11.7864 2.47227 12.3758C2.47227 12.9652 1.99447 13.443 1.40508 13.443C0.815687 13.443 0.337891 12.9652 0.337891 12.3758C0.337891 11.7864 0.815687 11.3086 1.40508 11.3086Z" fill="url(#paint0_linear_4723_154911)"></path><path d="M13.189 24.0291C14.2103 23.0771 14.3676 21.5858 13.5402 20.6983C12.7129 19.8108 11.2143 19.8632 10.193 20.8152C9.17169 21.7673 9.01442 23.2585 9.84173 24.146C10.669 25.0335 12.1677 24.9812 13.189 24.0291Z" fill="#7EB5FF"></path><path d="M26.7026 24.0291C27.724 23.0771 27.8812 21.5858 27.0539 20.6983C26.2266 19.8108 24.728 19.8631 23.7067 20.8152C22.6854 21.7673 22.5281 23.2585 23.3554 24.146C24.1827 25.0335 25.6813 24.9812 26.7026 24.0291Z" fill="#7EB5FF"></path></g><defs><linearGradient id="paint0_linear_4723_154911" x1="16.2954" y1="23.2864" x2="11.8202" y2="7.69953" gradientUnits="userSpaceOnUse"><stop stop-color="#1B5EEB"></stop><stop offset="1" stop-color="#4987FF"></stop></linearGradient><clipPath id="clip0_4723_154911"><rect width="32" height="32" fill="white"></rect></clipPath></defs></svg>
+                            </div>
+                            <div class="col-auto">
+                                <div class="row">
+                                    <span class="fw-semibold">Miễn phí vận chuyển</span>
+                                </div>
+                                <div class="row">
+                                    <span class="text-gray">theo chính sách giao hàng</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row bg-white rounded-4 mt-4">
+                    <div class="row ">
+                        <div class="col-2p5">
+                            <ul class="nav flex-column mt-3">
+                                <li active class="nav-item text-semilarge-2 py-3 ps-4"><a class="text-decoration-none text-gray" href="#">Mô tả sản phẩm</a></li>
+                                <li class="nav-item text-semilarge-2 py-3 ps-4"><a class="text-decoration-none text-gray" href="#">Thành phần</a></li>
+                                <li class="nav-item text-semilarge-2 py-3 ps-4"><a class="text-decoration-none text-gray" href="#">Công dụng</a></li>
+                                <li class="nav-item text-semilarge-2 py-3 ps-4"><a class="text-decoration-none text-gray" href="#">Cách dùng</a></li>
+                                <li class="nav-item text-semilarge-2 py-3 ps-4"><a class="text-decoration-none text-gray" href="#">Tác dụng phụ</a></li>
+                                <li class="nav-item text-semilarge-2 py-3 ps-4"><a class="text-decoration-none text-gray" href="#">Lưu ý</a></li>
+                                <li class="nav-item text-semilarge-2 py-3 ps-4"><a class="text-decoration-none text-gray" href="#">Bảo quản</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-9">
+                            <div class="row mt-3">
+                                <div class="col-8">
+                                    <span class="text-semilarge-2 fw-semibold">Viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam là gì ?</span>
+                                </div>
+                                <div class="col-4 px-0">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto pe-0"><span class="text-small">Kích thước chữ<span></div>
+                                        <div class="col-auto pe-0">
+                                            <div class="border-gray rounded-4 p-1">
+                                                <button class="btn bg-blue rounded-4 text-white">Mặc định</button>
+                                                <button class="btn rounded-4">Lớn hơn</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            </div>
+                            <hr>
+                            <p class="text-semilarge-2 fw-semibold">Mô tả sản phẩm</p>
+                            <p class="text-medium fw-semibold">Bổ sung vitamin cho cơ thể</p>
+                            <p><a class="text-decoration-none" href="#">Viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng</a>hương cam là một thức uống thơm ngon và sảng khoái giàu vitamin giúp tăng cường sức khỏe và đề kháng hàng ngày. Biotin rất quan trọng cho làn da, tóc và móng tay khỏe mạnh. Nhân sâm có tác dụng tiếp thêm sinh lực và hỗ trợ tăng cường nhận thức. Sản phẩm sản xuất tại Đức, tiêu chuẩn chất lượng Châu Âu.</p>
+                            <div class="row">
+                                <img class="m-auto" style="width: 636px;height: 636px;" src="/public/img/viensuisuper.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="box-blue-light text-blue text-small-2 fw-medium mx-4 py-2" style="width: 98%;border-left: 5px solid rgb(18, 80, 220);">Thực phẩm bảo vệ sức khoẻ, không phải là thuốc, không có tác dụng thay thế thuốc chữa bệnh.</div>
+                    </div>
+                    <div class="row box-white-gray my-3 mx-4" style="width: 96%;">
+                        <div class="col-1">
+                            <img src="/public/img/duocsi.png" alt="">
+                        </div>
+                        <div class="col-11">
+                            <div class="row justify-content-between">
+                                <div class="col-9">
+                                    <span class="fw-semibold">Dược sĩ Đại học Nguyễn Thanh Hải</span>
+                                </div>
+                                <div class="col-3 text-green">
+                                    <span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM15.2197 8.96967L10.75 13.4393L8.78033 11.4697C8.48744 11.1768 8.01256 11.1768 7.71967 11.4697C7.42678 11.7626 7.42678 12.2374 7.71967 12.5303L10.2197 15.0303C10.5126 15.3232 10.9874 15.3232 11.2803 15.0303L16.2803 10.0303C16.5732 9.73744 16.5732 9.26256 16.2803 8.96967C15.9874 8.67678 15.5126 8.67678 15.2197 8.96967Z" fill="currentColor"></path></svg></span>
+                                    <span>Đã kiểm duyệt nội dung</span>
+                                </div>
+                                <div class="row">
+                                    <span>Tốt nghiệp Đại học Dược Hà Nội, với hơn 10 năm kinh nghiệm trong lĩnh vực Dược phẩm. Hiện là giảng viên giảng dạy các môn Dược lý, Dược lâm sàng,...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-medium-2 fw-semibold mt-4">Sản phẩm liên quan</div>
+                <div id="outstandingCarousel" class="row rounded-4 mycarousel position-relative m-0" display-item="6" style="width: 100%;">
+                    <div class="row mycarousel-wrapper gap-4 m-4">
+                        <div class="col-2 mycarousel-item product">
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <span class="product-discount text-small-2 invisible">-20%</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <img src="/public/img/dungdichanngon.png" alt="">
+                            </div>
+                            <div class="row mt-2">
+                                <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam giúp bổ sung vitamin cho cơ thể (20 viên)</h6></a>
+                            </div>
+                            <div class="row d-inline-block">
+                                <span class="text-price pe-0">88.000đ</span>
+                                <span class="text-price ps-0">/ Hộp</span>
+                            </div>
+                            <div class="row">
+                                <span class="text-price-old invisible">126.500đ</span>
+                            </div>
+                            <div class="row">
+                                <div class="product-gift ms-3 p-0 mb-2 invisible">
+                                    <div class="product-gift-icon">
+                                        <svg class="" width="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.25 13V22H7.25C5.45507 22 4 20.5449 4 18.75V13H11.25ZM20 13V18.75C20 20.5449 18.5449 22 16.75 22H12.75V13H20ZM14.5 2C16.2949 2 17.75 3.45507 17.75 5.25C17.75 5.89498 17.5621 6.49607 17.2381 7.00154L19.75 7C20.4404 7 21 7.46637 21 8.04167V10.9583C21 11.5336 20.4404 12 19.75 12L12.75 11.999V7H11.25V11.999L4.25 12C3.55964 12 3 11.5336 3 10.9583V8.04167C3 7.46637 3.55964 7 4.25 7L6.7619 7.00154C6.43788 6.49607 6.25 5.89498 6.25 5.25C6.25 3.45507 7.70507 2 9.5 2C10.5055 2 11.4044 2.45666 12.0006 3.17391C12.5956 2.45666 13.4945 2 14.5 2ZM9.5 3.5C8.5335 3.5 7.75 4.2835 7.75 5.25C7.75 6.16817 8.45711 6.92119 9.35647 6.9942L9.5 7H11.25V5.25L11.2442 5.10647C11.1712 4.20711 10.4182 3.5 9.5 3.5ZM14.5 3.5C13.5335 3.5 12.75 4.2835 12.75 5.25V7H14.5C15.4665 7 16.25 6.2165 16.25 5.25C16.25 4.2835 15.4665 3.5 14.5 3.5Z" fill="currentColor"></path></svg>
+                                    </div>
+                                    <span class="product-gift-text">Quà tặng</span>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-8 product-unit"><span class="product-unit-text mt-1">Hộp 4 Vỉ x 5 Ống</span></div>
+                            </div>
+                            <div class="row justify-content-center my-3">
+                                <button type="button" class="btn product-buy" product-target="#product1">Chọn mua</button>
+                            </div>
+                        </div>
+                        <div class="col-2 mycarousel-item product ">
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <span class="product-discount text-small-2">-20%</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <img src="/public/img/nuocyensaocaocap.png" alt="">
+                            </div>
+                            <div class="row mt-2">
+                                <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Nước yến sào cao cấp Nunest Kid Grow vị cam hỗ trợ phát triển hệ xương, tăng cường sức khỏe (6 lọ x 70ml)</h6></a>
+                            </div>
+                            <div class="row d-inline-block">
+                                <span class="text-price pe-0">188.000đ</span>
+                                <span class="text-price ps-0">/ Hộp</span>
+                            </div>
+                            <div class="row">
+                                <span class="text-price-old">235.000đ</span>
+                            </div>
+                            <div class="row">
+                                <div class="product-gift ms-3 p-0 mb-2 invisible">
+                                    <div class="product-gift-icon">
+                                        <svg class="" width="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.25 13V22H7.25C5.45507 22 4 20.5449 4 18.75V13H11.25ZM20 13V18.75C20 20.5449 18.5449 22 16.75 22H12.75V13H20ZM14.5 2C16.2949 2 17.75 3.45507 17.75 5.25C17.75 5.89498 17.5621 6.49607 17.2381 7.00154L19.75 7C20.4404 7 21 7.46637 21 8.04167V10.9583C21 11.5336 20.4404 12 19.75 12L12.75 11.999V7H11.25V11.999L4.25 12C3.55964 12 3 11.5336 3 10.9583V8.04167C3 7.46637 3.55964 7 4.25 7L6.7619 7.00154C6.43788 6.49607 6.25 5.89498 6.25 5.25C6.25 3.45507 7.70507 2 9.5 2C10.5055 2 11.4044 2.45666 12.0006 3.17391C12.5956 2.45666 13.4945 2 14.5 2ZM9.5 3.5C8.5335 3.5 7.75 4.2835 7.75 5.25C7.75 6.16817 8.45711 6.92119 9.35647 6.9942L9.5 7H11.25V5.25L11.2442 5.10647C11.1712 4.20711 10.4182 3.5 9.5 3.5ZM14.5 3.5C13.5335 3.5 12.75 4.2835 12.75 5.25V7H14.5C15.4665 7 16.25 6.2165 16.25 5.25C16.25 4.2835 15.4665 3.5 14.5 3.5Z" fill="currentColor"></path></svg>
+                                    </div>
+                                    <span class="product-gift-text">Quà tặng</span>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-8 product-unit"><span class="product-unit-text">Hộp 6 Hũ x 70ml</span></div>
+                            </div>
+                            <div class="row justify-content-center my-3">
+                                <button type="button" class="btn product-buy" product-target="#product1">Chọn mua</button>
+                            </div>
+                        </div>
+                        <div class="col-2 mycarousel-item product ">
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <span class="product-discount text-small-2">-20%</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <img src="/public/img/nuocyensaocaocap2.png" alt="">
+                            </div>
+                            <div class="row mt-2">
+                                <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Nước yến sào cao cấp Nunest Kids vị chuối tăng cường sức khoẻ, ăn ngon (6 hũ x 70ml)</h6></a>
+                            </div>
+                            <div class="row d-inline-block">
+                                <span class="text-price pe-0">180.000đ</span>
+                                <span class="text-price ps-0">/ Hộp</span>
+                            </div>
+                            <div class="row">
+                                <span class="text-price-old">225.000đ</span>
+                            </div>
+                            <div class="row">
+                                <div class="product-gift ms-3 p-0 mb-2 invisible">
+                                    <div class="product-gift-icon">
+                                        <svg class="" width="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.25 13V22H7.25C5.45507 22 4 20.5449 4 18.75V13H11.25ZM20 13V18.75C20 20.5449 18.5449 22 16.75 22H12.75V13H20ZM14.5 2C16.2949 2 17.75 3.45507 17.75 5.25C17.75 5.89498 17.5621 6.49607 17.2381 7.00154L19.75 7C20.4404 7 21 7.46637 21 8.04167V10.9583C21 11.5336 20.4404 12 19.75 12L12.75 11.999V7H11.25V11.999L4.25 12C3.55964 12 3 11.5336 3 10.9583V8.04167C3 7.46637 3.55964 7 4.25 7L6.7619 7.00154C6.43788 6.49607 6.25 5.89498 6.25 5.25C6.25 3.45507 7.70507 2 9.5 2C10.5055 2 11.4044 2.45666 12.0006 3.17391C12.5956 2.45666 13.4945 2 14.5 2ZM9.5 3.5C8.5335 3.5 7.75 4.2835 7.75 5.25C7.75 6.16817 8.45711 6.92119 9.35647 6.9942L9.5 7H11.25V5.25L11.2442 5.10647C11.1712 4.20711 10.4182 3.5 9.5 3.5ZM14.5 3.5C13.5335 3.5 12.75 4.2835 12.75 5.25V7H14.5C15.4665 7 16.25 6.2165 16.25 5.25C16.25 4.2835 15.4665 3.5 14.5 3.5Z" fill="currentColor"></path></svg>
+                                    </div>
+                                    <span class="product-gift-text">Quà tặng</span>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-8 product-unit"><span class="product-unit-text">Hộp 6 Hũ x 70ml</span></div>
+                            </div>
+                            <div class="row justify-content-center my-3">
+                                <button type="button" class="btn product-buy" product-target="#product1">Chọn mua</button>
+                            </div>
+                        </div>
+                        <div class="col-2 mycarousel-item product">
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <span class="product-discount text-small-2 invisible">-20%</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <img src="/public/img/sirotopgrow.png" alt="">
+                            </div>
+                            <div class="row mt-2">
+                                <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Siro Top Grow Jpanwell bổ sung các vitamin, hỗ trợ tăng cường sức khỏe (10 chai x 30ml)</h6></a>
+                            </div>
+                            <div class="row d-inline-block">
+                                <span class="text-price pe-0">890.000đ</span>
+                                <span class="text-price ps-0">/ Hộp</span>
+                            </div>
+                            <div class="row">
+                                <span class="text-price-old invisible">225.000đ</span>
+                            </div>
+                            <div class="row">
+                                <div class="product-gift ms-3 p-0 mb-2 invisible">
+                                    <div class="product-gift-icon">
+                                        <svg class="" width="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.25 13V22H7.25C5.45507 22 4 20.5449 4 18.75V13H11.25ZM20 13V18.75C20 20.5449 18.5449 22 16.75 22H12.75V13H20ZM14.5 2C16.2949 2 17.75 3.45507 17.75 5.25C17.75 5.89498 17.5621 6.49607 17.2381 7.00154L19.75 7C20.4404 7 21 7.46637 21 8.04167V10.9583C21 11.5336 20.4404 12 19.75 12L12.75 11.999V7H11.25V11.999L4.25 12C3.55964 12 3 11.5336 3 10.9583V8.04167C3 7.46637 3.55964 7 4.25 7L6.7619 7.00154C6.43788 6.49607 6.25 5.89498 6.25 5.25C6.25 3.45507 7.70507 2 9.5 2C10.5055 2 11.4044 2.45666 12.0006 3.17391C12.5956 2.45666 13.4945 2 14.5 2ZM9.5 3.5C8.5335 3.5 7.75 4.2835 7.75 5.25C7.75 6.16817 8.45711 6.92119 9.35647 6.9942L9.5 7H11.25V5.25L11.2442 5.10647C11.1712 4.20711 10.4182 3.5 9.5 3.5ZM14.5 3.5C13.5335 3.5 12.75 4.2835 12.75 5.25V7H14.5C15.4665 7 16.25 6.2165 16.25 5.25C16.25 4.2835 15.4665 3.5 14.5 3.5Z" fill="currentColor"></path></svg>
+                                    </div>
+                                    <span class="product-gift-text">Quà tặng</span>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-8 product-unit"><span class="product-unit-text">Hộp 10 chai</span></div>
+                            </div>
+                            <div class="row justify-content-center my-3">
+                                <button type="button" class="btn product-buy" product-target="#product1">Chọn mua</button>
+                            </div>
+                        </div>
+                        <div class="col-2 mycarousel-item product">
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <span class="product-discount text-small-2 invisible">-20%</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <img src="/public/img/sirohealthynew.png" alt="">
+                            </div>
+                            <div class="row mt-2">
+                                <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Siro Healthy New Kids bổ sung vitamin, lysine, taurin, hỗ trợ kích thích tiêu hóa (120ml)</h6></a>
+                            </div>
+                            <div class="row d-inline-block">
+                                <span class="text-price pe-0">89.000đ</span>
+                                <span class="text-price ps-0">/ Chai</span>
+                            </div>
+                            <div class="row">
+                                <span class="text-price-old invisible">225.000đ</span>
+                            </div>
+                            <div class="row">
+                                <div class="product-gift ms-3 p-0 mb-2 invisible">
+                                    <div class="product-gift-icon">
+                                        <svg class="" width="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.25 13V22H7.25C5.45507 22 4 20.5449 4 18.75V13H11.25ZM20 13V18.75C20 20.5449 18.5449 22 16.75 22H12.75V13H20ZM14.5 2C16.2949 2 17.75 3.45507 17.75 5.25C17.75 5.89498 17.5621 6.49607 17.2381 7.00154L19.75 7C20.4404 7 21 7.46637 21 8.04167V10.9583C21 11.5336 20.4404 12 19.75 12L12.75 11.999V7H11.25V11.999L4.25 12C3.55964 12 3 11.5336 3 10.9583V8.04167C3 7.46637 3.55964 7 4.25 7L6.7619 7.00154C6.43788 6.49607 6.25 5.89498 6.25 5.25C6.25 3.45507 7.70507 2 9.5 2C10.5055 2 11.4044 2.45666 12.0006 3.17391C12.5956 2.45666 13.4945 2 14.5 2ZM9.5 3.5C8.5335 3.5 7.75 4.2835 7.75 5.25C7.75 6.16817 8.45711 6.92119 9.35647 6.9942L9.5 7H11.25V5.25L11.2442 5.10647C11.1712 4.20711 10.4182 3.5 9.5 3.5ZM14.5 3.5C13.5335 3.5 12.75 4.2835 12.75 5.25V7H14.5C15.4665 7 16.25 6.2165 16.25 5.25C16.25 4.2835 15.4665 3.5 14.5 3.5Z" fill="currentColor"></path></svg>
+                                    </div>
+                                    <span class="product-gift-text">Quà tặng</span>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-8 product-unit"><span class="product-unit-text">Chai x 120ml</span></div>
+                            </div>
+                            <div class="row justify-content-center my-3">
+                                <button type="button" class="btn product-buy" product-target="#product1">Chọn mua</button>
+                            </div>
+                        </div>
+                        <div class="col-2 mycarousel-item product ">
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <span class="product-discount text-small-2 invisible">-20%</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <img src="/public/img/srioginkid.png" alt="">
+                            </div>
+                            <div class="row mt-2">
+                                <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Siro Ginkid Ăn Ngon 11X Gold GINIC hỗ trợ kích thích tiêu hóa (125ml)</h6></a>
+                            </div>
+                            <div class="row d-inline-block">
+                                <span class="text-price pe-0">275.000đ</span>
+                                <span class="text-price ps-0">/ Chai</span>
+                            </div>
+                            <div class="row">
+                                <span class="text-price-old invisible">225.000đ</span>
+                            </div>
+                            <div class="row">
+                                <div class="product-gift ms-3 p-0 mb-2 invisible">
+                                    <div class="product-gift-icon">
+                                        <svg class="" width="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.25 13V22H7.25C5.45507 22 4 20.5449 4 18.75V13H11.25ZM20 13V18.75C20 20.5449 18.5449 22 16.75 22H12.75V13H20ZM14.5 2C16.2949 2 17.75 3.45507 17.75 5.25C17.75 5.89498 17.5621 6.49607 17.2381 7.00154L19.75 7C20.4404 7 21 7.46637 21 8.04167V10.9583C21 11.5336 20.4404 12 19.75 12L12.75 11.999V7H11.25V11.999L4.25 12C3.55964 12 3 11.5336 3 10.9583V8.04167C3 7.46637 3.55964 7 4.25 7L6.7619 7.00154C6.43788 6.49607 6.25 5.89498 6.25 5.25C6.25 3.45507 7.70507 2 9.5 2C10.5055 2 11.4044 2.45666 12.0006 3.17391C12.5956 2.45666 13.4945 2 14.5 2ZM9.5 3.5C8.5335 3.5 7.75 4.2835 7.75 5.25C7.75 6.16817 8.45711 6.92119 9.35647 6.9942L9.5 7H11.25V5.25L11.2442 5.10647C11.1712 4.20711 10.4182 3.5 9.5 3.5ZM14.5 3.5C13.5335 3.5 12.75 4.2835 12.75 5.25V7H14.5C15.4665 7 16.25 6.2165 16.25 5.25C16.25 4.2835 15.4665 3.5 14.5 3.5Z" fill="currentColor"></path></svg>
+                                    </div>
+                                    <span class="product-gift-text">Quà tặng</span>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-8 product-unit"><span class="product-unit-text">Chai x 150m</span></div>
+                            </div>
+                            <div class="row justify-content-center my-3">
+                                <button type="button" class="btn product-buy" product-target="#product1">Chọn mua</button>
+                            </div>
+                        </div>
+                        <div class="col-2 mycarousel-item product ">
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <span class="product-discount text-small-2 invisible">-20%</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <img src="/public/img/siroginkidzinc.png" alt="">
+                            </div>
+                            <div class="row mt-2">
+                                <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Siro Ginkid ZinC bổ sung kẽm, hỗ trợ tăng sức đề kháng (4 vỉ x 5 ống x 5ml)</h6></a>
+                            </div>
+                            <div class="row d-inline-block">
+                                <span class="text-price pe-0">89.000đ</span>
+                                <span class="text-price ps-0">/ Hộp</span>
+                            </div>
+                            <div class="row">
+                                <span class="text-price-old invisible">225.000đ</span>
+                            </div>
+                            <div class="row">
+                                <div class="product-gift ms-3 p-0 mb-2 invisible">
+                                    <div class="product-gift-icon">
+                                        <svg class="" width="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.25 13V22H7.25C5.45507 22 4 20.5449 4 18.75V13H11.25ZM20 13V18.75C20 20.5449 18.5449 22 16.75 22H12.75V13H20ZM14.5 2C16.2949 2 17.75 3.45507 17.75 5.25C17.75 5.89498 17.5621 6.49607 17.2381 7.00154L19.75 7C20.4404 7 21 7.46637 21 8.04167V10.9583C21 11.5336 20.4404 12 19.75 12L12.75 11.999V7H11.25V11.999L4.25 12C3.55964 12 3 11.5336 3 10.9583V8.04167C3 7.46637 3.55964 7 4.25 7L6.7619 7.00154C6.43788 6.49607 6.25 5.89498 6.25 5.25C6.25 3.45507 7.70507 2 9.5 2C10.5055 2 11.4044 2.45666 12.0006 3.17391C12.5956 2.45666 13.4945 2 14.5 2ZM9.5 3.5C8.5335 3.5 7.75 4.2835 7.75 5.25C7.75 6.16817 8.45711 6.92119 9.35647 6.9942L9.5 7H11.25V5.25L11.2442 5.10647C11.1712 4.20711 10.4182 3.5 9.5 3.5ZM14.5 3.5C13.5335 3.5 12.75 4.2835 12.75 5.25V7H14.5C15.4665 7 16.25 6.2165 16.25 5.25C16.25 4.2835 15.4665 3.5 14.5 3.5Z" fill="currentColor"></path></svg>
+                                    </div>
+                                    <span class="product-gift-text">Quà tặng</span>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-8 product-unit"><span class="product-unit-text">Hộp 4 Vỉ x 5 Ống x 5ml</span></div>
+                            </div>
+                            <div class="row justify-content-center my-3">
+                                <button type="button" class="btn product-buy" product-target="#product1">Chọn mua</button>
+                            </div>
+                        </div>
+                        <div class="col-2 mycarousel-item product ">
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <span class="product-discount text-small-2 invisible">-20%</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <img src="/public/img/siromorningkis.png" alt="">
+                            </div>
+                            <div class="row mt-2">
+                                <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Siro Morningkids Multivitamin Bổ sung Vitamin và khoáng chất (150ml)</h6></a>
+                            </div>
+                            <div class="row d-inline-block">
+                                <span class="text-price pe-0">100.000đ</span>
+                                <span class="text-price ps-0">/ Chai</span>
+                            </div>
+                            <div class="row">
+                                <span class="text-price-old invisible">225.000đ</span>
+                            </div>
+                            <div class="row">
+                                <div class="product-gift ms-3 p-0 mb-2 invisible">
+                                    <div class="product-gift-icon">
+                                        <svg class="" width="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.25 13V22H7.25C5.45507 22 4 20.5449 4 18.75V13H11.25ZM20 13V18.75C20 20.5449 18.5449 22 16.75 22H12.75V13H20ZM14.5 2C16.2949 2 17.75 3.45507 17.75 5.25C17.75 5.89498 17.5621 6.49607 17.2381 7.00154L19.75 7C20.4404 7 21 7.46637 21 8.04167V10.9583C21 11.5336 20.4404 12 19.75 12L12.75 11.999V7H11.25V11.999L4.25 12C3.55964 12 3 11.5336 3 10.9583V8.04167C3 7.46637 3.55964 7 4.25 7L6.7619 7.00154C6.43788 6.49607 6.25 5.89498 6.25 5.25C6.25 3.45507 7.70507 2 9.5 2C10.5055 2 11.4044 2.45666 12.0006 3.17391C12.5956 2.45666 13.4945 2 14.5 2ZM9.5 3.5C8.5335 3.5 7.75 4.2835 7.75 5.25C7.75 6.16817 8.45711 6.92119 9.35647 6.9942L9.5 7H11.25V5.25L11.2442 5.10647C11.1712 4.20711 10.4182 3.5 9.5 3.5ZM14.5 3.5C13.5335 3.5 12.75 4.2835 12.75 5.25V7H14.5C15.4665 7 16.25 6.2165 16.25 5.25C16.25 4.2835 15.4665 3.5 14.5 3.5Z" fill="currentColor"></path></svg>
+                                    </div>
+                                    <span class="product-gift-text">Quà tặng</span>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-8 product-unit"><span class="product-unit-text">Chai x 125ml</span></div>
+                            </div>
+                            <div class="row justify-content-center my-3">
+                                <button type="button" class="btn product-buy" product-target="#product1">Chọn mua</button>
+                            </div>
+                        </div>
+                        <div class="col-2 mycarousel-item product ">
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <span class="product-discount text-small-2">-18%</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <img src="/public/img/sirospecicalkidzinc.png" alt="">
+                            </div>
+                            <div class="row mt-2">
+                                <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Siro Special Kid Zinc Eric Favre Wellness bổ sung kẽm, hỗ trợ tăng sức đề kháng cho trẻ (125ml)</h6></a>
+                            </div>
+                            <div class="row d-inline-block">
+                                <span class="text-price pe-0">195.980đ</span>
+                                <span class="text-price ps-0">/ Chai</span>
+                            </div>
+                            <div class="row">
+                                <span class="text-price-old">239.000đ</span>
+                            </div>
+                            <div class="row">
+                                <div class="product-gift ms-3 p-0 mb-2 invisible">
+                                    <div class="product-gift-icon">
+                                        <svg class="" width="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.25 13V22H7.25C5.45507 22 4 20.5449 4 18.75V13H11.25ZM20 13V18.75C20 20.5449 18.5449 22 16.75 22H12.75V13H20ZM14.5 2C16.2949 2 17.75 3.45507 17.75 5.25C17.75 5.89498 17.5621 6.49607 17.2381 7.00154L19.75 7C20.4404 7 21 7.46637 21 8.04167V10.9583C21 11.5336 20.4404 12 19.75 12L12.75 11.999V7H11.25V11.999L4.25 12C3.55964 12 3 11.5336 3 10.9583V8.04167C3 7.46637 3.55964 7 4.25 7L6.7619 7.00154C6.43788 6.49607 6.25 5.89498 6.25 5.25C6.25 3.45507 7.70507 2 9.5 2C10.5055 2 11.4044 2.45666 12.0006 3.17391C12.5956 2.45666 13.4945 2 14.5 2ZM9.5 3.5C8.5335 3.5 7.75 4.2835 7.75 5.25C7.75 6.16817 8.45711 6.92119 9.35647 6.9942L9.5 7H11.25V5.25L11.2442 5.10647C11.1712 4.20711 10.4182 3.5 9.5 3.5ZM14.5 3.5C13.5335 3.5 12.75 4.2835 12.75 5.25V7H14.5C15.4665 7 16.25 6.2165 16.25 5.25C16.25 4.2835 15.4665 3.5 14.5 3.5Z" fill="currentColor"></path></svg>
+                                    </div>
+                                    <span class="product-gift-text">Quà tặng</span>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-8 product-unit"><span class="product-unit-text">Chai</span></div>
+                            </div>
+                            <div class="row justify-content-center my-3">
+                                <button type="button" class="btn product-buy" product-target="#product1">Chọn mua</button>
+                            </div>
+                        </div>
+                        <div class="col-2 mycarousel-item product ">
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <span class="product-discount text-small-2 invisible">-20%</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <img src="/public/img/sirospecialkismultivitamines.png" alt="">
+                            </div>
+                            <div class="row mt-2">
+                                <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Siro Special Kid Multivitamines bổ sung Vitamin và khoáng chất giúp tăng cường sức đề kháng (125ml)</h6></a>
+                            </div>
+                            <div class="row d-inline-block">
+                                <span class="text-price pe-0">239.000đ</span>
+                                <span class="text-price ps-0">/ Chai</span>
+                            </div>
+                            <div class="row">
+                                <span class="text-price-old invisible">225.000đ</span>
+                            </div>
+                            <div class="row">
+                                <div class="product-gift ms-3 p-0 mb-2 invisible">
+                                    <div class="product-gift-icon">
+                                        <svg class="" width="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.25 13V22H7.25C5.45507 22 4 20.5449 4 18.75V13H11.25ZM20 13V18.75C20 20.5449 18.5449 22 16.75 22H12.75V13H20ZM14.5 2C16.2949 2 17.75 3.45507 17.75 5.25C17.75 5.89498 17.5621 6.49607 17.2381 7.00154L19.75 7C20.4404 7 21 7.46637 21 8.04167V10.9583C21 11.5336 20.4404 12 19.75 12L12.75 11.999V7H11.25V11.999L4.25 12C3.55964 12 3 11.5336 3 10.9583V8.04167C3 7.46637 3.55964 7 4.25 7L6.7619 7.00154C6.43788 6.49607 6.25 5.89498 6.25 5.25C6.25 3.45507 7.70507 2 9.5 2C10.5055 2 11.4044 2.45666 12.0006 3.17391C12.5956 2.45666 13.4945 2 14.5 2ZM9.5 3.5C8.5335 3.5 7.75 4.2835 7.75 5.25C7.75 6.16817 8.45711 6.92119 9.35647 6.9942L9.5 7H11.25V5.25L11.2442 5.10647C11.1712 4.20711 10.4182 3.5 9.5 3.5ZM14.5 3.5C13.5335 3.5 12.75 4.2835 12.75 5.25V7H14.5C15.4665 7 16.25 6.2165 16.25 5.25C16.25 4.2835 15.4665 3.5 14.5 3.5Z" fill="currentColor"></path></svg>
+                                    </div>
+                                    <span class="product-gift-text">Quà tặng</span>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-8 product-unit"><span class="product-unit-text">Chai x 125ml</span></div>
+                            </div>
+                            <div class="row justify-content-center my-3">
+                                <button type="button" class="btn product-buy" product-target="#product1">Chọn mua</button>
+                            </div>
+                        </div>
+                        <div class="col-2 mycarousel-item product ">
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <span class="product-discount text-small-2 invisible">-20%</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <img src="/public/img/comankidstraphaco.png" alt="">
+                            </div>
+                            <div class="row mt-2">
+                                <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Cốm ăn ngon trẻ em TT KIDS Traphaco hỗ trợ tăng hấp thu dinh dưỡng, tăng cường sức khỏe (20 gói x 3g)</h6></a>
+                            </div>
+                            <div class="row d-inline-block">
+                                <span class="text-price pe-0">100.000đ</span>
+                                <span class="text-price ps-0">/ Hộp</span>
+                            </div>
+                            <div class="row">
+                                <span class="text-price-old invisible">225.000đ</span>
+                            </div>
+                            <div class="row">
+                                <div class="product-gift ms-3 p-0 mb-2 invisible">
+                                    <div class="product-gift-icon">
+                                        <svg class="" width="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.25 13V22H7.25C5.45507 22 4 20.5449 4 18.75V13H11.25ZM20 13V18.75C20 20.5449 18.5449 22 16.75 22H12.75V13H20ZM14.5 2C16.2949 2 17.75 3.45507 17.75 5.25C17.75 5.89498 17.5621 6.49607 17.2381 7.00154L19.75 7C20.4404 7 21 7.46637 21 8.04167V10.9583C21 11.5336 20.4404 12 19.75 12L12.75 11.999V7H11.25V11.999L4.25 12C3.55964 12 3 11.5336 3 10.9583V8.04167C3 7.46637 3.55964 7 4.25 7L6.7619 7.00154C6.43788 6.49607 6.25 5.89498 6.25 5.25C6.25 3.45507 7.70507 2 9.5 2C10.5055 2 11.4044 2.45666 12.0006 3.17391C12.5956 2.45666 13.4945 2 14.5 2ZM9.5 3.5C8.5335 3.5 7.75 4.2835 7.75 5.25C7.75 6.16817 8.45711 6.92119 9.35647 6.9942L9.5 7H11.25V5.25L11.2442 5.10647C11.1712 4.20711 10.4182 3.5 9.5 3.5ZM14.5 3.5C13.5335 3.5 12.75 4.2835 12.75 5.25V7H14.5C15.4665 7 16.25 6.2165 16.25 5.25C16.25 4.2835 15.4665 3.5 14.5 3.5Z" fill="currentColor"></path></svg>
+                                    </div>
+                                    <span class="product-gift-text">Quà tặng</span>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-8 product-unit"><span class="product-unit-text">Hộp 20 Gói x 3g</span></div>
+                            </div>
+                            <div class="row justify-content-center my-3">
+                                <button type="button" class="btn product-buy" product-target="#product1">Chọn mua</button>
+                            </div>
+                        </div>
+                        <div class="col-2 mycarousel-item product ">
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <span class="product-discount text-small-2">-20%</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <img src="/public/img/dauhungchanhlabebe.png" alt="">
+                            </div>
+                            <div class="row mt-2">
+                                <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Dầu Húng Chanh Lábebé hỗ trợ lợi phế trừ đờm, giảm ho (30ml)</h6></a>
+                            </div>
+                            <div class="row d-inline-block">
+                                <span class="text-price pe-0">144.000đ</span>
+                                <span class="text-price ps-0">/ Hộp</span>
+                            </div>
+                            <div class="row">
+                                <span class="text-price-old">180.000đ</span>
+                            </div>
+                            <div class="row">
+                                <div class="product-gift ms-3 p-0 mb-2 invisible">
+                                    <div class="product-gift-icon">
+                                        <svg class="" width="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.25 13V22H7.25C5.45507 22 4 20.5449 4 18.75V13H11.25ZM20 13V18.75C20 20.5449 18.5449 22 16.75 22H12.75V13H20ZM14.5 2C16.2949 2 17.75 3.45507 17.75 5.25C17.75 5.89498 17.5621 6.49607 17.2381 7.00154L19.75 7C20.4404 7 21 7.46637 21 8.04167V10.9583C21 11.5336 20.4404 12 19.75 12L12.75 11.999V7H11.25V11.999L4.25 12C3.55964 12 3 11.5336 3 10.9583V8.04167C3 7.46637 3.55964 7 4.25 7L6.7619 7.00154C6.43788 6.49607 6.25 5.89498 6.25 5.25C6.25 3.45507 7.70507 2 9.5 2C10.5055 2 11.4044 2.45666 12.0006 3.17391C12.5956 2.45666 13.4945 2 14.5 2ZM9.5 3.5C8.5335 3.5 7.75 4.2835 7.75 5.25C7.75 6.16817 8.45711 6.92119 9.35647 6.9942L9.5 7H11.25V5.25L11.2442 5.10647C11.1712 4.20711 10.4182 3.5 9.5 3.5ZM14.5 3.5C13.5335 3.5 12.75 4.2835 12.75 5.25V7H14.5C15.4665 7 16.25 6.2165 16.25 5.25C16.25 4.2835 15.4665 3.5 14.5 3.5Z" fill="currentColor"></path></svg>
+                                    </div>
+                                    <span class="product-gift-text">Quà tặng</span>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-8 product-unit"><span class="product-unit-text">Hộp x 30ml</span></div>
+                            </div>
+                            <div class="row justify-content-center my-3">
+                                <button type="button" class="btn product-buy" product-target="#product1">Chọn mua</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="position-absolute mycarousel-prev" mycarousel-target="#outstandingCarousel" style="left:-0.1%">
+                        <svg class="text-blue" width="20" height="20" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-text-focus"><path d="M16.668 4.29289C17.0586 4.68342 17.0586 5.31658 16.668 5.70711L10.3752 12L16.668 18.2929C17.0586 18.6834 17.0586 19.3166 16.668 19.7071C16.2775 20.0976 15.6444 20.0976 15.2538 19.7071L8.25383 12.7071C7.86331 12.3166 7.86331 11.6834 8.25383 11.2929L15.2538 4.29289C15.6444 3.90237 16.2775 3.90237 16.668 4.29289Z" fill="currentColor"></path></svg>
+                    </button>
+                    <button class="position-absolute mycarousel-next" mycarousel-target="#outstandingCarousel" style="right: -0.1%;">
+                        <svg class="text-blue" width="20" height="20" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-text-focus"><path d="M9.25383 4.29289C8.86331 4.68342 8.86331 5.31658 9.25383 5.70711L15.5467 12L9.25383 18.2929C8.86331 18.6834 8.86331 19.3166 9.25383 19.7071C9.64436 20.0976 10.2775 20.0976 10.668 19.7071L17.668 12.7071C18.0586 12.3166 18.0586 11.6834 17.668 11.2929L10.668 4.29289C10.2775 3.90237 9.64435 3.90237 9.25383 4.29289Z" fill="currentColor"></path></svg>
+                    </button>
+                </div>
+                <div class="row bg-white align-items-center rounded-4 p-3">
+                    <h2 class="text-medium-2 fw-semibold">Câu hỏi thường gặp</h2>
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                <svg width="24" class="text-icon-secondary mr-1 inline-block shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4C35.0457 4 44 12.9543 44 24C44 35.0457 35.0457 44 24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4ZM24.25 32C23.4216 32 22.75 32.6716 22.75 33.5C22.75 34.3284 23.4216 35 24.25 35C25.0784 35 25.75 34.3284 25.75 33.5C25.75 32.6716 25.0784 32 24.25 32ZM24.25 13C20.8864 13 18 15.8846 18 19.25C18 19.9404 18.5596 20.5 19.25 20.5C19.8541 20.5 20.358 20.0715 20.4746 19.5019L20.4935 19.3778L20.5055 19.0587C20.6142 17.1536 22.3307 15.5 24.25 15.5C26.2346 15.5 28 17.2634 28 19.25C28.0011 20.437 27.5794 21.29 26.3804 22.6455L26.1734 22.8762L25.1461 23.9739C23.5147 25.7467 22.8251 26.9703 22.8379 28.7589C22.8428 29.4493 23.4065 30.0049 24.0968 30.0001C24.6577 29.996 25.1297 29.6231 25.2843 29.1132L25.3143 28.9932L25.3323 28.8689L25.3379 28.7411L25.3409 28.5793C25.377 27.7786 25.7351 27.0936 26.6221 26.0726L26.8066 25.8638L27.8216 24.7772C29.7314 22.7192 30.502 21.3691 30.5 19.2488C30.5 15.8821 27.6147 13 24.25 13Z" fill="currentColor"></path></svg>
+                                <span>Viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam có dành cho người ăn chay?</span>
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam không chứa lactose, gluten và thân thiện với người ăn chay.</div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                <svg width="24" class="text-icon-secondary mr-1 inline-block shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4C35.0457 4 44 12.9543 44 24C44 35.0457 35.0457 44 24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4ZM24.25 32C23.4216 32 22.75 32.6716 22.75 33.5C22.75 34.3284 23.4216 35 24.25 35C25.0784 35 25.75 34.3284 25.75 33.5C25.75 32.6716 25.0784 32 24.25 32ZM24.25 13C20.8864 13 18 15.8846 18 19.25C18 19.9404 18.5596 20.5 19.25 20.5C19.8541 20.5 20.358 20.0715 20.4746 19.5019L20.4935 19.3778L20.5055 19.0587C20.6142 17.1536 22.3307 15.5 24.25 15.5C26.2346 15.5 28 17.2634 28 19.25C28.0011 20.437 27.5794 21.29 26.3804 22.6455L26.1734 22.8762L25.1461 23.9739C23.5147 25.7467 22.8251 26.9703 22.8379 28.7589C22.8428 29.4493 23.4065 30.0049 24.0968 30.0001C24.6577 29.996 25.1297 29.6231 25.2843 29.1132L25.3143 28.9932L25.3323 28.8689L25.3379 28.7411L25.3409 28.5793C25.377 27.7786 25.7351 27.0936 26.6221 26.0726L26.8066 25.8638L27.8216 24.7772C29.7314 22.7192 30.502 21.3691 30.5 19.2488C30.5 15.8821 27.6147 13 24.25 13Z" fill="currentColor"></path></svg>
+                                <span>Những ai không nên dùng viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam?</span>
+                            </button>
+                          </h2>
+                          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Không dùng cho người mẫn cảm, kiêng kỵ với bất cứ thành phần nào của sản phẩm. <br>
+                                Phụ nữ có thai, đang cho con bú, người đang dùng thuốc nên tham khảo ý kiến thầy thuốc hoặc bác sĩ, chuyên gia y tế trước khi dùng. <br>
+                                Không dùng cho người viêm loét dạ dày, người bị bệnh huyết áp, người mẫn cảm với nhân sâm. <br>
+                                Không phù hợp cho trẻ em dưới 14 tuổi.</div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                <svg width="24" class="text-icon-secondary mr-1 inline-block shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4C35.0457 4 44 12.9543 44 24C44 35.0457 35.0457 44 24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4ZM24.25 32C23.4216 32 22.75 32.6716 22.75 33.5C22.75 34.3284 23.4216 35 24.25 35C25.0784 35 25.75 34.3284 25.75 33.5C25.75 32.6716 25.0784 32 24.25 32ZM24.25 13C20.8864 13 18 15.8846 18 19.25C18 19.9404 18.5596 20.5 19.25 20.5C19.8541 20.5 20.358 20.0715 20.4746 19.5019L20.4935 19.3778L20.5055 19.0587C20.6142 17.1536 22.3307 15.5 24.25 15.5C26.2346 15.5 28 17.2634 28 19.25C28.0011 20.437 27.5794 21.29 26.3804 22.6455L26.1734 22.8762L25.1461 23.9739C23.5147 25.7467 22.8251 26.9703 22.8379 28.7589C22.8428 29.4493 23.4065 30.0049 24.0968 30.0001C24.6577 29.996 25.1297 29.6231 25.2843 29.1132L25.3143 28.9932L25.3323 28.8689L25.3379 28.7411L25.3409 28.5793C25.377 27.7786 25.7351 27.0936 26.6221 26.0726L26.8066 25.8638L27.8216 24.7772C29.7314 22.7192 30.502 21.3691 30.5 19.2488C30.5 15.8821 27.6147 13 24.25 13Z" fill="currentColor"></path></svg>
+                                <span>Nhóm tuổi nào có thể sử dụng viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam?</span>
+                            </button>
+                          </h2>
+                          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Người trên 14 tuổi có thể sử dụng viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam.</div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                  <svg width="24" class="text-icon-secondary mr-1 inline-block shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4C35.0457 4 44 12.9543 44 24C44 35.0457 35.0457 44 24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4ZM24.25 32C23.4216 32 22.75 32.6716 22.75 33.5C22.75 34.3284 23.4216 35 24.25 35C25.0784 35 25.75 34.3284 25.75 33.5C25.75 32.6716 25.0784 32 24.25 32ZM24.25 13C20.8864 13 18 15.8846 18 19.25C18 19.9404 18.5596 20.5 19.25 20.5C19.8541 20.5 20.358 20.0715 20.4746 19.5019L20.4935 19.3778L20.5055 19.0587C20.6142 17.1536 22.3307 15.5 24.25 15.5C26.2346 15.5 28 17.2634 28 19.25C28.0011 20.437 27.5794 21.29 26.3804 22.6455L26.1734 22.8762L25.1461 23.9739C23.5147 25.7467 22.8251 26.9703 22.8379 28.7589C22.8428 29.4493 23.4065 30.0049 24.0968 30.0001C24.6577 29.996 25.1297 29.6231 25.2843 29.1132L25.3143 28.9932L25.3323 28.8689L25.3379 28.7411L25.3409 28.5793C25.377 27.7786 25.7351 27.0936 26.6221 26.0726L26.8066 25.8638L27.8216 24.7772C29.7314 22.7192 30.502 21.3691 30.5 19.2488C30.5 15.8821 27.6147 13 24.25 13Z" fill="currentColor"></path></svg>
+                                  <span>Viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam có thể uống trực tiếp với nước được không?</span>
+                              </button>
+                            </h2>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body">Không, luôn luôn cho một viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam vào một cốc nước và để sủi bọt hoàn toàn rồi mới uống.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                  <svg width="24" class="text-icon-secondary mr-1 inline-block shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4C35.0457 4 44 12.9543 44 24C44 35.0457 35.0457 44 24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4ZM24.25 32C23.4216 32 22.75 32.6716 22.75 33.5C22.75 34.3284 23.4216 35 24.25 35C25.0784 35 25.75 34.3284 25.75 33.5C25.75 32.6716 25.0784 32 24.25 32ZM24.25 13C20.8864 13 18 15.8846 18 19.25C18 19.9404 18.5596 20.5 19.25 20.5C19.8541 20.5 20.358 20.0715 20.4746 19.5019L20.4935 19.3778L20.5055 19.0587C20.6142 17.1536 22.3307 15.5 24.25 15.5C26.2346 15.5 28 17.2634 28 19.25C28.0011 20.437 27.5794 21.29 26.3804 22.6455L26.1734 22.8762L25.1461 23.9739C23.5147 25.7467 22.8251 26.9703 22.8379 28.7589C22.8428 29.4493 23.4065 30.0049 24.0968 30.0001C24.6577 29.996 25.1297 29.6231 25.2843 29.1132L25.3143 28.9932L25.3323 28.8689L25.3379 28.7411L25.3409 28.5793C25.377 27.7786 25.7351 27.0936 26.6221 26.0726L26.8066 25.8638L27.8216 24.7772C29.7314 22.7192 30.502 21.3691 30.5 19.2488C30.5 15.8821 27.6147 13 24.25 13Z" fill="currentColor"></path></svg>
+                                  <span>Đâu là thời điểm lý tưởng để uống viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam?</span>
+                              </button>
+                            </h2>
+                            <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body">Thời gian lý tưởng để uống viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam là sau bữa ăn.</div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </detail>
+    <footer></footer>
+</body>
