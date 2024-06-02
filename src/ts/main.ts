@@ -1,5 +1,5 @@
 import Product from "../models/ProductModel";
-import CarouselHandler from "./Carousel";
+import CarouselHandler from "./components/Carousel";
 import { LoadCartHandler } from "./header";
 import { LayoutRender } from "./layoutHelper";
 import { MyLocalStorage } from "./localStorage";

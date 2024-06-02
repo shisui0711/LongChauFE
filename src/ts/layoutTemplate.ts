@@ -3,7 +3,7 @@ export let headerTemplate:string = ` <header>
 <div class="container">
     <div class="row justify-content-between">
         <div class="col-7 mt-2">
-            <img src="public/img/megaphone.png" alt="megaphone">
+            <img src="dist/img/megaphone.png" alt="megaphone">
             <a href="#" class="text-white fw-semibold text-decoration-none mx-1">Trung tâm tiêm chủng Long Châu
                 <span><u>Xem chi tiết</u></span></a>
         </div>
@@ -30,7 +30,7 @@ export let headerTemplate:string = ` <header>
     </div>
     <div class="row mt-3">
         <div class="col-2p25">
-            <a href="/index.html"><img src="/public/img/logo.svg" alt="logo"></a>
+            <a href="/index.html"><img src="/dist/img/logo.svg" alt="logo"></a>
         </div>
         <div class="col-6 position-relative">
             <div class="row align-items-center bg-white rounded-5">
@@ -126,7 +126,7 @@ export let headerTemplate:string = ` <header>
             <div class="cart-container my-4">
                 <!-- <div class="row align-items-center mb-3">
                     <div class="col-2">
-                        <img src="/public/img/viensui.png" alt="viensui">
+                        <img src="/dist/img/viensui.png" alt="viensui">
                     </div>
                     <div class="col-8">
                         <span class="product-name line-clamp-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure nisi natus officia est modi corrupti ullam, dolorum numquam necessitatibus assumenda? Consectetur maiores alias inventore tenetur nisi vitae molestias similique vero?</span>
@@ -171,7 +171,7 @@ export let headerTemplate:string = ` <header>
             <p class="text-semilarge-2 fw-bold text-center">Đăng nhập hoặc Đăng ký</p>
             <p class="text-center">Vui lòng đăng nhập để hưởng những đặc quyền dành cho thành viên.</p>
             <span class="position-relative d-inline-block w-100 mb-2">
-                <input id="txtPhone" class="form-control" maxlength="10" type="text" placeholder="Nhập số điện thoại">
+                <input id="txtPhone" class="form-control py-2" maxlength="10" type="text" placeholder="Nhập số điện thoại">
                 <span hidden id="removePhone" class="position-absolute h-fit text-gray" style="top: 20%; right:5%">
                     <svg width="24" height="24" class="text-icon-secondary cursor-pointer" role="button" viewBox="0 0 25 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.0033 2.4C17.3053 2.4 21.6033 6.69807 21.6033 12C21.6033 17.3019 17.3053 21.6 12.0033 21.6C6.70139 21.6 2.40332 17.3019 2.40332 12C2.40332 6.69807 6.70139 2.4 12.0033 2.4ZM9.37464 8.53646C9.1408 8.37447 8.81749 8.39761 8.60921 8.60589L8.53978 8.68899C8.37779 8.92283 8.40093 9.24614 8.60921 9.45442L11.1548 12L8.60921 14.5456L8.53978 14.6287C8.37779 14.8625 8.40093 15.1858 8.60921 15.3941L8.69231 15.4635C8.92615 15.6255 9.24946 15.6024 9.45774 15.3941L12.0033 12.8485L14.5489 15.3941L14.632 15.4635C14.8658 15.6255 15.1892 15.6024 15.3974 15.3941L15.4669 15.311C15.6289 15.0772 15.6057 14.7539 15.3974 14.5456L12.8518 12L15.3974 9.45442L15.4669 9.37132C15.6289 9.13748 15.6057 8.81417 15.3974 8.60589L15.3143 8.53646C15.0805 8.37447 14.7572 8.39761 14.5489 8.60589L12.0033 11.1515L9.45774 8.60589L9.37464 8.53646Z" fill="currentColor"></path></svg>
                 </span>
@@ -189,11 +189,11 @@ export let headerTemplate:string = ` <header>
                 <div class="col-auto"><button class="btn border-gray rounded-full p-2"><span class="d-inline-block"><svg class="h-6 w-6" width="24" height="24" viewBox="0 0 151 158" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M75.77 157.05C117.191 157.05 150.77 123.471 150.77 82.05C150.77 40.6286 117.191 7.05 75.77 7.05C34.3486 7.05 0.770004 40.6286 0.770004 82.05C0.770004 123.471 34.3486 157.05 75.77 157.05Z" fill="url(#paint0_linear_1_4)"></path><path d="M111.76 43.86V85.13C106.24 78.53 97.95 74.33 88.69 74.33C72.1 74.33 58.6 87.83 58.6 104.42C58.6 121.01 72.1 134.51 88.69 134.51C105.28 134.51 118.78 121.01 118.78 104.42V43.87H111.77L111.76 43.86ZM88.69 127.48C75.97 127.48 65.62 117.13 65.62 104.41C65.62 91.69 75.97 81.34 88.69 81.34C101.41 81.34 111.76 91.69 111.76 104.41C111.76 117.13 101.41 127.48 88.69 127.48Z" fill="white"></path><path d="M46.17 82.93H39.16V130.98H46.17V82.93Z" fill="white"></path><path d="M49.01 76.66C47.93 76.17 47.25 75.05 47.32 73.87L47.64 69.68L54.9 71.96C55.57 71.06 56.14 70.08 56.6 69.03L44.67 65.29L44.03 73.64C43.94 75.17 44.41 76.62 45.3 77.78C46.62 77.57 47.87 77.19 49.05 76.66C49.05 76.66 49.03 76.66 49.02 76.65L49.01 76.66Z" fill="white"></path><path d="M41.47 65.39L33.32 67.34C31.82 67.72 30.56 68.64 29.73 69.87C30.33 71.05 31.09 72.14 31.97 73.11C31.97 73.07 31.97 73.04 31.97 73.01C32.11 71.83 32.96 70.85 34.11 70.54L38.19 69.56L38.25 77.19C39.3 77.54 40.41 77.78 41.56 77.89L41.47 65.38V65.39Z" fill="white"></path><path d="M53.29 65.52C54.05 65.83 54.84 65.98 55.62 65.98C56.3 65.98 56.98 65.86 57.63 65.64C57.77 64.82 57.85 63.97 57.85 63.1C57.85 62.63 57.83 62.17 57.78 61.71C57.76 61.73 57.75 61.75 57.74 61.76C57.19 62.34 56.42 62.68 55.62 62.68C55.25 62.68 54.9 62.61 54.55 62.47L50.69 60.83L55.2 54.63C54.55 53.7 53.81 52.84 52.97 52.08L45.58 62.24L53.29 65.51V65.52Z" fill="white"></path><path d="M49.86 49.92C48.7 49.31 47.44 48.85 46.12 48.57C46.15 48.62 46.18 48.67 46.2 48.7C46.77 49.74 46.66 51.04 45.9 51.95L43.15 55.13L38.6 48.89C37.51 49.22 36.47 49.68 35.51 50.25L42.94 60.43L48.42 54.09C49.42 52.9 49.9 51.41 49.86 49.93V49.92Z" fill="white"></path><path d="M36.04 55.21C35.21 53.88 33.93 52.96 32.49 52.55C31.55 53.49 30.73 54.55 30.07 55.71C30.13 55.69 30.2 55.68 30.24 55.67C30.43 55.63 30.62 55.61 30.8 55.61C31.79 55.61 32.7 56.11 33.24 56.94L35.42 60.53L28.11 62.94C28.11 62.94 28.11 63.04 28.11 63.09C28.11 64.19 28.23 65.27 28.46 66.3L40.4 62.36L36.05 55.2L36.04 55.21Z" fill="white"></path><path d="M90.94 41.99L18.53 41.99C9.07001 41.99 1.40001 34.31 1.40001 24.86V0.449989L73.81 0.449989C83.27 0.449989 90.94 8.12999 90.94 17.58V41.99Z" fill="url(#paint1_linear_1_4)"></path><path d="M17.04 36.12V7.66H34.97V10.79H20.25V20.3H33.06V23.43H20.25V36.11H17.04V36.12Z" fill="white"></path><path d="M38.12 36.12V7.66H49.38C50.87 7.66 52.21 8.03 53.41 8.78C54.6 9.53 55.55 10.54 56.26 11.81C56.96 13.08 57.32 14.52 57.32 16.12C57.32 17.8 56.97 19.31 56.26 20.63C55.55 21.96 54.61 23 53.41 23.76C52.22 24.52 50.88 24.9 49.38 24.9H41.33V36.12H38.12ZM41.33 21.77H49.54C50.38 21.77 51.13 21.53 51.8 21.04C52.46 20.55 53 19.88 53.41 19.01C53.82 18.14 54.02 17.17 54.02 16.08C54.02 14.59 53.59 13.34 52.72 12.32C51.85 11.3 50.8 10.8 49.55 10.8H41.34V21.78L41.33 21.77Z" fill="white"></path><path d="M66.52 36.12V10.79H58.35V7.66H78.15V10.79H69.73V36.12H66.52Z" fill="white"></path><defs><linearGradient id="paint0_linear_1_4" x1="75.77" y1="157.87" x2="75.77" y2="6.55" gradientUnits="userSpaceOnUse"><stop stop-color="#F04E23"></stop><stop offset="1" stop-color="#F7941E"></stop></linearGradient><linearGradient id="paint1_linear_1_4" x1="46.17" y1="41.99" x2="46.17" y2="0.449989" gradientUnits="userSpaceOnUse"><stop stop-color="#58595B"></stop><stop offset="1" stop-color="#808285"></stop></linearGradient></defs></svg></span></button></div>
             </div>
         </form>
-        <img class="mt-3 rounded-5" src="/public/img/background_login.svg" alt="">
+        <img class="mt-2 rounded-5" src="/dist/img/background_login.svg" alt="">
       </div>
       <div class="login-backdrop"></div>
       <!-- End Login -->
-      <script src="./public/js/header.bundle.js"></script>
+      <script src="./dist/js/header.bundle.js"></script>
 </header>`
 export let footerTemplate:string = `<footer>
 <div class="bg-blue">
@@ -275,34 +275,34 @@ export let footerTemplate:string = `<footer>
             <p class="text-small text-gray-light fw-bold">CHỨNG NHẬN BỞI</p>
             <div class="row align-items-center mb-3">
                 <div class="col-auto">
-                    <img src="/public/img/bo_cong_thuong.svg" alt="">
+                    <img src="/dist/img/bo_cong_thuong.svg" alt="">
                 </div>
                 <div class="col-auto">
-                    <img src="/public/img/DMCA.svg" alt="">
+                    <img src="/dist/img/DMCA.svg" alt="">
                 </div>
             </div>
             <p class="text-small text-gray-light fw-bold">HỖ TRỢ THANH TOÁN</p>
             <div class="row">
                 <div class="col-auto mb-3 pe-0">
-                    <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/public/img/visa.svg" alt=""></a>
+                    <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/dist/img/visa.svg" alt=""></a>
                 </div>
                 <div class="col-auto mb-3 pe-0">
-                    <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/public/img/mtc.svg" alt=""></a>
+                    <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/dist/img/mtc.svg" alt=""></a>
                 </div>
                 <div class="col-auto mb-3 pe-0">
-                    <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/public/img/jcb.svg" alt=""></a>
+                    <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/dist/img/jcb.svg" alt=""></a>
                 </div>
                 <div class="col-auto mb-3 pe-0">
-                    <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/public/img/amex.svg" alt=""></a>
+                    <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/dist/img/amex.svg" alt=""></a>
                 </div>
                 <div class="col-auto mb-3 pe-0">
-                    <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/public/img/vnpay.svg" alt=""></a>
+                    <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/dist/img/vnpay.svg" alt=""></a>
                 </div>
                 <div class="col-auto mb-3 pe-0">
-                    <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/public/img/zalopay.svg" alt=""></a>
+                    <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/dist/img/zalopay.svg" alt=""></a>
                 </div>
                 <div class="col-auto mb-3 pe-0">
-                    <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/public/img/momo.svg" alt=""></a>
+                    <a class="border-gray p-1 rounded-2" href="#"><img class="px-0" style="width: 36px; height: 19px;" src="/dist/img/momo.svg" alt=""></a>
                 </div>
             </div>
         </div>
@@ -310,15 +310,15 @@ export let footerTemplate:string = `<footer>
             <p class="text-small text-gray-light fw-bold">KẾT NỐI VỚI CHÚNG TÔI</p>
             <div class="row">
                 <div class="col-auto mb-3 pe-0">
-                    <a href="#"><img class="px-0" style="width: 28px; height: 28px;" src="/public/img/facebook.svg" alt=""></a>
+                    <a href="#"><img class="px-0" style="width: 28px; height: 28px;" src="/dist/img/facebook.svg" alt=""></a>
                 </div>
                 <div class="col-auto mb-3 pe-0">
-                    <a href="#"><img class="px-0" style="width: 28px; height: 28px;" src="/public/img/zalo.svg" alt=""></a>
+                    <a href="#"><img class="px-0" style="width: 28px; height: 28px;" src="/dist/img/zalo.svg" alt=""></a>
                 </div>
             </div>
             <div>
                 <p class="text-small text-gray-light fw-bold">TẢI ỨNG DỤNG LONG CHÂU</p>
-                <img src="/public/img/QR_100x100.png" alt="">
+                <img src="/dist/img/QR_100x100.png" alt="">
             </div>
         </div>
     </div>
@@ -350,57 +350,57 @@ export let navTemplate:string = ` <nav>
                     <div class="col-2p75">
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/tpcn_vitamin_khoang_chat.png" alt="">
+                                <img src="/dist/img/tpcn_vitamin_khoang_chat.png" alt="">
                                 <span class="fw-semibold">Vitamin & khoáng chất</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/sinh_li_noi_tiet_to.png" alt="">
+                                <img src="/dist/img/sinh_li_noi_tiet_to.png" alt="">
                                 <span class="fw-semibold">Sinh lý - Nội tiết tố</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <div class="">
                                 <a class="line-clamp-1 text-decoration-none my-2" ref="#">
-                                    <img src="/public/img/cai_thien_tang_cuong_chuc_nang.png" alt="">
+                                    <img src="/dist/img/cai_thien_tang_cuong_chuc_nang.png" alt="">
                                     <span class=" fw-semibold">Cải thiện tăng cường chức năng</span>
                                 </a>
                             </div>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/ho_tro_dieu_tri.png" alt="">
+                                <img src="/dist/img/ho_tro_dieu_tri.png" alt="">
                                 <span class="fw-semibold">Hỗ trợ điều trị</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/ho_tro_tieu_hoa.png" alt="">
+                                <img src="/dist/img/ho_tro_tieu_hoa.png" alt="">
                                 <span class="fw-semibold">Hỗ trợ tiêu hóa</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/than_kinh_nao.png" alt="">
+                                <img src="/dist/img/than_kinh_nao.png" alt="">
                                 <span class="fw-semibold">Thần kinh não</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/ho_tro_lam_dep.png" alt="">
+                                <img src="/dist/img/ho_tro_lam_dep.png" alt="">
                                 <span class="fw-semibold">Hỗ trợ làm đẹp</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/suc_khoe_tim_mach.png" alt="">
+                                <img src="/dist/img/suc_khoe_tim_mach.png" alt="">
                                 <span class="fw-semibold">Sức khỏe tim mạch</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/dinh_duong.png" alt="">
+                                <img src="/dist/img/dinh_duong.png" alt="">
                                 <span class="fw-semibold">Dinh dưỡng</span>
                             </a>
                         </div>
@@ -409,37 +409,37 @@ export let navTemplate:string = ` <nav>
                         <div class="row mt-3 mx-2 gap-3">
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/bo_sung_canxi_vitamin_d.png" alt="#">
+                                    <img src="/dist/img/bo_sung_canxi_vitamin_d.png" alt="#">
                                     <span class="text-black text-small fw-medium">Bổ sung Canxi & Vitamin D</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/tpcn_vitamin_tong_hop.png" alt="#">
+                                    <img src="/dist/img/tpcn_vitamin_tong_hop.png" alt="#">
                                     <span class="text-black text-small fw-medium">Vitamin tổng hợp</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/dau_ca_omega_3_dha.png" alt="#">
+                                    <img src="/dist/img/dau_ca_omega_3_dha.png" alt="#">
                                     <span class="text-black text-small fw-medium">Dầu cá, Omega 3, DHA</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/tpcn_vitamin_c_cac_loai.png" alt="#">
+                                    <img src="/dist/img/tpcn_vitamin_c_cac_loai.png" alt="#">
                                     <span class="text-black text-small fw-medium">Vitamin C các loại</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/bo_sung_sat_axit_folic.png" alt="#">
+                                    <img src="/dist/img/bo_sung_sat_axit_folic.png" alt="#">
                                     <span class="text-black text-small fw-medium">Bổ sung Sắt & Axit Folic</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/show-more-dot-icon.svg" alt="#">
+                                    <img src="/dist/img/show-more-dot-icon.svg" alt="#">
                                     <span class="text-black text-small fw-medium">Xem thêm</span>
                                 </a>
                             </div>
@@ -461,7 +461,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09006.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09006.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -483,7 +483,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_0958.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_0958.png" alt="">
                                     </div> 
                                 </div>
                                 <div class="row mt-2">
@@ -505,7 +505,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09365.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09365.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -527,7 +527,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09335.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09335.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -549,7 +549,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09324.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09324.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -577,57 +577,57 @@ export let navTemplate:string = ` <nav>
                     <div class="col-2p75">
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/tpcn_vitamin_khoang_chat.png" alt="">
+                                <img src="/dist/img/tpcn_vitamin_khoang_chat.png" alt="">
                                 <span class="fw-semibold">Vitamin & khoáng chất</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/sinh_li_noi_tiet_to.png" alt="">
+                                <img src="/dist/img/sinh_li_noi_tiet_to.png" alt="">
                                 <span class="fw-semibold">Sinh lý - Nội tiết tố</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <div class="">
                                 <a class="line-clamp-1 text-decoration-none my-2" ref="#">
-                                    <img src="/public/img/cai_thien_tang_cuong_chuc_nang.png" alt="">
+                                    <img src="/dist/img/cai_thien_tang_cuong_chuc_nang.png" alt="">
                                     <span class=" fw-semibold">Cải thiện tăng cường chức năng</span>
                                 </a>
                             </div>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/ho_tro_dieu_tri.png" alt="">
+                                <img src="/dist/img/ho_tro_dieu_tri.png" alt="">
                                 <span class="fw-semibold">Hỗ trợ điều trị</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/ho_tro_tieu_hoa.png" alt="">
+                                <img src="/dist/img/ho_tro_tieu_hoa.png" alt="">
                                 <span class="fw-semibold">Hỗ trợ tiêu hóa</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/than_kinh_nao.png" alt="">
+                                <img src="/dist/img/than_kinh_nao.png" alt="">
                                 <span class="fw-semibold">Thần kinh não</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/ho_tro_lam_dep.png" alt="">
+                                <img src="/dist/img/ho_tro_lam_dep.png" alt="">
                                 <span class="fw-semibold">Hỗ trợ làm đẹp</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/suc_khoe_tim_mach.png" alt="">
+                                <img src="/dist/img/suc_khoe_tim_mach.png" alt="">
                                 <span class="fw-semibold">Sức khỏe tim mạch</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/dinh_duong.png" alt="">
+                                <img src="/dist/img/dinh_duong.png" alt="">
                                 <span class="fw-semibold">Dinh dưỡng</span>
                             </a>
                         </div>
@@ -636,37 +636,37 @@ export let navTemplate:string = ` <nav>
                         <div class="row mt-3 mx-2 gap-3">
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/bo_sung_canxi_vitamin_d.png" alt="#">
+                                    <img src="/dist/img/bo_sung_canxi_vitamin_d.png" alt="#">
                                     <span class="text-black text-small fw-medium">Bổ sung Canxi & Vitamin D</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/tpcn_vitamin_tong_hop.png" alt="#">
+                                    <img src="/dist/img/tpcn_vitamin_tong_hop.png" alt="#">
                                     <span class="text-black text-small fw-medium">Vitamin tổng hợp</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/dau_ca_omega_3_dha.png" alt="#">
+                                    <img src="/dist/img/dau_ca_omega_3_dha.png" alt="#">
                                     <span class="text-black text-small fw-medium">Dầu cá, Omega 3, DHA</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/tpcn_vitamin_c_cac_loai.png" alt="#">
+                                    <img src="/dist/img/tpcn_vitamin_c_cac_loai.png" alt="#">
                                     <span class="text-black text-small fw-medium">Vitamin C các loại</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/bo_sung_sat_axit_folic.png" alt="#">
+                                    <img src="/dist/img/bo_sung_sat_axit_folic.png" alt="#">
                                     <span class="text-black text-small fw-medium">Bổ sung Sắt & Axit Folic</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/show-more-dot-icon.svg" alt="#">
+                                    <img src="/dist/img/show-more-dot-icon.svg" alt="#">
                                     <span class="text-black text-small fw-medium">Xem thêm</span>
                                 </a>
                             </div>
@@ -688,7 +688,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09006.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09006.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -710,7 +710,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_0958.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_0958.png" alt="">
                                     </div> 
                                 </div>
                                 <div class="row mt-2">
@@ -732,7 +732,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09365.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09365.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -754,7 +754,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09335.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09335.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -776,7 +776,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09324.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09324.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -804,57 +804,57 @@ export let navTemplate:string = ` <nav>
                     <div class="col-2p75">
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/tpcn_vitamin_khoang_chat.png" alt="">
+                                <img src="/dist/img/tpcn_vitamin_khoang_chat.png" alt="">
                                 <span class="fw-semibold">Vitamin & khoáng chất</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/sinh_li_noi_tiet_to.png" alt="">
+                                <img src="/dist/img/sinh_li_noi_tiet_to.png" alt="">
                                 <span class="fw-semibold">Sinh lý - Nội tiết tố</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <div class="">
                                 <a class="line-clamp-1 text-decoration-none my-2" ref="#">
-                                    <img src="/public/img/cai_thien_tang_cuong_chuc_nang.png" alt="">
+                                    <img src="/dist/img/cai_thien_tang_cuong_chuc_nang.png" alt="">
                                     <span class=" fw-semibold">Cải thiện tăng cường chức năng</span>
                                 </a>
                             </div>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/ho_tro_dieu_tri.png" alt="">
+                                <img src="/dist/img/ho_tro_dieu_tri.png" alt="">
                                 <span class="fw-semibold">Hỗ trợ điều trị</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/ho_tro_tieu_hoa.png" alt="">
+                                <img src="/dist/img/ho_tro_tieu_hoa.png" alt="">
                                 <span class="fw-semibold">Hỗ trợ tiêu hóa</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/than_kinh_nao.png" alt="">
+                                <img src="/dist/img/than_kinh_nao.png" alt="">
                                 <span class="fw-semibold">Thần kinh não</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/ho_tro_lam_dep.png" alt="">
+                                <img src="/dist/img/ho_tro_lam_dep.png" alt="">
                                 <span class="fw-semibold">Hỗ trợ làm đẹp</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/suc_khoe_tim_mach.png" alt="">
+                                <img src="/dist/img/suc_khoe_tim_mach.png" alt="">
                                 <span class="fw-semibold">Sức khỏe tim mạch</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/dinh_duong.png" alt="">
+                                <img src="/dist/img/dinh_duong.png" alt="">
                                 <span class="fw-semibold">Dinh dưỡng</span>
                             </a>
                         </div>
@@ -863,37 +863,37 @@ export let navTemplate:string = ` <nav>
                         <div class="row mt-3 mx-2 gap-3">
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/bo_sung_canxi_vitamin_d.png" alt="#">
+                                    <img src="/dist/img/bo_sung_canxi_vitamin_d.png" alt="#">
                                     <span class="text-black text-small fw-medium">Bổ sung Canxi & Vitamin D</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/tpcn_vitamin_tong_hop.png" alt="#">
+                                    <img src="/dist/img/tpcn_vitamin_tong_hop.png" alt="#">
                                     <span class="text-black text-small fw-medium">Vitamin tổng hợp</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/dau_ca_omega_3_dha.png" alt="#">
+                                    <img src="/dist/img/dau_ca_omega_3_dha.png" alt="#">
                                     <span class="text-black text-small fw-medium">Dầu cá, Omega 3, DHA</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/tpcn_vitamin_c_cac_loai.png" alt="#">
+                                    <img src="/dist/img/tpcn_vitamin_c_cac_loai.png" alt="#">
                                     <span class="text-black text-small fw-medium">Vitamin C các loại</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/bo_sung_sat_axit_folic.png" alt="#">
+                                    <img src="/dist/img/bo_sung_sat_axit_folic.png" alt="#">
                                     <span class="text-black text-small fw-medium">Bổ sung Sắt & Axit Folic</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/show-more-dot-icon.svg" alt="#">
+                                    <img src="/dist/img/show-more-dot-icon.svg" alt="#">
                                     <span class="text-black text-small fw-medium">Xem thêm</span>
                                 </a>
                             </div>
@@ -915,7 +915,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09006.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09006.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -937,7 +937,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_0958.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_0958.png" alt="">
                                     </div> 
                                 </div>
                                 <div class="row mt-2">
@@ -959,7 +959,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09365.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09365.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -981,7 +981,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09335.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09335.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -1003,7 +1003,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09324.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09324.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -1031,57 +1031,57 @@ export let navTemplate:string = ` <nav>
                     <div class="col-2p75">
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/tpcn_vitamin_khoang_chat.png" alt="">
+                                <img src="/dist/img/tpcn_vitamin_khoang_chat.png" alt="">
                                 <span class="fw-semibold">Vitamin & khoáng chất</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/sinh_li_noi_tiet_to.png" alt="">
+                                <img src="/dist/img/sinh_li_noi_tiet_to.png" alt="">
                                 <span class="fw-semibold">Sinh lý - Nội tiết tố</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <div class="">
                                 <a class="line-clamp-1 text-decoration-none my-2" ref="#">
-                                    <img src="/public/img/cai_thien_tang_cuong_chuc_nang.png" alt="">
+                                    <img src="/dist/img/cai_thien_tang_cuong_chuc_nang.png" alt="">
                                     <span class=" fw-semibold">Cải thiện tăng cường chức năng</span>
                                 </a>
                             </div>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/ho_tro_dieu_tri.png" alt="">
+                                <img src="/dist/img/ho_tro_dieu_tri.png" alt="">
                                 <span class="fw-semibold">Hỗ trợ điều trị</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/ho_tro_tieu_hoa.png" alt="">
+                                <img src="/dist/img/ho_tro_tieu_hoa.png" alt="">
                                 <span class="fw-semibold">Hỗ trợ tiêu hóa</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/than_kinh_nao.png" alt="">
+                                <img src="/dist/img/than_kinh_nao.png" alt="">
                                 <span class="fw-semibold">Thần kinh não</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/ho_tro_lam_dep.png" alt="">
+                                <img src="/dist/img/ho_tro_lam_dep.png" alt="">
                                 <span class="fw-semibold">Hỗ trợ làm đẹp</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/suc_khoe_tim_mach.png" alt="">
+                                <img src="/dist/img/suc_khoe_tim_mach.png" alt="">
                                 <span class="fw-semibold">Sức khỏe tim mạch</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/dinh_duong.png" alt="">
+                                <img src="/dist/img/dinh_duong.png" alt="">
                                 <span class="fw-semibold">Dinh dưỡng</span>
                             </a>
                         </div>
@@ -1090,37 +1090,37 @@ export let navTemplate:string = ` <nav>
                         <div class="row mt-3 mx-2 gap-3">
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/bo_sung_canxi_vitamin_d.png" alt="#">
+                                    <img src="/dist/img/bo_sung_canxi_vitamin_d.png" alt="#">
                                     <span class="text-black text-small fw-medium">Bổ sung Canxi & Vitamin D</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/tpcn_vitamin_tong_hop.png" alt="#">
+                                    <img src="/dist/img/tpcn_vitamin_tong_hop.png" alt="#">
                                     <span class="text-black text-small fw-medium">Vitamin tổng hợp</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/dau_ca_omega_3_dha.png" alt="#">
+                                    <img src="/dist/img/dau_ca_omega_3_dha.png" alt="#">
                                     <span class="text-black text-small fw-medium">Dầu cá, Omega 3, DHA</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/tpcn_vitamin_c_cac_loai.png" alt="#">
+                                    <img src="/dist/img/tpcn_vitamin_c_cac_loai.png" alt="#">
                                     <span class="text-black text-small fw-medium">Vitamin C các loại</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/bo_sung_sat_axit_folic.png" alt="#">
+                                    <img src="/dist/img/bo_sung_sat_axit_folic.png" alt="#">
                                     <span class="text-black text-small fw-medium">Bổ sung Sắt & Axit Folic</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/show-more-dot-icon.svg" alt="#">
+                                    <img src="/dist/img/show-more-dot-icon.svg" alt="#">
                                     <span class="text-black text-small fw-medium">Xem thêm</span>
                                 </a>
                             </div>
@@ -1142,7 +1142,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09006.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09006.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -1164,7 +1164,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_0958.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_0958.png" alt="">
                                     </div> 
                                 </div>
                                 <div class="row mt-2">
@@ -1186,7 +1186,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09365.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09365.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -1208,7 +1208,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09335.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09335.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -1230,7 +1230,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09324.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09324.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -1258,57 +1258,57 @@ export let navTemplate:string = ` <nav>
                     <div class="col-2p75">
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/tpcn_vitamin_khoang_chat.png" alt="">
+                                <img src="/dist/img/tpcn_vitamin_khoang_chat.png" alt="">
                                 <span class="fw-semibold">Vitamin & khoáng chất</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/sinh_li_noi_tiet_to.png" alt="">
+                                <img src="/dist/img/sinh_li_noi_tiet_to.png" alt="">
                                 <span class="fw-semibold">Sinh lý - Nội tiết tố</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <div class="">
                                 <a class="line-clamp-1 text-decoration-none my-2" ref="#">
-                                    <img src="/public/img/cai_thien_tang_cuong_chuc_nang.png" alt="">
+                                    <img src="/dist/img/cai_thien_tang_cuong_chuc_nang.png" alt="">
                                     <span class=" fw-semibold">Cải thiện tăng cường chức năng</span>
                                 </a>
                             </div>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/ho_tro_dieu_tri.png" alt="">
+                                <img src="/dist/img/ho_tro_dieu_tri.png" alt="">
                                 <span class="fw-semibold">Hỗ trợ điều trị</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/ho_tro_tieu_hoa.png" alt="">
+                                <img src="/dist/img/ho_tro_tieu_hoa.png" alt="">
                                 <span class="fw-semibold">Hỗ trợ tiêu hóa</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/than_kinh_nao.png" alt="">
+                                <img src="/dist/img/than_kinh_nao.png" alt="">
                                 <span class="fw-semibold">Thần kinh não</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/ho_tro_lam_dep.png" alt="">
+                                <img src="/dist/img/ho_tro_lam_dep.png" alt="">
                                 <span class="fw-semibold">Hỗ trợ làm đẹp</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/suc_khoe_tim_mach.png" alt="">
+                                <img src="/dist/img/suc_khoe_tim_mach.png" alt="">
                                 <span class="fw-semibold">Sức khỏe tim mạch</span>
                             </a>
                         </div>
                         <div class="row panel-item">
                             <a class="text-decoration-none my-2" ref="#">
-                                <img src="/public/img/dinh_duong.png" alt="">
+                                <img src="/dist/img/dinh_duong.png" alt="">
                                 <span class="fw-semibold">Dinh dưỡng</span>
                             </a>
                         </div>
@@ -1317,37 +1317,37 @@ export let navTemplate:string = ` <nav>
                         <div class="row mt-3 mx-2 gap-3">
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/bo_sung_canxi_vitamin_d.png" alt="#">
+                                    <img src="/dist/img/bo_sung_canxi_vitamin_d.png" alt="#">
                                     <span class="text-black text-small fw-medium">Bổ sung Canxi & Vitamin D</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/tpcn_vitamin_tong_hop.png" alt="#">
+                                    <img src="/dist/img/tpcn_vitamin_tong_hop.png" alt="#">
                                     <span class="text-black text-small fw-medium">Vitamin tổng hợp</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/dau_ca_omega_3_dha.png" alt="#">
+                                    <img src="/dist/img/dau_ca_omega_3_dha.png" alt="#">
                                     <span class="text-black text-small fw-medium">Dầu cá, Omega 3, DHA</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/tpcn_vitamin_c_cac_loai.png" alt="#">
+                                    <img src="/dist/img/tpcn_vitamin_c_cac_loai.png" alt="#">
                                     <span class="text-black text-small fw-medium">Vitamin C các loại</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/bo_sung_sat_axit_folic.png" alt="#">
+                                    <img src="/dist/img/bo_sung_sat_axit_folic.png" alt="#">
                                     <span class="text-black text-small fw-medium">Bổ sung Sắt & Axit Folic</span>
                                 </a>
                             </div>
                             <div class="col-3p75 product-mini py-3">
                                 <a class="text-decoration-none" ref="#">
-                                    <img src="/public/img/show-more-dot-icon.svg" alt="#">
+                                    <img src="/dist/img/show-more-dot-icon.svg" alt="#">
                                     <span class="text-black text-small fw-medium">Xem thêm</span>
                                 </a>
                             </div>
@@ -1369,7 +1369,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09006.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09006.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -1391,7 +1391,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_0958.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_0958.png" alt="">
                                     </div> 
                                 </div>
                                 <div class="row mt-2">
@@ -1413,7 +1413,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09365.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09365.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -1435,7 +1435,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09335.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09335.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -1457,7 +1457,7 @@ export let navTemplate:string = ` <nav>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <img class="rounded-5" src="/public/img/DSC_09324.png" alt="">
+                                        <img class="rounded-5" src="/dist/img/DSC_09324.png" alt="">
                                     </div>
                                 </div>
                                 <div class="row mt-2">

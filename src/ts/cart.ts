@@ -11,7 +11,6 @@ $(
         LayoutRender();
         LoadProductInCart();
         CartChangeHandler();
-        RemoveOrderProductHandler();
         OrderConfirmHandler();
     }
 )
@@ -58,6 +57,7 @@ function LoadProductInCart():void{
     CalculateTotalProduct();
     IncreaseAndDesceaseHandlder();
     InputQuantityHandler();
+    RemoveOrderProductHandler();
 }
 function InputQuantityHandler():void{
     for(const input of $('[productQuantity]')){
@@ -109,11 +109,10 @@ function IncreaseAndDesceaseHandlder():void{
 }
 function RemoveOrderProductHandler():void{
     for(const btnRemove of $('[remove-target]')){
-        let productTarget = btnRemove.getAttribute('remove-target');
-        $(`${productTarget} [remove-target]`).on('click',()=>{
-            let productId:string = $(`${productTarget} [remove-target]`).attr('remove-target');
+        $(btnRemove).on('click',function(){
+            let productId:string = $(this).attr('remove-target');
             myLocalStorage.RemoveProductById(productId.substring(1));
-            if(myLocalStorage.ProductCount() ===0){
+            if(myLocalStorage.ProductCount() === 0){
                 window.location.href = "./giohangempty.html"
             }else{
                 LoadProductInCart();

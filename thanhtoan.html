@@ -4,16 +4,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Nhà thuốc FPT Long Châu - Hệ thống chuỗi nhà thuốc lớn</title>
-        <link rel="shortcut icon" href="/public/img/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="public/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/public/css/style.css">
-        <script src="public/js/jquery.min.js"></script>
-        <script src="public/js/bootstrap.min.js"></script>
-        <script defer src="/public/js/purchase.bundle.js"></script>
+        <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/dist/css/style.css">
+        <link rel="stylesheet" href="/dist/css/purchase.css">
+        <script src="dist/js/jquery.min.js"></script>
+        <script src="dist/js/bootstrap.min.js"></script>
+        <script defer src="/dist/js/purchase.bundle.js"></script>
     </head>
 <body>
     <header></header>
@@ -25,7 +26,7 @@
                 <svg viewBox="0 0 25 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5"><path d="M16.668 4.29289C17.0586 4.68342 17.0586 5.31658 16.668 5.70711L10.3752 12L16.668 18.2929C17.0586 18.6834 17.0586 19.3166 16.668 19.7071C16.2775 20.0976 15.6444 20.0976 15.2538 19.7071L8.25383 12.7071C7.86331 12.3166 7.86331 11.6834 8.25383 11.2929L15.2538 4.29289C15.6444 3.90237 16.2775 3.90237 16.668 4.29289Z" fill="currentColor"></path></svg>
                 <span><a class="text-blue text-decoration-none" href="/giohang.html">Quay lại giỏ hàng</a></span>
             </button>
-            <div class="row gap-4">
+            <div class="row gap-4 position-relative">
                 <div class="col-8 ">
                     <div class="row ">
                         <div class="col box-white rounded-4 p-4 pb-0">
@@ -39,8 +40,8 @@
                         </div>
                         <div class="col-auto pe-0">
                             <span class="bg-white py-2 rounded-3">
-                                <span role="button" class="text-small fw-medium text-blue bg-blue-3 rounded-3 px-4 py-2">Giao hàng tận nơi</span>
-                                <span role="button" class="text-small fw-medium text-gray-light bg-white rounded-3 px-4 py-2">Nhận tại nhà thuốc</span>
+                                <span id="shipHome" role="button" class="text-small fw-medium text-blue bg-blue-3 rounded-3 px-4 py-2">Giao hàng tận nơi</span>
+                                <span id="takeStore" role="button" class="text-small fw-medium text-gray-light bg-white rounded-3 px-4 py-2">Nhận tại nhà thuốc</span>
                             </span>
                         </div>
                     </div>
@@ -51,13 +52,13 @@
                         </span>
                         <div class="row mt-3">
                             <div class="col-6">
-                                <div class="row">
+                                <div class="row input-custom-group" validate="required">
                                     <span class="position-relative text-gray">
-                                        <input type="text" class="form-control input-custom pt-3 pb-2" placeholder=" ">
+                                        <input id="txtNguoiDat" type="text" class="form-control input-custom pt-3 pb-2" placeholder=" ">
                                         <span class="input-placeholder ms-2">Họ và tên người đặt</span>
                                     </span>
                                 </div>
-                                <div hidden class="row">
+                                <div id="errorNguoiDat" hidden class="row input-error">
                                     <span class="text-danger">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C17.523 2 22 6.478 22 12C22 17.522 17.523 22 12 22C6.477 22 2 17.522 2 12C2 6.478 6.477 2 12 2ZM12.0018 15.0037C11.4503 15.0037 11.0031 15.4508 11.0031 16.0024C11.0031 16.5539 11.4503 17.001 12.0018 17.001C12.5533 17.001 13.0005 16.5539 13.0005 16.0024C13.0005 15.4508 12.5533 15.0037 12.0018 15.0037ZM11.9996 7C11.4868 7.00018 11.0643 7.38638 11.0067 7.88374L11 8.00036L11.0018 13.0012L11.0086 13.1179C11.0665 13.6152 11.4893 14.0011 12.0022 14.0009C12.515 14.0007 12.9375 13.6145 12.9951 13.1171L13.0018 13.0005L13 7.99964L12.9932 7.88302C12.9353 7.3857 12.5125 6.99982 11.9996 7Z" fill="currentColor"></path></svg>
                                         <span>Thông tin bắt buộc. Vui lòng nhập đầy đủ.</span>
@@ -65,13 +66,13 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="row">
+                                <div class="row input-custom-group" validate="required|phone">
                                     <span class="position-relative text-gray">
-                                        <input type="text" class="form-control input-custom pt-3 pb-2" placeholder=" ">
+                                        <input id="txtPhoneNguoiDat" type="text" class="form-control input-custom pt-3 pb-2" placeholder=" ">
                                         <span class="input-placeholder ms-2">Số điện thoại</span>
                                     </span>
                                 </div>
-                                <div hidden class="row">
+                                <div id="errorPhoneNguoiDat" hidden class="row input-error">
                                     <span class="text-danger">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C17.523 2 22 6.478 22 12C22 17.522 17.523 22 12 22C6.477 22 2 17.522 2 12C2 6.478 6.477 2 12 2ZM12.0018 15.0037C11.4503 15.0037 11.0031 15.4508 11.0031 16.0024C11.0031 16.5539 11.4503 17.001 12.0018 17.001C12.5533 17.001 13.0005 16.5539 13.0005 16.0024C13.0005 15.4508 12.5533 15.0037 12.0018 15.0037ZM11.9996 7C11.4868 7.00018 11.0643 7.38638 11.0067 7.88374L11 8.00036L11.0018 13.0012L11.0086 13.1179C11.0665 13.6152 11.4893 14.0011 12.0022 14.0009C12.515 14.0007 12.9375 13.6145 12.9951 13.1171L13.0018 13.0005L13 7.99964L12.9932 7.88302C12.9353 7.3857 12.5125 6.99982 11.9996 7Z" fill="currentColor"></path></svg>
                                         <span>Số điện thoại không hợp lệ</span>
@@ -80,11 +81,11 @@
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <span class="position-relative text-gray">
-                                <input type="text" class="form-control input-custom pt-3 pb-2" placeholder=" ">
+                            <span class="position-relative text-gray input-custom-group" validate="email">
+                                <input id="txtEmail" type="text" class="form-control input-custom pt-3 pb-2" placeholder=" ">
                                 <span class="input-placeholder ms-2">Email (không bắt buộc)</span>
                             </span>
-                            <span hidden class="text-danger">
+                            <span id="errorEmail" hidden class="text-danger input-error">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C17.523 2 22 6.478 22 12C22 17.522 17.523 22 12 22C6.477 22 2 17.522 2 12C2 6.478 6.477 2 12 2ZM12.0018 15.0037C11.4503 15.0037 11.0031 15.4508 11.0031 16.0024C11.0031 16.5539 11.4503 17.001 12.0018 17.001C12.5533 17.001 13.0005 16.5539 13.0005 16.0024C13.0005 15.4508 12.5533 15.0037 12.0018 15.0037ZM11.9996 7C11.4868 7.00018 11.0643 7.38638 11.0067 7.88374L11 8.00036L11.0018 13.0012L11.0086 13.1179C11.0665 13.6152 11.4893 14.0011 12.0022 14.0009C12.515 14.0007 12.9375 13.6145 12.9951 13.1171L13.0018 13.0005L13 7.99964L12.9932 7.88302C12.9353 7.3857 12.5125 6.99982 11.9996 7Z" fill="currentColor"></path></svg>
                                 <span>Email không hợp lệ</span>
                             </span>
@@ -95,13 +96,13 @@
                         </span>
                         <div class="row mt-3">
                             <div class="col-6">
-                                <div class="row">
+                                <div class="row input-custom-group" validate="required">
                                     <span class="position-relative text-gray">
                                         <input type="text" class="form-control input-custom pt-3 pb-2" placeholder=" ">
                                         <span class="input-placeholder ms-2">Họ và tên người đặt</span>
                                     </span>
                                 </div>
-                                <div hidden class="row">
+                                <div hidden class="row input-error">
                                     <span class="text-danger">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C17.523 2 22 6.478 22 12C22 17.522 17.523 22 12 22C6.477 22 2 17.522 2 12C2 6.478 6.477 2 12 2ZM12.0018 15.0037C11.4503 15.0037 11.0031 15.4508 11.0031 16.0024C11.0031 16.5539 11.4503 17.001 12.0018 17.001C12.5533 17.001 13.0005 16.5539 13.0005 16.0024C13.0005 15.4508 12.5533 15.0037 12.0018 15.0037ZM11.9996 7C11.4868 7.00018 11.0643 7.38638 11.0067 7.88374L11 8.00036L11.0018 13.0012L11.0086 13.1179C11.0665 13.6152 11.4893 14.0011 12.0022 14.0009C12.515 14.0007 12.9375 13.6145 12.9951 13.1171L13.0018 13.0005L13 7.99964L12.9932 7.88302C12.9353 7.3857 12.5125 6.99982 11.9996 7Z" fill="currentColor"></path></svg>
                                         <span>Thông tin bắt buộc. Vui lòng nhập đầy đủ.</span>
@@ -109,13 +110,13 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="row">
+                                <div class="row input-custom-group"  validate="required|phone">
                                     <span class="position-relative text-gray">
                                         <input type="text" class="form-control input-custom pt-3 pb-2" placeholder=" ">
                                         <span class="input-placeholder ms-2">Số điện thoại</span>
                                     </span>
                                 </div>
-                                <div hidden class="row">
+                                <div hidden class="row input-error">
                                     <span class="text-danger">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C17.523 2 22 6.478 22 12C22 17.522 17.523 22 12 22C6.477 22 2 17.522 2 12C2 6.478 6.477 2 12 2ZM12.0018 15.0037C11.4503 15.0037 11.0031 15.4508 11.0031 16.0024C11.0031 16.5539 11.4503 17.001 12.0018 17.001C12.5533 17.001 13.0005 16.5539 13.0005 16.0024C13.0005 15.4508 12.5533 15.0037 12.0018 15.0037ZM11.9996 7C11.4868 7.00018 11.0643 7.38638 11.0067 7.88374L11 8.00036L11.0018 13.0012L11.0086 13.1179C11.0665 13.6152 11.4893 14.0011 12.0022 14.0009C12.515 14.0007 12.9375 13.6145 12.9951 13.1171L13.0018 13.0005L13 7.99964L12.9932 7.88302C12.9353 7.3857 12.5125 6.99982 11.9996 7Z" fill="currentColor"></path></svg>
                                         <span>Số điện thoại không hợp lệ</span>
@@ -125,17 +126,242 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col-6">
-                                <div class="input-dropdown">
-                                    <input type="text" readonly placeholder="Chọn tỉnh/thành phố"> 
-                                    <span class="input-dropdown-icon">
-                                        <svg viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 shrink-0 grow-0 transition-transform ease-in-out rotate-0"><path d="M5.25383 8.29289C5.64435 7.90237 6.27752 7.90237 6.66804 8.29289L12.9609 14.5858L19.2538 8.29289C19.6444 7.90237 20.2775 7.90237 20.668 8.29289C21.0586 8.68342 21.0586 9.31658 20.668 9.70711L13.668 16.7071C13.2775 17.0976 12.6444 17.0976 12.2538 16.7071L5.25383 9.70711C4.86331 9.31658 4.86331 8.68342 5.25383 8.29289Z" fill="currentColor"></path></svg>
+                                <div class="input-dropdown-container input-custom-group" validate="required">
+                                    <div id="inputDropdownTp" class="input-dropdown" dropdown-target="#dropdownTp">
+                                        <input type="text" readonly placeholder="Chọn tỉnh/thành phố"> 
+                                        <span class="input-dropdown-icon me-2">
+                                            <svg viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 shrink-0 grow-0 transition-transform ease-in-out rotate-0"><path d="M5.25383 8.29289C5.64435 7.90237 6.27752 7.90237 6.66804 8.29289L12.9609 14.5858L19.2538 8.29289C19.6444 7.90237 20.2775 7.90237 20.668 8.29289C21.0586 8.68342 21.0586 9.31658 20.668 9.70711L13.668 16.7071C13.2775 17.0976 12.6444 17.0976 12.2538 16.7071L5.25383 9.70711C4.86331 9.31658 4.86331 8.68342 5.25383 8.29289Z" fill="currentColor"></path></svg>
+                                        </span>
+                                    </div>
+                                    <div id="dropdownTp" class="input-dropdown-menu">
+                                        <div class="input-dropdown-menu-search">
+                                            <div class="row">
+                                                <div class="col-1"><svg width="24" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.9414 1.93125C5.98269 1.93125 1.94336 5.97057 1.94336 10.9293C1.94336 15.888 5.98269 19.9352 10.9414 19.9352C13.0594 19.9352 15.0074 19.193 16.5469 17.9606L20.2949 21.7066C20.4841 21.888 20.7367 21.988 20.9987 21.9853C21.2607 21.9826 21.5112 21.8775 21.6966 21.6923C21.882 21.5072 21.9875 21.2569 21.9906 20.9949C21.9936 20.7329 21.8939 20.4801 21.7129 20.2907L17.9648 16.5427C19.1983 15.0008 19.9414 13.0498 19.9414 10.9293C19.9414 5.97057 15.9001 1.93125 10.9414 1.93125ZM10.9414 3.93128C14.8192 3.93128 17.9395 7.05148 17.9395 10.9293C17.9395 14.8071 14.8192 17.9352 10.9414 17.9352C7.06357 17.9352 3.94336 14.8071 3.94336 10.9293C3.94336 7.05148 7.06357 3.93128 10.9414 3.93128Z" fill="currentColor"></path></svg></div>
+                                                <div class="col-9">
+                                                    <input input-search dropdown-target="#dropdownTp" class="border-none" type="text" placeholder="Nhập tìm tỉnh/thành phố">
+                                                </div>
+                                                <div hidden reset-search dropdown-target="#dropdownTp" role="button" class="col-1 ms-3">
+                                                    <span><svg width="24" height="24" viewBox="0 0 25 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.0033 2.4C17.3053 2.4 21.6033 6.69807 21.6033 12C21.6033 17.3019 17.3053 21.6 12.0033 21.6C6.70139 21.6 2.40332 17.3019 2.40332 12C2.40332 6.69807 6.70139 2.4 12.0033 2.4ZM9.37464 8.53646C9.1408 8.37447 8.81749 8.39761 8.60921 8.60589L8.53978 8.68899C8.37779 8.92283 8.40093 9.24614 8.60921 9.45442L11.1548 12L8.60921 14.5456L8.53978 14.6287C8.37779 14.8625 8.40093 15.1858 8.60921 15.3941L8.69231 15.4635C8.92615 15.6255 9.24946 15.6024 9.45774 15.3941L12.0033 12.8485L14.5489 15.3941L14.632 15.4635C14.8658 15.6255 15.1892 15.6024 15.3974 15.3941L15.4669 15.311C15.6289 15.0772 15.6057 14.7539 15.3974 14.5456L12.8518 12L15.3974 9.45442L15.4669 9.37132C15.6289 9.13748 15.6057 8.81417 15.3974 8.60589L15.3143 8.53646C15.0805 8.37447 14.7572 8.39761 14.5489 8.60589L12.0033 11.1515L9.45774 8.60589L9.37464 8.53646Z" fill="currentColor"></path></svg></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="input-dropdown-menu-list">
+                                            <li><div class="input-dropdown-menu-item">Hồ Chí Minh
+                                                <span><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Radio Button/Icon"><g id="vuesax/linear/tick-circle"><g id="tick-circle"><path id="Vector" d="M12.5 22C18 22 22.5 17.5 22.5 12C22.5 6.5 18 2 12.5 2C7 2 2.5 6.5 2.5 12C2.5 17.5 7 22 12.5 22Z" fill="url(#paint0_linear_19509_24117)"></path><path id="Vector_2" d="M8.25 11.9999L11.08 14.8299L16.75 9.16992" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></g></g><defs><linearGradient id="paint0_linear_19509_24117" x1="22.5" y1="22" x2="2.5" y2="2" gradientUnits="userSpaceOnUse"><stop stop-color="#1250DC"></stop><stop offset="1" stop-color="#306DE4"></stop></linearGradient></defs></svg></span>
+                                            </div></li>
+                                            <li><div class="input-dropdown-menu-item">Hà Nội
+                                                <span><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Radio Button/Icon"><g id="vuesax/linear/tick-circle"><g id="tick-circle"><path id="Vector" d="M12.5 22C18 22 22.5 17.5 22.5 12C22.5 6.5 18 2 12.5 2C7 2 2.5 6.5 2.5 12C2.5 17.5 7 22 12.5 22Z" fill="url(#paint0_linear_19509_24117)"></path><path id="Vector_2" d="M8.25 11.9999L11.08 14.8299L16.75 9.16992" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></g></g><defs><linearGradient id="paint0_linear_19509_24117" x1="22.5" y1="22" x2="2.5" y2="2" gradientUnits="userSpaceOnUse"><stop stop-color="#1250DC"></stop><stop offset="1" stop-color="#306DE4"></stop></linearGradient></defs></svg></span>
+                                            </div></li>
+                                            <li><div class="input-dropdown-menu-item">Hưng Yên
+                                                <span><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Radio Button/Icon"><g id="vuesax/linear/tick-circle"><g id="tick-circle"><path id="Vector" d="M12.5 22C18 22 22.5 17.5 22.5 12C22.5 6.5 18 2 12.5 2C7 2 2.5 6.5 2.5 12C2.5 17.5 7 22 12.5 22Z" fill="url(#paint0_linear_19509_24117)"></path><path id="Vector_2" d="M8.25 11.9999L11.08 14.8299L16.75 9.16992" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></g></g><defs><linearGradient id="paint0_linear_19509_24117" x1="22.5" y1="22" x2="2.5" y2="2" gradientUnits="userSpaceOnUse"><stop stop-color="#1250DC"></stop><stop offset="1" stop-color="#306DE4"></stop></linearGradient></defs></svg></span>
+                                            </div></li>
+                                            <li><div class="input-dropdown-menu-item">Đà Nẵng
+                                                <span><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Radio Button/Icon"><g id="vuesax/linear/tick-circle"><g id="tick-circle"><path id="Vector" d="M12.5 22C18 22 22.5 17.5 22.5 12C22.5 6.5 18 2 12.5 2C7 2 2.5 6.5 2.5 12C2.5 17.5 7 22 12.5 22Z" fill="url(#paint0_linear_19509_24117)"></path><path id="Vector_2" d="M8.25 11.9999L11.08 14.8299L16.75 9.16992" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></g></g><defs><linearGradient id="paint0_linear_19509_24117" x1="22.5" y1="22" x2="2.5" y2="2" gradientUnits="userSpaceOnUse"><stop stop-color="#1250DC"></stop><stop offset="1" stop-color="#306DE4"></stop></linearGradient></defs></svg></span>
+                                            </div></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div hidden class="row input-error">
+                                    <span class="text-danger">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C17.523 2 22 6.478 22 12C22 17.522 17.523 22 12 22C6.477 22 2 17.522 2 12C2 6.478 6.477 2 12 2ZM12.0018 15.0037C11.4503 15.0037 11.0031 15.4508 11.0031 16.0024C11.0031 16.5539 11.4503 17.001 12.0018 17.001C12.5533 17.001 13.0005 16.5539 13.0005 16.0024C13.0005 15.4508 12.5533 15.0037 12.0018 15.0037ZM11.9996 7C11.4868 7.00018 11.0643 7.38638 11.0067 7.88374L11 8.00036L11.0018 13.0012L11.0086 13.1179C11.0665 13.6152 11.4893 14.0011 12.0022 14.0009C12.515 14.0007 12.9375 13.6145 12.9951 13.1171L13.0018 13.0005L13 7.99964L12.9932 7.88302C12.9353 7.3857 12.5125 6.99982 11.9996 7Z" fill="currentColor"></path></svg>
+                                        <span>Thông tin bắt buộc. Vui lòng nhập đầy đủ.</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-dropdown-container input-custom-group" validate="required">
+                                    <div class="input-dropdown" dropdown-target="#dropdownQh">
+                                        <input type="text" readonly placeholder="Chọn quận/huyện"> 
+                                        <span class="input-dropdown-icon me-2">
+                                            <svg viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 shrink-0 grow-0 transition-transform ease-in-out rotate-0"><path d="M5.25383 8.29289C5.64435 7.90237 6.27752 7.90237 6.66804 8.29289L12.9609 14.5858L19.2538 8.29289C19.6444 7.90237 20.2775 7.90237 20.668 8.29289C21.0586 8.68342 21.0586 9.31658 20.668 9.70711L13.668 16.7071C13.2775 17.0976 12.6444 17.0976 12.2538 16.7071L5.25383 9.70711C4.86331 9.31658 4.86331 8.68342 5.25383 8.29289Z" fill="currentColor"></path></svg>
+                                        </span>
+                                    </div>
+                                    <div id="dropdownQh" class="input-dropdown-menu">
+                                        <div class="input-dropdown-menu-search">
+                                            <div class="row">
+                                                <div class="col-1"><svg width="24" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.9414 1.93125C5.98269 1.93125 1.94336 5.97057 1.94336 10.9293C1.94336 15.888 5.98269 19.9352 10.9414 19.9352C13.0594 19.9352 15.0074 19.193 16.5469 17.9606L20.2949 21.7066C20.4841 21.888 20.7367 21.988 20.9987 21.9853C21.2607 21.9826 21.5112 21.8775 21.6966 21.6923C21.882 21.5072 21.9875 21.2569 21.9906 20.9949C21.9936 20.7329 21.8939 20.4801 21.7129 20.2907L17.9648 16.5427C19.1983 15.0008 19.9414 13.0498 19.9414 10.9293C19.9414 5.97057 15.9001 1.93125 10.9414 1.93125ZM10.9414 3.93128C14.8192 3.93128 17.9395 7.05148 17.9395 10.9293C17.9395 14.8071 14.8192 17.9352 10.9414 17.9352C7.06357 17.9352 3.94336 14.8071 3.94336 10.9293C3.94336 7.05148 7.06357 3.93128 10.9414 3.93128Z" fill="currentColor"></path></svg></div>
+                                                <div class="col-9">
+                                                    <input input-search dropdown-target="#dropdownTp" class="border-none" type="text" placeholder="Nhập tìm quận/huyện">
+                                                </div>
+                                                <div hidden reset-search dropdown-target="#dropdownTp" role="button" class="col-1 ms-3">
+                                                    <span><svg width="24" height="24" viewBox="0 0 25 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.0033 2.4C17.3053 2.4 21.6033 6.69807 21.6033 12C21.6033 17.3019 17.3053 21.6 12.0033 21.6C6.70139 21.6 2.40332 17.3019 2.40332 12C2.40332 6.69807 6.70139 2.4 12.0033 2.4ZM9.37464 8.53646C9.1408 8.37447 8.81749 8.39761 8.60921 8.60589L8.53978 8.68899C8.37779 8.92283 8.40093 9.24614 8.60921 9.45442L11.1548 12L8.60921 14.5456L8.53978 14.6287C8.37779 14.8625 8.40093 15.1858 8.60921 15.3941L8.69231 15.4635C8.92615 15.6255 9.24946 15.6024 9.45774 15.3941L12.0033 12.8485L14.5489 15.3941L14.632 15.4635C14.8658 15.6255 15.1892 15.6024 15.3974 15.3941L15.4669 15.311C15.6289 15.0772 15.6057 14.7539 15.3974 14.5456L12.8518 12L15.3974 9.45442L15.4669 9.37132C15.6289 9.13748 15.6057 8.81417 15.3974 8.60589L15.3143 8.53646C15.0805 8.37447 14.7572 8.39761 14.5489 8.60589L12.0033 11.1515L9.45774 8.60589L9.37464 8.53646Z" fill="currentColor"></path></svg></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="input-dropdown-menu-list">
+                                            <li><div class="input-dropdown-menu-item">Quận 1
+                                                <span><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Radio Button/Icon"><g id="vuesax/linear/tick-circle"><g id="tick-circle"><path id="Vector" d="M12.5 22C18 22 22.5 17.5 22.5 12C22.5 6.5 18 2 12.5 2C7 2 2.5 6.5 2.5 12C2.5 17.5 7 22 12.5 22Z" fill="url(#paint0_linear_19509_24117)"></path><path id="Vector_2" d="M8.25 11.9999L11.08 14.8299L16.75 9.16992" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></g></g><defs><linearGradient id="paint0_linear_19509_24117" x1="22.5" y1="22" x2="2.5" y2="2" gradientUnits="userSpaceOnUse"><stop stop-color="#1250DC"></stop><stop offset="1" stop-color="#306DE4"></stop></linearGradient></defs></svg></span>
+                                            </div></li>
+                                            <li><div class="input-dropdown-menu-item">Quận 2
+                                                <span><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Radio Button/Icon"><g id="vuesax/linear/tick-circle"><g id="tick-circle"><path id="Vector" d="M12.5 22C18 22 22.5 17.5 22.5 12C22.5 6.5 18 2 12.5 2C7 2 2.5 6.5 2.5 12C2.5 17.5 7 22 12.5 22Z" fill="url(#paint0_linear_19509_24117)"></path><path id="Vector_2" d="M8.25 11.9999L11.08 14.8299L16.75 9.16992" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></g></g><defs><linearGradient id="paint0_linear_19509_24117" x1="22.5" y1="22" x2="2.5" y2="2" gradientUnits="userSpaceOnUse"><stop stop-color="#1250DC"></stop><stop offset="1" stop-color="#306DE4"></stop></linearGradient></defs></svg></span>
+                                            </div></li>
+                                            <li><div class="input-dropdown-menu-item">Quận 3
+                                                <span><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Radio Button/Icon"><g id="vuesax/linear/tick-circle"><g id="tick-circle"><path id="Vector" d="M12.5 22C18 22 22.5 17.5 22.5 12C22.5 6.5 18 2 12.5 2C7 2 2.5 6.5 2.5 12C2.5 17.5 7 22 12.5 22Z" fill="url(#paint0_linear_19509_24117)"></path><path id="Vector_2" d="M8.25 11.9999L11.08 14.8299L16.75 9.16992" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></g></g><defs><linearGradient id="paint0_linear_19509_24117" x1="22.5" y1="22" x2="2.5" y2="2" gradientUnits="userSpaceOnUse"><stop stop-color="#1250DC"></stop><stop offset="1" stop-color="#306DE4"></stop></linearGradient></defs></svg></span>
+                                            </div></li>
+                                            <li><div class="input-dropdown-menu-item">Quận 4
+                                                <span><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Radio Button/Icon"><g id="vuesax/linear/tick-circle"><g id="tick-circle"><path id="Vector" d="M12.5 22C18 22 22.5 17.5 22.5 12C22.5 6.5 18 2 12.5 2C7 2 2.5 6.5 2.5 12C2.5 17.5 7 22 12.5 22Z" fill="url(#paint0_linear_19509_24117)"></path><path id="Vector_2" d="M8.25 11.9999L11.08 14.8299L16.75 9.16992" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></g></g><defs><linearGradient id="paint0_linear_19509_24117" x1="22.5" y1="22" x2="2.5" y2="2" gradientUnits="userSpaceOnUse"><stop stop-color="#1250DC"></stop><stop offset="1" stop-color="#306DE4"></stop></linearGradient></defs></svg></span>
+                                            </div></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div hidden class="row input-error">
+                                    <span class="text-danger">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C17.523 2 22 6.478 22 12C22 17.522 17.523 22 12 22C6.477 22 2 17.522 2 12C2 6.478 6.477 2 12 2ZM12.0018 15.0037C11.4503 15.0037 11.0031 15.4508 11.0031 16.0024C11.0031 16.5539 11.4503 17.001 12.0018 17.001C12.5533 17.001 13.0005 16.5539 13.0005 16.0024C13.0005 15.4508 12.5533 15.0037 12.0018 15.0037ZM11.9996 7C11.4868 7.00018 11.0643 7.38638 11.0067 7.88374L11 8.00036L11.0018 13.0012L11.0086 13.1179C11.0665 13.6152 11.4893 14.0011 12.0022 14.0009C12.515 14.0007 12.9375 13.6145 12.9951 13.1171L13.0018 13.0005L13 7.99964L12.9932 7.88302C12.9353 7.3857 12.5125 6.99982 11.9996 7Z" fill="currentColor"></path></svg>
+                                        <span>Thông tin bắt buộc. Vui lòng nhập đầy đủ.</span>
                                     </span>
                                 </div>
                             </div>
                         </div>
+                        <div class="row mt-3 px-4">
+                           <div class="input-dropdown-container input-custom-group" validate="required">
+                                <div class="input-dropdown" dropdown-target="#dropdownXp">
+                                    <input type="text" readonly placeholder="Chọn phường/xã"> 
+                                    <span class="input-dropdown-icon me-2">
+                                        <svg viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 shrink-0 grow-0 transition-transform ease-in-out rotate-0"><path d="M5.25383 8.29289C5.64435 7.90237 6.27752 7.90237 6.66804 8.29289L12.9609 14.5858L19.2538 8.29289C19.6444 7.90237 20.2775 7.90237 20.668 8.29289C21.0586 8.68342 21.0586 9.31658 20.668 9.70711L13.668 16.7071C13.2775 17.0976 12.6444 17.0976 12.2538 16.7071L5.25383 9.70711C4.86331 9.31658 4.86331 8.68342 5.25383 8.29289Z" fill="currentColor"></path></svg>
+                                    </span>
+                                </div>
+                                <div id="dropdownXp" class="input-dropdown-menu">
+                                    <div class="input-dropdown-menu-search">
+                                        <div class="row">
+                                            <div class="col-auto"><svg width="24" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.9414 1.93125C5.98269 1.93125 1.94336 5.97057 1.94336 10.9293C1.94336 15.888 5.98269 19.9352 10.9414 19.9352C13.0594 19.9352 15.0074 19.193 16.5469 17.9606L20.2949 21.7066C20.4841 21.888 20.7367 21.988 20.9987 21.9853C21.2607 21.9826 21.5112 21.8775 21.6966 21.6923C21.882 21.5072 21.9875 21.2569 21.9906 20.9949C21.9936 20.7329 21.8939 20.4801 21.7129 20.2907L17.9648 16.5427C19.1983 15.0008 19.9414 13.0498 19.9414 10.9293C19.9414 5.97057 15.9001 1.93125 10.9414 1.93125ZM10.9414 3.93128C14.8192 3.93128 17.9395 7.05148 17.9395 10.9293C17.9395 14.8071 14.8192 17.9352 10.9414 17.9352C7.06357 17.9352 3.94336 14.8071 3.94336 10.9293C3.94336 7.05148 7.06357 3.93128 10.9414 3.93128Z" fill="currentColor"></path></svg></div>
+                                            <div class="col-9">
+                                                <input input-search dropdown-target="#dropdownTp" class="border-none" type="text" placeholder="Nhập tìm phường/xã">
+                                            </div>
+                                            <div hidden reset-search dropdown-target="#dropdownTp" role="button" class="col-1 ms-3">
+                                                <span><svg width="24" height="24" viewBox="0 0 25 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.0033 2.4C17.3053 2.4 21.6033 6.69807 21.6033 12C21.6033 17.3019 17.3053 21.6 12.0033 21.6C6.70139 21.6 2.40332 17.3019 2.40332 12C2.40332 6.69807 6.70139 2.4 12.0033 2.4ZM9.37464 8.53646C9.1408 8.37447 8.81749 8.39761 8.60921 8.60589L8.53978 8.68899C8.37779 8.92283 8.40093 9.24614 8.60921 9.45442L11.1548 12L8.60921 14.5456L8.53978 14.6287C8.37779 14.8625 8.40093 15.1858 8.60921 15.3941L8.69231 15.4635C8.92615 15.6255 9.24946 15.6024 9.45774 15.3941L12.0033 12.8485L14.5489 15.3941L14.632 15.4635C14.8658 15.6255 15.1892 15.6024 15.3974 15.3941L15.4669 15.311C15.6289 15.0772 15.6057 14.7539 15.3974 14.5456L12.8518 12L15.3974 9.45442L15.4669 9.37132C15.6289 9.13748 15.6057 8.81417 15.3974 8.60589L15.3143 8.53646C15.0805 8.37447 14.7572 8.39761 14.5489 8.60589L12.0033 11.1515L9.45774 8.60589L9.37464 8.53646Z" fill="currentColor"></path></svg></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="input-dropdown-menu-list">
+                                        <li>
+                                            <div  class="input-dropdown-menu-item" selected>Phường An Phú 
+                                            <span><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Radio Button/Icon"><g id="vuesax/linear/tick-circle"><g id="tick-circle"><path id="Vector" d="M12.5 22C18 22 22.5 17.5 22.5 12C22.5 6.5 18 2 12.5 2C7 2 2.5 6.5 2.5 12C2.5 17.5 7 22 12.5 22Z" fill="url(#paint0_linear_19509_24117)"></path><path id="Vector_2" d="M8.25 11.9999L11.08 14.8299L16.75 9.16992" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></g></g><defs><linearGradient id="paint0_linear_19509_24117" x1="22.5" y1="22" x2="2.5" y2="2" gradientUnits="userSpaceOnUse"><stop stop-color="#1250DC"></stop><stop offset="1" stop-color="#306DE4"></stop></linearGradient></defs></svg></span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="input-dropdown-menu-item">Phường Thảo Điền
+                                                <span><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Radio Button/Icon"><g id="vuesax/linear/tick-circle"><g id="tick-circle"><path id="Vector" d="M12.5 22C18 22 22.5 17.5 22.5 12C22.5 6.5 18 2 12.5 2C7 2 2.5 6.5 2.5 12C2.5 17.5 7 22 12.5 22Z" fill="url(#paint0_linear_19509_24117)"></path><path id="Vector_2" d="M8.25 11.9999L11.08 14.8299L16.75 9.16992" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></g></g><defs><linearGradient id="paint0_linear_19509_24117" x1="22.5" y1="22" x2="2.5" y2="2" gradientUnits="userSpaceOnUse"><stop stop-color="#1250DC"></stop><stop offset="1" stop-color="#306DE4"></stop></linearGradient></defs></svg></span>
+                                            </div>
+                                        </li>
+                                        <li><div class="input-dropdown-menu-item">Phường Cát Lai
+                                            <span><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Radio Button/Icon"><g id="vuesax/linear/tick-circle"><g id="tick-circle"><path id="Vector" d="M12.5 22C18 22 22.5 17.5 22.5 12C22.5 6.5 18 2 12.5 2C7 2 2.5 6.5 2.5 12C2.5 17.5 7 22 12.5 22Z" fill="url(#paint0_linear_19509_24117)"></path><path id="Vector_2" d="M8.25 11.9999L11.08 14.8299L16.75 9.16992" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></g></g><defs><linearGradient id="paint0_linear_19509_24117" x1="22.5" y1="22" x2="2.5" y2="2" gradientUnits="userSpaceOnUse"><stop stop-color="#1250DC"></stop><stop offset="1" stop-color="#306DE4"></stop></linearGradient></defs></svg></span>
+                                        </div></li>
+                                        <li><div class="input-dropdown-menu-item">Phường Bình Khánh
+                                            <span><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Radio Button/Icon"><g id="vuesax/linear/tick-circle"><g id="tick-circle"><path id="Vector" d="M12.5 22C18 22 22.5 17.5 22.5 12C22.5 6.5 18 2 12.5 2C7 2 2.5 6.5 2.5 12C2.5 17.5 7 22 12.5 22Z" fill="url(#paint0_linear_19509_24117)"></path><path id="Vector_2" d="M8.25 11.9999L11.08 14.8299L16.75 9.16992" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></g></g><defs><linearGradient id="paint0_linear_19509_24117" x1="22.5" y1="22" x2="2.5" y2="2" gradientUnits="userSpaceOnUse"><stop stop-color="#1250DC"></stop><stop offset="1" stop-color="#306DE4"></stop></linearGradient></defs></svg></span>
+                                        </div></li>
+                                    </ul>
+                                </div>
+                           </div>
+                        </div>
+                        <div class="row mt-3">
+                            <span class="position-relative text-gray input-custom-group" validate="required">
+                                <input type="text" class="form-control input-custom pt-3 pb-2" placeholder=" ">
+                                <span class="input-placeholder ms-2">Nhập địa chỉ cụ thể</span>
+                            </span>
+                            <span hidden class="text-danger input-error">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C17.523 2 22 6.478 22 12C22 17.522 17.523 22 12 22C6.477 22 2 17.522 2 12C2 6.478 6.477 2 12 2ZM12.0018 15.0037C11.4503 15.0037 11.0031 15.4508 11.0031 16.0024C11.0031 16.5539 11.4503 17.001 12.0018 17.001C12.5533 17.001 13.0005 16.5539 13.0005 16.0024C13.0005 15.4508 12.5533 15.0037 12.0018 15.0037ZM11.9996 7C11.4868 7.00018 11.0643 7.38638 11.0067 7.88374L11 8.00036L11.0018 13.0012L11.0086 13.1179C11.0665 13.6152 11.4893 14.0011 12.0022 14.0009C12.515 14.0007 12.9375 13.6145 12.9951 13.1171L13.0018 13.0005L13 7.99964L12.9932 7.88302C12.9353 7.3857 12.5125 6.99982 11.9996 7Z" fill="currentColor"></path></svg>
+                                <span>Thông tin bắt buộc. Vui lòng nhập đầy đủ.</span>
+                            </span>
+                        </div>
+                        <div class="row mt-3 position-relative px-4">
+                            <textarea style="resize: none;" class="form-control p-4" name="note" placeholder="Ví dụ: Hãy gọi cho tôi 15 phút trước khi giao"></textarea>
+                            <span style="left: 4%;top: 3%;" class="position-absolute text-small-2 text-gray">Ghi chú (không bắt buộc)</span>
+                        </div>
+                    </div>
+                    <div class="row bg-white mt-2 p-3 rounded-bottom-4 justify-content-between">
+                        <div class="col-auto">
+                            <span>Yêu cầu xuất hóa đơn điện tử</span>
+                        </div>
+                        <div class="col-auto">
+                              <button type="button" role="switch" class="btn btn-switch" check-state="false">
+                                <span class="btn-switch-inner"></span>
+                              </button>
+                        </div>
+                    </div>
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto">
+                            <p class="text-small fw-medium mt-3">Chọn phương thức thanh toán</p>
+                        </div>
+                        <div class="col-auto">
+                            <span hidden class="text-danger input-error">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C17.523 2 22 6.478 22 12C22 17.522 17.523 22 12 22C6.477 22 2 17.522 2 12C2 6.478 6.477 2 12 2ZM12.0018 15.0037C11.4503 15.0037 11.0031 15.4508 11.0031 16.0024C11.0031 16.5539 11.4503 17.001 12.0018 17.001C12.5533 17.001 13.0005 16.5539 13.0005 16.0024C13.0005 15.4508 12.5533 15.0037 12.0018 15.0037ZM11.9996 7C11.4868 7.00018 11.0643 7.38638 11.0067 7.88374L11 8.00036L11.0018 13.0012L11.0086 13.1179C11.0665 13.6152 11.4893 14.0011 12.0022 14.0009C12.515 14.0007 12.9375 13.6145 12.9951 13.1171L13.0018 13.0005L13 7.99964L12.9932 7.88302C12.9353 7.3857 12.5125 6.99982 11.9996 7Z" fill="currentColor"></path></svg>
+                                <span>Vui lòng chọn phương thức thanh toán</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="choosePurchaseMethod" class="bg-white row rounded-4 p-4">
+                        <div class="row pb-3">
+                            <div class="col-auto">
+                                <button id="purchaseCOD" type="button" class="btn-radio" checked-state="false">
+                                    <span>
+                                        <svg width="12" height="17" viewBox="0 10 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 stroke-current"><path d="M8.5 16.5858L4.70711 12.7929C4.31658 12.4024 3.68342 12.4024 3.29289 12.7929C2.90237 13.1834 2.90237 13.8166 3.29289 14.2071L7.79289 18.7071C8.18342 19.0976 8.81658 19.0976 9.20711 18.7071L20.2071 7.70711C20.5976 7.31658 20.5976 6.68342 20.2071 6.29289C19.8166 5.90237 19.1834 5.90237 18.7929 6.29289L8.5 16.5858Z" fill="currentColor"></path></svg>
+                                    </span>
+                                </button>
+                                <label for="purchaseCOD">
+                                    <img width="40" height="40" src="/dist/img/purchaseCOD.png" alt="">
+                                    <span>Thanh toán tiền mặt khi nhận hàng</span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row pb-3">
+                            <div class="col-auto">
+                                <button id="purchaseVNPay" type="button" class="btn-radio" checked-state="false">
+                                    <span>
+                                        <svg width="12" height="17" viewBox="0 10 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 stroke-current"><path d="M8.5 16.5858L4.70711 12.7929C4.31658 12.4024 3.68342 12.4024 3.29289 12.7929C2.90237 13.1834 2.90237 13.8166 3.29289 14.2071L7.79289 18.7071C8.18342 19.0976 8.81658 19.0976 9.20711 18.7071L20.2071 7.70711C20.5976 7.31658 20.5976 6.68342 20.2071 6.29289C19.8166 5.90237 19.1834 5.90237 18.7929 6.29289L8.5 16.5858Z" fill="currentColor"></path></svg>
+                                    </span>
+                                </button>
+                                <label for="purchaseVNPay">
+                                    <img width="40" height="40" src="/dist/img/vnpay.png" alt="">
+                                    <span>Thanh toán bằng thẻ ATM nội địa (Qua VNPay)</span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row pb-3">
+                            <div class="col-auto">
+                                <button id="purchaseVISA" type="button" class="btn-radio" checked-state="false">
+                                    <span>
+                                        <svg width="12" height="17" viewBox="0 10 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 stroke-current"><path d="M8.5 16.5858L4.70711 12.7929C4.31658 12.4024 3.68342 12.4024 3.29289 12.7929C2.90237 13.1834 2.90237 13.8166 3.29289 14.2071L7.79289 18.7071C8.18342 19.0976 8.81658 19.0976 9.20711 18.7071L20.2071 7.70711C20.5976 7.31658 20.5976 6.68342 20.2071 6.29289C19.8166 5.90237 19.1834 5.90237 18.7929 6.29289L8.5 16.5858Z" fill="currentColor"></path></svg>
+                                    </span>
+                                </button>
+                                <label for="purchaseVISA">
+                                    <img width="40" height="40" src="/dist/img/visa.png" alt="">
+                                    <span>Thanh toán bằng thẻ quốc tế Visa, Master, JCB, AMEX (GooglePay, ApplePay)</span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row pb-3">
+                            <div class="col-auto">
+                                <button id="purchaseZaloPay" type="button" class="btn-radio" checked-state="false">
+                                    <span>
+                                        <svg width="12" height="17" viewBox="0 10 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 stroke-current"><path d="M8.5 16.5858L4.70711 12.7929C4.31658 12.4024 3.68342 12.4024 3.29289 12.7929C2.90237 13.1834 2.90237 13.8166 3.29289 14.2071L7.79289 18.7071C8.18342 19.0976 8.81658 19.0976 9.20711 18.7071L20.2071 7.70711C20.5976 7.31658 20.5976 6.68342 20.2071 6.29289C19.8166 5.90237 19.1834 5.90237 18.7929 6.29289L8.5 16.5858Z" fill="currentColor"></path></svg>
+                                    </span>
+                                </button>
+                                <label for="purchaseZaloPay">
+                                    <img width="40" height="40" src="/dist/img/zalopay.png" alt="">
+                                    <span>Thanh toán bằng ví ZaloPay</span>
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-auto">
+                                <button id="purchaseMoMo" type="button" class="btn-radio" checked-state="false">
+                                    <span>
+                                        <svg width="12" height="17" viewBox="0 10 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 stroke-current"><path d="M8.5 16.5858L4.70711 12.7929C4.31658 12.4024 3.68342 12.4024 3.29289 12.7929C2.90237 13.1834 2.90237 13.8166 3.29289 14.2071L7.79289 18.7071C8.18342 19.0976 8.81658 19.0976 9.20711 18.7071L20.2071 7.70711C20.5976 7.31658 20.5976 6.68342 20.2071 6.29289C19.8166 5.90237 19.1834 5.90237 18.7929 6.29289L8.5 16.5858Z" fill="currentColor"></path></svg>
+                                    </span>
+                                </button>
+                                <label for="purchaseMoMo">
+                                    <img width="40" height="40" src="/dist/img/momo.png" alt="">
+                                    <span>Thanh toán bằng ví MoMo</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-3p75 box-white rounded-4 p-4">
+                <div class="col-3p75 box-white rounded-4 p-4 position-sticky" style="top: .625rem">
                     <div class="row box-blue-light text-blue justify-content-between">
                         <div class="col-10"><span class="text-small fw-medium">Áp dụng ưu đãi để được giảm giá</span></div>
                         <div class="col-auto">
@@ -157,13 +383,19 @@
                         </div>
                         <div class="col-auto"><span class="text-yellow-8">0đ</span></div>
                     </div>
+                    <div id="transportFee" class="row justify-content-between mt-2">
+                        <div class="col-auto">
+                            <span class="text-gray">Phí vận chuyển</span>
+                        </div>
+                        <div class="col-auto"><span class="text-blue fw-medium">Miễn phí</span></div>
+                    </div>
                     <hr>
                     <div class="row justify-content-between mt-2">
                         <div class="col-auto"><span class="text-black text-semilarge-2 fw-semibold">Thành tiền</span></div>
                         <div class="col-auto"><span id="finalPrice" class="text-blue fw-medium text-semilarge-2">0đ</span></div>
                     </div>
                     <div class="row justify-content-center">
-                        <a href="#" class="btn bg-blue text-white rounded-5 m-2 py-3">Mua hàng</a>
+                        <button id="btnPurchase" class="btn bg-blue text-white rounded-5 m-2 py-3">Hoàn tất</button>
                     </div>
                     <div class="text-small-2 text-gray text-center">Bằng việc tiến hành đặt mua hàng, bạn đồng ý với</div>
                     <div class="text-small-2 text-center"><a href="#">Điều khoản dịch vụ</a> và <a href="#">Chính sách xử lý dữ liệu cá nhân</a></div>

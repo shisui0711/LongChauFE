@@ -1,0 +1,1 @@
+.btn-radio{border:2px solid #657384;background-color:transparent;border-radius:9999px;width:1.25rem;height:1.25rem}.btn-radio[checked-state="true"]{background-color:#1250dc;border-color:#1250dc;color:white}.btn-radio[checked-state="true"]>*{display:block}.btn-radio>*{display:none}

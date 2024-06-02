@@ -1,5 +1,8 @@
 import Cart from "../models/CartModel";
 import { PriceRender, ToCurrency } from "./Helper";
+import { LoadAllDropdown, TextChangeValidate } from "./components/dropdown";
+import { RadioHandler } from "./components/radios";
+import { StateChangeHandler } from "./components/switches";
 import { LayoutRender } from "./layoutHelper";
 import { MyLocalStorage } from "./localStorage";
 
@@ -11,6 +14,11 @@ $(
         }
         LayoutRender();
         LoadProduct();
+        LoadAllDropdown();
+        StateChangeHandler();
+        RadioHandler();
+        TextChangeValidate();
+        OnPurchaseHandler();
     }
 )
 function LoadProduct():void{
@@ -46,3 +54,19 @@ function CalulateTotalPrice():void{
     $('#totalPrice').text(ToCurrency(totalPrice));
     $('#finalPrice').text(ToCurrency(totalPrice));
 }
+function OnPurchaseHandler():void{
+    $('#btnPurchase').on('click',()=>{
+        for(const inputGroup of $('.input-custom-group')){
+            $(inputGroup).find('input:first').trigger('input');
+        }
+        if($('#choosePurchaseMethod button[checked-state="true"]').length === 0){
+            $('#choosePurchaseMethod').prev('div').find('.input-error').prop('hidden',false);
+        }else{
+            $('#choosePurchaseMethod').prev('div').find('.input-error').prop('hidden',true);
+        }
+        if($('.input-error:not([hidden="true"])').length === 0){
+            console.log('success');
+        }
+    })
+}
+

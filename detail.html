@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nhà thuốc FPT Long Châu - Hệ thống chuỗi nhà thuốc lớn</title>
-    <link rel="shortcut icon" href="/public/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="public/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/public/css/style.css">
-    <link rel="stylesheet" href="/public/css/detail.css">
-    <script src="public/js/jquery.min.js"></script>
-    <script src="public/js/bootstrap.min.js"></script>
-    <script defer src="./public/js/detail.bundle.js"></script>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/dist/css/style.css">
+    <link rel="stylesheet" href="/dist/css/detail.css">
+    <script src="dist/js/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script defer src="./dist/js/detail.bundle.js"></script>
 </head>
 <body>
     <header></header>
@@ -33,36 +33,36 @@
                         <p class="text-small">Vitamin & khoáng chất</p>
                     </div>
                 </div>
-                <div class="row bg-white align-items-center rounded-4 gap-5 pb-3">
-                    <div class="col-4">
+                <div class="row bg-white align-items-start position-relative rounded-4 gap-5 pb-3">
+                    <div class="col-4 position-sticky" style="top: 0;">
                         <div id="detailCarousel" class="row mycarousel ps-3 m-5" display-item="1" style="width: 90%;">
                             <div class="row mycarousel-wrapper ">
                                 <div class="mycarousel-item ps-3">
-                                    <img src="/public/img/viensuibig.png" alt="">
+                                    <img src="/dist/img/viensuibig.png" alt="">
                                 </div>
                                 <div class="mycarousel-item">
-                                    <img src="/public/img/hdsd.png" alt="">
+                                    <img src="/dist/img/hdsd.png" alt="">
                                 </div>
                                 <div class="mycarousel-item">
-                                    <img src="/public/img/viensuiback.png" alt="">
+                                    <img src="/dist/img/viensuiback.png" alt="">
                                 </div>
                                 <div class="mycarousel-item">
-                                    <img src="/public/img/viensuiback2.png" alt="">
+                                    <img src="/dist/img/viensuiback2.png" alt="">
                                 </div>
                                 <div class="mycarousel-item">
-                                    <img src="/public/img/viensuibig2.png" alt="">
+                                    <img src="/dist/img/viensuibig2.png" alt="">
                                 </div>
                                 <div class="mycarousel-item ps-5">
-                                    <img src="/public/img/viensuibig3.png" alt="">
+                                    <img src="/dist/img/viensuibig3.png" alt="">
                                 </div>
                             </div>
                             <div class="mycarousel-indicators">
-                                <button class="product-mini" mycarousel-target="#detailCarousel" mycarousel-target-page="0"><img src="/public//img/viensuimini.png" alt=""></button>
-                                <button class="product-mini" mycarousel-target="#detailCarousel" mycarousel-target-page="1"><img src="/public/img/hdsd.png" alt=""></button>
-                                <button class="product-mini" mycarousel-target="#detailCarousel" mycarousel-target-page="2"><img src="/public/img/viensuiback.png" alt=""></button>
-                                <button class="product-mini" mycarousel-target="#detailCarousel" mycarousel-target-page="3"><img src="/public/img/viensuiback2.png" alt=""></button>
-                                <!-- <button mycarousel-target="#detailCarousel" mycarousel-target-page="4"><img src="/public/img/viensuibig2.png" alt=""></button> -->
-                                <!-- <button mycarousel-target="#detailCarousel" mycarousel-target-page="5"><img src="/public/img/viensuibig3.png" alt=""></button> -->
+                                <button class="product-mini" mycarousel-target="#detailCarousel" mycarousel-target-page="0"><img src="/dist//img/viensuimini.png" alt=""></button>
+                                <button class="product-mini" mycarousel-target="#detailCarousel" mycarousel-target-page="1"><img src="/dist/img/hdsd.png" alt=""></button>
+                                <button class="product-mini" mycarousel-target="#detailCarousel" mycarousel-target-page="2"><img src="/dist/img/viensuiback.png" alt=""></button>
+                                <button class="product-mini" mycarousel-target="#detailCarousel" mycarousel-target-page="3"><img src="/dist/img/viensuiback2.png" alt=""></button>
+                                <!-- <button mycarousel-target="#detailCarousel" mycarousel-target-page="4"><img src="/dist/img/viensuibig2.png" alt=""></button> -->
+                                <!-- <button mycarousel-target="#detailCarousel" mycarousel-target-page="5"><img src="/dist/img/viensuibig3.png" alt=""></button> -->
                             </div>
                             <button class="mycarousel-prev position-absolute " mycarousel-target="#detailCarousel" style="left: 0%;">
                                 <svg class="text-blue" width="20" height="20" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-text-focus"><path d="M16.668 4.29289C17.0586 4.68342 17.0586 5.31658 16.668 5.70711L10.3752 12L16.668 18.2929C17.0586 18.6834 17.0586 19.3166 16.668 19.7071C16.2775 20.0976 15.6444 20.0976 15.2538 19.7071L8.25383 12.7071C7.86331 12.3166 7.86331 11.6834 8.25383 11.2929L15.2538 4.29289C15.6444 3.90237 16.2775 3.90237 16.668 4.29289Z" fill="currentColor"></path></svg>
@@ -213,8 +213,8 @@
                     </div>
                 </div>
                 <div class="row bg-white rounded-4 mt-4">
-                    <div class="row ">
-                        <div class="col-2p5">
+                    <div class="row align-items-start position-relative">
+                        <div class="col-2p5 position-sticky" style="top: 0;">
                             <ul class="nav flex-column mt-3">
                                 <li active class="nav-item text-semilarge-2 py-3 ps-4"><a class="text-decoration-none text-gray" href="#">Mô tả sản phẩm</a></li>
                                 <li class="nav-item text-semilarge-2 py-3 ps-4"><a class="text-decoration-none text-gray" href="#">Thành phần</a></li>
@@ -248,7 +248,7 @@
                             <p class="text-medium fw-semibold">Bổ sung vitamin cho cơ thể</p>
                             <p><a class="text-decoration-none" href="#">Viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng</a>hương cam là một thức uống thơm ngon và sảng khoái giàu vitamin giúp tăng cường sức khỏe và đề kháng hàng ngày. Biotin rất quan trọng cho làn da, tóc và móng tay khỏe mạnh. Nhân sâm có tác dụng tiếp thêm sinh lực và hỗ trợ tăng cường nhận thức. Sản phẩm sản xuất tại Đức, tiêu chuẩn chất lượng Châu Âu.</p>
                             <div class="row">
-                                <img class="m-auto" style="width: 636px;height: 636px;" src="/public/img/viensuisuper.png" alt="">
+                                <img class="m-auto" style="width: 636px;height: 636px;" src="/dist/img/viensuisuper.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -257,7 +257,7 @@
                     </div>
                     <div class="row box-white-gray my-3 mx-4" style="width: 96%;">
                         <div class="col-1">
-                            <img src="/public/img/duocsi.png" alt="">
+                            <img src="/dist/img/duocsi.png" alt="">
                         </div>
                         <div class="col-11">
                             <div class="row justify-content-between">
@@ -285,7 +285,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <img src="/public/img/dungdichanngon.png" alt="">
+                                <img src="/dist/img/dungdichanngon.png" alt="">
                             </div>
                             <div class="row mt-2">
                                 <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Viên sủi Kudos Daily Vitamins Plus Biotin & Ginseng hương cam giúp bổ sung vitamin cho cơ thể (20 viên)</h6></a>
@@ -319,7 +319,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <img src="/public/img/nuocyensaocaocap.png" alt="">
+                                <img src="/dist/img/nuocyensaocaocap.png" alt="">
                             </div>
                             <div class="row mt-2">
                                 <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Nước yến sào cao cấp Nunest Kid Grow vị cam hỗ trợ phát triển hệ xương, tăng cường sức khỏe (6 lọ x 70ml)</h6></a>
@@ -353,7 +353,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <img src="/public/img/nuocyensaocaocap2.png" alt="">
+                                <img src="/dist/img/nuocyensaocaocap2.png" alt="">
                             </div>
                             <div class="row mt-2">
                                 <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Nước yến sào cao cấp Nunest Kids vị chuối tăng cường sức khoẻ, ăn ngon (6 hũ x 70ml)</h6></a>
@@ -387,7 +387,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <img src="/public/img/sirotopgrow.png" alt="">
+                                <img src="/dist/img/sirotopgrow.png" alt="">
                             </div>
                             <div class="row mt-2">
                                 <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Siro Top Grow Jpanwell bổ sung các vitamin, hỗ trợ tăng cường sức khỏe (10 chai x 30ml)</h6></a>
@@ -421,7 +421,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <img src="/public/img/sirohealthynew.png" alt="">
+                                <img src="/dist/img/sirohealthynew.png" alt="">
                             </div>
                             <div class="row mt-2">
                                 <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Siro Healthy New Kids bổ sung vitamin, lysine, taurin, hỗ trợ kích thích tiêu hóa (120ml)</h6></a>
@@ -455,7 +455,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <img src="/public/img/srioginkid.png" alt="">
+                                <img src="/dist/img/srioginkid.png" alt="">
                             </div>
                             <div class="row mt-2">
                                 <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Siro Ginkid Ăn Ngon 11X Gold GINIC hỗ trợ kích thích tiêu hóa (125ml)</h6></a>
@@ -489,7 +489,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <img src="/public/img/siroginkidzinc.png" alt="">
+                                <img src="/dist/img/siroginkidzinc.png" alt="">
                             </div>
                             <div class="row mt-2">
                                 <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Siro Ginkid ZinC bổ sung kẽm, hỗ trợ tăng sức đề kháng (4 vỉ x 5 ống x 5ml)</h6></a>
@@ -523,7 +523,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <img src="/public/img/siromorningkis.png" alt="">
+                                <img src="/dist/img/siromorningkis.png" alt="">
                             </div>
                             <div class="row mt-2">
                                 <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Siro Morningkids Multivitamin Bổ sung Vitamin và khoáng chất (150ml)</h6></a>
@@ -557,7 +557,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <img src="/public/img/sirospecicalkidzinc.png" alt="">
+                                <img src="/dist/img/sirospecicalkidzinc.png" alt="">
                             </div>
                             <div class="row mt-2">
                                 <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Siro Special Kid Zinc Eric Favre Wellness bổ sung kẽm, hỗ trợ tăng sức đề kháng cho trẻ (125ml)</h6></a>
@@ -591,7 +591,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <img src="/public/img/sirospecialkismultivitamines.png" alt="">
+                                <img src="/dist/img/sirospecialkismultivitamines.png" alt="">
                             </div>
                             <div class="row mt-2">
                                 <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Siro Special Kid Multivitamines bổ sung Vitamin và khoáng chất giúp tăng cường sức đề kháng (125ml)</h6></a>
@@ -625,7 +625,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <img src="/public/img/comankidstraphaco.png" alt="">
+                                <img src="/dist/img/comankidstraphaco.png" alt="">
                             </div>
                             <div class="row mt-2">
                                 <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Cốm ăn ngon trẻ em TT KIDS Traphaco hỗ trợ tăng hấp thu dinh dưỡng, tăng cường sức khỏe (20 gói x 3g)</h6></a>
@@ -659,7 +659,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <img src="/public/img/dauhungchanhlabebe.png" alt="">
+                                <img src="/dist/img/dauhungchanhlabebe.png" alt="">
                             </div>
                             <div class="row mt-2">
                                 <a class="text-decoration-none product-link" href="#"><h6 class="product-name inter-600">Dầu Húng Chanh Lábebé hỗ trợ lợi phế trừ đờm, giảm ho (30ml)</h6></a>

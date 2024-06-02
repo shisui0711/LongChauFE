@@ -1,6 +1,5 @@
-@import "./custome_variable.scss";
-@import "./carousel.scss";
-@import "./dropdown.scss";
+@import "./custom_variable.scss";
+@import "./components/carousel.scss";
 * {
   padding: 0px;
   margin: 0px;
@@ -33,6 +32,10 @@
   }
   &-gray-light {
     color: $gray_light !important;
+  }
+  &-very-small{
+    font-size: 10px !important;
+    line-height: 14px !important;
   }
   &-small {
     font-size: 14px !important;
@@ -132,7 +135,7 @@
   }
 }
 header {
-  background-image: url(/public/img/background_header.png);
+  background-image: url(/dist/img/background_header.png);
 }
 a:hover {
   text-decoration: none;
@@ -226,10 +229,10 @@ img.header {
     }
   }
   &-none {
-    border: none;
-    border-style: none;
+    border: none !important;
+    border-style: none !important;
     &:focus {
-      outline: none;
+      outline: none !important;
     }
   }
 }
@@ -312,7 +315,7 @@ img.header {
 }
 
 .slide-bar {
-  background-image: url(/public/img/background_slide.png);
+  background-image: url(/dist/img/background_slide.png);
 }
 .carousel-item {
   transition: transform 0.6s ease;
@@ -872,7 +875,35 @@ textarea {
         visibility: hidden;
     }
 }
+input:read-only{
+  border: 0;
+  cursor: pointer;
+  &:hover{
+    outline: none;
+  }
+}
+.outline-none{
+  outline: none;
+}
+.form-control:focus{
+  box-shadow: none;
+}
+input[type="file"]{
+  margin-left: -2px !important;
+  &::file-selector-button{
+    display: none;
+  }
+  &::-webkit-file-upload-button{
+    display: none;
+  }
+  &:hover {
+		label {
+			background-color: #dde0e3;
+			cursor: pointer;
+		}
+	}
 
+}
 @media only screen and (max-width: 1238px) {
   .product {
     &-top {

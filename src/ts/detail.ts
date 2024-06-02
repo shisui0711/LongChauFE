@@ -1,9 +1,11 @@
+import CarouselHandler from "./components/Carousel";
 import { LayoutRender } from "./layoutHelper";
 
 $(
     function(){
         LayoutRender();
         IncreaseAndDesceaseHandlder();
+        CarouselHandler();
     }
 )
 function IncreaseAndDesceaseHandlder():void{

@@ -1,15 +1,17 @@
 {
     "include": ["src/**/*.ts"],
     "compilerOptions": {
-        "target": "ES2022",
+        "target": "ES6",
         "module": "ES2022",
         "sourceMap": true,
-        "outDir": "./public/js",
+        "outDir": "./dist/js",
         "esModuleInterop": true,
         "moduleResolution": "node",
         "importHelpers": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata":true,
         "lib": [
-            "ES2022",
+            "ES6",
             "dom"
           ]
     },

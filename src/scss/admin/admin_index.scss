@@ -1,0 +1,183 @@
+@import '../custom_variable.scss';
+$default_text_color: #333335;
+$default_border: #f3f3f3;
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+}
+body{
+    overflow: hidden;
+}
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+.app{
+    &-header{
+        max-width: 100%;
+        height: 3.75rem;
+        z-index: 100;
+        position: fixed;
+        inset-block-start: 0;
+        inset-inline: 0;
+        background: white;
+        border-block-end: 1px solid #f3f3f3;
+        transition: all 0.1s ease;
+    }
+    &-logo{
+        height: 3.75rem;
+        width: 15rem;
+        position: fixed;
+        display: flex;
+        background: var(--menu-bg);
+        z-index: 9;
+        align-items: center;
+        justify-content: center;
+        padding: 0.813rem 1.25rem;
+        border-inline-end: 1px solid rgba(255, 255, 255, 0.1);
+        border-block-end: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.05s ease;
+    }
+    &-sidebar{
+        width: 15rem;
+        height: 100%;
+        background: $blue;
+        border-inline-end: 1px solid rgba(255, 255, 255, 0.1);
+        position: fixed;
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        font-family: "Montserrat", sans-serif;
+        z-index: 103;
+        transition: all 0.05s ease;
+    }
+}
+.main{
+    &-sidebar{
+        margin-block-start: 3.72rem;
+        padding-block-start: 0.5rem;
+        padding-block-end: 5rem;
+        height: 100vh;
+        position: relative;
+        overflow-y: auto;
+    }
+    &-content{
+        padding: 0 0.5rem;
+    }
+}
+.slide{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: .25rem;
+    &-item{
+        padding: 0.75rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-size: 0.78rem;
+        color: white;
+        font-weight: 500;
+        border-radius: 0.5rem;
+    }
+    &-icon{
+        margin-inline-end: 0.625rem;
+        width: 1.15rem;
+        height: 1.15rem;
+        font-size: 1.15rem;
+        text-align: center;
+        color: white;
+        fill: white;
+        border-radius: 0.5rem;
+        transition: all 0.2s ease 0.2s;
+    }
+    &-label{
+        color: white;
+        white-space: nowrap;
+        color: white;
+        position: relative;
+        font-size: 0.85rem;
+        line-height: 1;
+        vertical-align: middle;
+        font-weight: 500;
+    }
+    &-angle{
+        transform-origin: center;
+        position: absolute;
+        inset-inline-end: 0.75rem;
+        font-size: 0.85rem;
+        color: white;
+        transition: all 0.05s ease;
+    }
+    & .slide-item:hover{
+        background: rgba(255, 255, 255, 0.1);
+    }
+    & .slide-item.active{
+        background: rgba(255, 255, 255, 0.1);
+    }
+    &-collapse{
+        transition: all 0.6s ease;
+        & +.slide-sub{
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out 0.3s;
+        }
+        &.show +.slide-sub{
+            max-height: fit-content;
+            transition: max-height 0.5s ease-in 0.3s;
+        }
+        &.show .slide-angle{
+            transform: rotate(90deg);
+        }
+    }
+    &-category{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;;
+    }
+    
+}
+.bg-main-content{
+    background-color: rgb(237, 240, 243);
+}
+.table{
+    color: $default_text_color;
+    border-color: $default_border;
+    margin-block-end: 0;
+    &-wrapper{
+        max-height: 700px;
+        overflow-y: auto;
+        & table{
+            width: 100%;
+        }
+    }
+    &-responsive{
+        overflow-x: auto;
+    }
+}
+.footer{
+    box-shadow: 0 0.25rem 1rem rgba(0,0,0, 0.1);
+    
+}
+.form-check-input{
+    background-color: #bdbdbd;
+}
+@media (min-width: 992px) {
+    .app{
+        &-header{
+            padding-inline-start: 15rem;
+        }
+        &-content{
+            min-height: calc(100vh - 7.5rem);
+            margin-block-end: 0;
+            margin-block-start: 3.75rem;
+            margin-inline-start: 15rem;
+            transition: all 0.05s ease;
+        }
+    }
+}

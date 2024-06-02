@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang quản trị</title>
+    <link rel="shortcut icon" href="/dist/img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/dist/css/style.css">
+    <link rel="stylesheet" href="/dist/css/admin_index.css">
+    <link rel="stylesheet" href="/dist/css/dropdown.css">
+    <script src="/dist/js/jquery.min.js"></script>
+    <script defer src="/dist/js/admin.bundle.js"></script>
+</head>
+<body class="overflow-y-auto">
+    <div class="page">
+        <header class="app-header"></header>
+        <aside class="app-sidebar">
+            <div class="app-logo">
+                <a href="/" class="text-center"><img src="/dist/img/logo.svg" alt=""></a>
+            </div>
+            <div class="main-sidebar">
+                <ul class="nav flex-column">
+                    <li class="nav-item slide-category"><span class="text-very-small fw-semibold text-white">Main</span></li>
+                    <li class="nav-item slide">
+                        <a id="btnDashboard" href="javascript:void(0);" class="slide-item">
+                            <i class="fa-solid fa-house slide-icon"></i>
+                            <span class="slide-label">Trang chủ</span>
+                        </a>
+                    </li>
+                    <li class="nav-item slide-category"><span class="text-very-small fw-semibold text-white">Dịch vụ</span></li>
+                    <li class="nav-item slide">
+                        <a  href="javascript:void(0);" class="slide-item slide-collapse">
+                            <i class="fa-solid fa-capsules slide-icon"></i>
+                            <span class="slide-label">Sản phẩm</span>
+                            <i class="fa-solid fa-chevron-right slide-angle"></i>
+                        </a>
+                        <ul class="nav flex-column mt-2 slide-sub">
+                            <li class="nav-item slide">
+                                <a routerLink="/admin/page/viewProduct.html" src="/dist/js/viewProduct.bundle.js" href="javascript:void(0);" class="slide-item">
+                                    <i class="fa-solid fa-list slide-icon"></i>
+                                    <span class="slide-label">Tất cả sản phẩm</span>
+                                </a>
+                            </li>
+                            <li class="nav-item slide">
+                                <a href="javascript:void(0);" class="slide-item" routerLink="/admin/page/viewCategory.html" src="/dist/js/viewCategory.bundle.js">
+                                    <i class="fa-solid fa-layer-group slide-icon"></i>
+                                    <span class="slide-label">Danh mục</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item slide">
+                        <a href="javascript:void(0);" class="slide-item slide-collapse">
+                            <i class="fa-solid fa-cart-shopping slide-icon"></i>
+                            <span class="slide-label">Đơn hàng</span>
+                            <i class="fa-solid fa-chevron-right slide-angle"></i>
+                        </a>
+                        <ul class="nav flex-column mt-2 slide-sub">
+                            <li class="nav-item slide">
+                                <a href="javascript:void(0);" class="slide-item">
+                                    <i class="fa-solid fa-dollar-sign slide-icon"></i>
+                                    <span class="slide-label">Đơn hàng bán</span>
+                                </a>
+                            </li>
+                            <li class="nav-item slide">
+                                <a href="javascript:void(0);" class="slide-item">
+                                    <i class="fa-solid fa-arrow-right slide-icon"></i>
+                                    <span class="slide-label">Đơn hàng nhập</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item slide-category"><span class="text-very-small fw-semibold text-white">Quản lý</span></li>
+                    <li class="nav-item slide">
+                        <a id="btnDashboard" href="javascript:void(0);" class="slide-item">
+                            <i class="fa-solid fa-user slide-icon"></i>
+                            <span class="slide-label">Thành viên</span>
+                        </a>
+                    </li>
+                    <li class="nav-item slide">
+                        <a id="btnDashboard" href="javascript:void(0);" class="slide-item">
+                            <i class="fa-solid fa-gift slide-icon"></i>
+                            <span class="slide-label">Mã giảm giá</span>
+                        </a>
+                    </li>
+                    <li class="nav-item slide-category"><span class="text-very-small fw-semibold text-white">Cài đặt hệ thống</span></li>
+                    <li class="nav-item slide">
+                        <a href="javascript:void(0);" class="slide-item slide-collapse">
+                            <i class="fa-solid fa-gear slide-icon"></i>
+                            <span class="slide-label">Cài đặt</span>
+                            <i class="fa-solid fa-chevron-right slide-angle"></i>
+                        </a>
+                        <ul class="nav flex-column mt-2 slide-sub">
+                            <li class="nav-item slide">
+                                <a href="javascript:void(0);" class="slide-item">
+                                    <i class="fa-solid fa-gears slide-icon"></i>
+                                    <span class="slide-label">Cài đặt chung</span>
+                                </a>
+                            </li>
+                            <li class="nav-item slide">
+                                <a href="javascript:void(0);" class="slide-item">
+                                    <i class="fa-solid fa-plug slide-icon"></i>
+                                    <span class="slide-label">Kết nối</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <main class="main-content app-content bg-main-content overflow-y-auto">
+        </main>
+        <footer class="footer mt-auto py-3 bg-white text-center">
+            <div class="container">
+                <span>Copyright © 2024. Software by <a href="#">Nguyễn Văn Khang</a>. All rights reserved</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
