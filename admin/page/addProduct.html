@@ -19,10 +19,10 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4">
+                <div class="col-sm-12 col-md-6">
                     <div class="row input-custom-group" validate="required">
                         <span class="position-relative text-gray">
-                            <input id="txtProductSalePrice" type="text" class="form-control input-custom pt-3 pb-2" placeholder=" ">
+                            <input id="txtProductSalePrice" type="number" class="form-control input-custom pt-3 pb-2" placeholder=" ">
                             <span class="input-placeholder ms-2">Giá bán mặc định</span>
                         </span>
                     </div>
@@ -32,10 +32,10 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4">
+                <div class="col-sm-12 col-md-6">
                     <div class="row input-custom-group" validate="required">
                         <span class="position-relative text-gray">
-                            <input id="txtProductDiscount" type="text" class="form-control input-custom pt-3 pb-2" placeholder=" ">
+                            <input id="txtProductDiscount" type="number" class="form-control input-custom pt-3 pb-2" placeholder=" ">
                             <span class="input-placeholder ms-2">Giảm giá</span>
                         </span>
                     </div>
@@ -45,11 +45,24 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4">
+                <div class="col-sm-12 col-md-6">
                     <div class="row input-custom-group" validate="required">
                         <span class="position-relative text-gray">
-                            <input id="txtProductImportPrice" type="text" class="form-control input-custom pt-3 pb-2" placeholder=" ">
+                            <input id="txtProductImportPrice" type="number" class="form-control input-custom pt-3 pb-2" placeholder=" ">
                             <span class="input-placeholder ms-2">Giá vốn</span>
+                        </span>
+                    </div>
+                    <div hidden class="row input-error">
+                        <span class="text-danger">
+                            <span>Thông tin bắt buộc. Vui lòng nhập đầy đủ.</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="row input-custom-group">
+                        <span class="position-relative text-gray">
+                            <input id="txtProductGiftContent" type="text" class="form-control input-custom pt-3 pb-2" placeholder=" ">
+                            <span class="input-placeholder ms-2">Chương trình giảm giá</span>
                         </span>
                     </div>
                     <div hidden class="row input-error">
@@ -91,7 +104,7 @@
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    <img src="/dist/img/upload.png" alt="Ảnh sản phẩm">
+                    <img id="imageDisplayProduct" src="/dist/img/upload.png" alt="Ảnh sản phẩm">
                 </div>
             </div>
         </div>
@@ -101,7 +114,7 @@
                 <div class="col-12">
                     <div class="input-dropdown-container">
                         <div class="input-dropdown" dropdown-target="#dropdownCategory">
-                            <input type="text" readonly placeholder="Chọn danh mục">
+                            <input id="txtCategoryName" type="text" readonly placeholder="Chọn danh mục">
                             <span class="input-dropdown-icon me-2">
                                 <svg viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 shrink-0 grow-0 transition-transform ease-in-out rotate-0"><path d="M5.25383 8.29289C5.64435 7.90237 6.27752 7.90237 6.66804 8.29289L12.9609 14.5858L19.2538 8.29289C19.6444 7.90237 20.2775 7.90237 20.668 8.29289C21.0586 8.68342 21.0586 9.31658 20.668 9.70711L13.668 16.7071C13.2775 17.0976 12.6444 17.0976 12.2538 16.7071L5.25383 9.70711C4.86331 9.31658 4.86331 8.68342 5.25383 8.29289Z" fill="currentColor"></path></svg>
                             </span>
@@ -111,7 +124,7 @@
                                 <div class="row">
                                     <div class="col-1"><i class="fa-solid fa-magnifying-glass"></i></div>
                                     <div class="col-9">
-                                        <input input-search dropdown-target="#dropdownCategory" class="border-none" type="text" placeholder="Nhập tìm tỉnh/thành phố">
+                                        <input id="txtSearchCategory" input-search dropdown-target="#dropdownCategory" class="border-none" type="text" placeholder="Nhập tìm danh mục">
                                     </div>
                                     <div hidden reset-search dropdown-target="#dropdownCategory" role="button" class="col-1 ms-3">
                                         <span><i class="fa-solid fa-circle-xmark"></i></span>
@@ -119,18 +132,6 @@
                                 </div>
                             </div>
                             <ul id="cboCategory" class="input-dropdown-menu-list">
-                                <li><div class="input-dropdown-menu-item">Hồ Chí Minh
-                                    <span><i class="fa-solid fa-circle-check"></i></span>
-                                </div></li>
-                                <li><div class="input-dropdown-menu-item">Hà Nội
-                                    <span><i class="fa-solid fa-circle-check"></i></span>
-                                </div></li>
-                                <li><div class="input-dropdown-menu-item">Hưng Yên
-                                    <span><i class="fa-solid fa-circle-check"></i></span>
-                                </div></li>
-                                <li><div class="input-dropdown-menu-item">Đà Nẵng
-                                    <span><i class="fa-solid fa-circle-check"></i></span>
-                                </div></li>
                             </ul>
                         </div>
                     </div>

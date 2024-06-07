@@ -6,6 +6,7 @@ module.exports = {
       cartEmpty: './src/ts/cartEmpty.ts',
       header: './src/ts/header.ts',
       purchase:'./src/ts/purchase.ts',
+      category:'./src/ts/category.ts',
       admin: './src/ts/admin/admin.ts',
       viewProduct:'./src/ts/admin/viewProduct.ts',
       addProduct:'./src/ts/admin/addProduct.ts',

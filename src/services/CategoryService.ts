@@ -55,13 +55,10 @@ export async function DeleteCategory(id:string):Promise<boolean>{
  }
  export async function GetCategoryByName(keyword:string):Promise<Category[]>{
     try{
-        let response = await fetch(
-            `${urlApi}/categories?q=${keyword}}`
-        )
-        return response.json();
+        let categories:Category[] = await GetCategories();
+        return categories.filter(c => c.name.toLowerCase().includes(keyword.toLowerCase()));
     }catch(error){
-        console.log(error);
-        return null;
+        return [];
     }
 }
  export async function GetCategory(id:string):Promise<Category>{

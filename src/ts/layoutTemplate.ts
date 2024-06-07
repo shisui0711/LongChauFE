@@ -342,7 +342,7 @@ export let navTemplate:string = ` <nav>
 <div class="row">
     <ul class="nav position-relative justify-content-center flex-nowrap my-nav gap-4">
         <li class="nav-item">
-            <a class="nav-link text-black d-inline-flex border-bottom my-nav px-0" href="#">
+            <a class="nav-link text-black d-inline-flex border-bottom my-nav px-0" href="/danhmuc.html">
                 <span class="menu-item fw-medium text-small">Thực phẩm chức năng<i class="fa-solid fa-chevron-up semi-rotate mx-2"></i></span>
             </a>
             <div class="position-absolute panel">

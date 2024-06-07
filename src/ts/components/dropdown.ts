@@ -1,6 +1,7 @@
 import { GetErrorMessage } from "../projectTemplate";
 
 export function LoadAllDropdown():void{
+    ResetEventHandler();
     ShowDropdownHandler();
     InputSearchHandler();
     RemoveSearchHandler();
@@ -33,6 +34,24 @@ function RemoveSearchHandler():void{
            $(`${dropdownTarget} [reset-search]`).prop('hidden',true);
            $(`${dropdownTarget} [input-search]`).trigger('input');
         });
+    }
+}
+function ResetEventHandler():void{
+    for(const btnDropdown of $('.input-dropdown')){
+        let target:string = btnDropdown.getAttribute('dropdown-target');
+        if(target === null || target === ""){
+            continue;
+        }
+        $(`.input-dropdown[dropdown-target="${target}"]`).off('click');
+    }
+    for(const dropMenu of $('.input-dropdown-menu')){
+        let id:string = dropMenu.getAttribute('id');
+        if(id === null || id === ""){
+            continue;
+        }
+        for(const item of $(`#${id} .input-dropdown-menu-item`)){
+            $(item).off('click')
+        }
     }
 }
 function ShowDropdownHandler():void{
@@ -104,6 +123,8 @@ export function TextChangeValidate(){
                     }else{
                         NormalState($(inputGroup));
                     }
+                    break;
+                case 'range':
                     break;
             }
             }

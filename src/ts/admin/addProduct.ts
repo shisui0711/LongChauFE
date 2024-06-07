@@ -3,18 +3,39 @@ import { Product } from "../../viewModels/ProductVM";
 import { AddProduct } from "../../services/ProductService";
 import { LoadAllDropdown, TextChangeValidate } from "../components/dropdown";
 import { RenderViewMain } from "./adminLayoutHelper";
-import { GetCategories } from "../../services/CategoryService";
+import { GetCategories, GetCategoryByName } from "../../services/CategoryService";
 import { Category } from "../../viewModels/CategoryVM";
+import { GetImageUrl } from "../../services/ImageService";
 
 $(
     async function(){
-        await LoadCategories();
+        let categories =  await GetCategories();
+        LoadCategories(categories);
         LoadAllDropdown();
         TextChangeValidate();
         BackHandler();
         AddProductHandler();
+        ChoosePictureHandler();
+        $('#txtSearchCategory').on('input',()=>{
+            let categoryName:string = $('#txtSearchCategory').val() as string;
+            GetCategoryByName(categoryName).then((categories)=>{
+              LoadCategories(categories);
+            });
+          })
     }
 )
+function ChoosePictureHandler(){
+    const fileInput = $('#imageProduct') as JQuery<HTMLInputElement>;
+    fileInput.on('change',(event)=>{
+        const file:File = event.target.files[0];
+        if(!file) return;
+        console.log(file)
+        GetImageUrl(file).then(imageUrl=>{
+            console.log(imageUrl)
+            $('#imageDisplayProduct').attr('src',imageUrl);
+        })
+    })
+}
 function BackHandler(){
     $('#back').on('click',()=>{
         RenderViewMain('/admin/page/viewProduct.html',undefined,'/dist/js/viewProduct.bundle.js');
@@ -22,7 +43,7 @@ function BackHandler(){
 }
 function AddProductHandler(){
     $('#btnAddProduct').on('click',()=>{
-        if($('.input-error[hidden="false"]').length > 0){
+        if($('.input-error:not([hidden])').length > 0){
             return;
         }
         let product:Product = new Product();
@@ -32,6 +53,8 @@ function AddProductHandler(){
         product.discountPercent = $('#txtProductDiscount').val() as number;
         product.unit = $('#txtProductUnit').val() as string;
         product.unitExtend = $('#txtProductUnitExtend').val() as string;
+        product.giftContent = $('#txtProductGiftContent').val() as string;
+        product.categoryName = $('#txtCategoryName').val() as string;
         if(AddProduct(product)){
             Swal.fire("Thông báo","Thêm sản phẩm thành công","success");
         }else{
@@ -39,15 +62,15 @@ function AddProductHandler(){
         }
     })
 }
-async function LoadCategories():Promise<void>{
+function LoadCategories(categories:Category[]){
     $('#cboCategory').empty();
-    let categories:Category[] = await GetCategories();
     categories.forEach(category=>{
         let row:string = `<li><div class="input-dropdown-menu-item">${category.name}
                         <span><i class="fa-solid fa-circle-check"></i></span>
                          </div></li>`;
         $('#cboCategory').append(row);
     })
+    LoadAllDropdown();
 }
 
 

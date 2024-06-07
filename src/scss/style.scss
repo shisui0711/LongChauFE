@@ -333,8 +333,8 @@ img.header {
   visibility: hidden;
   opacity: 0;
   transition-property: opacity, visibility;
-  transition-duration: 0.4s;
-  transition-delay: 0.2s;
+  transition-duration: 0.3s;
+  transition-delay: 0.1s;
   transition-timing-function: ease;
   box-shadow: 0 100vh 0 100vh rgba(2, 11, 39, 0.5);
   padding: 16px;
@@ -791,6 +791,14 @@ video {
     -webkit-line-clamp: 2;
   }
 }
+.hover{
+  &-underline:hover{
+    text-decoration: underline;
+  }
+  &-none:hover{
+    text-decoration: none;
+  }
+}
 .w-fit {
   width: fit-content;
 }
@@ -887,6 +895,38 @@ input:read-only{
 }
 .form-control:focus{
   box-shadow: none;
+}
+.form-check-input{
+  background-color: #bdbdbd;
+}
+.carousel-indicators{
+  margin-left: 40%;
+  bottom: 0;
+}
+.carousel-indicators [data-bs-target]{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #c1c8d1;
+  margin-right: 10px;
+}
+.carousel-indicators .active{
+  background-color: #657384;
+}
+.carousel-control-next, .carousel-control-prev{
+  width: 5%;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon{
+  background-color: rgba(2, 11, 39, .4);
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-size: 80%;
+}
+tfoot{
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
 }
 input[type="file"]{
   margin-left: -2px !important;
