@@ -4,7 +4,7 @@
         "target": "ES6",
         "module": "ES2022",
         "sourceMap": true,
-        "outDir": "./dist/js",
+        "outDir": "dist/js",
         "esModuleInterop": true,
         "moduleResolution": "node",
         "importHelpers": true,
