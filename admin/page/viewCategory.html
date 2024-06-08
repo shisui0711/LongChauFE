@@ -55,21 +55,32 @@
                     <thead>
                         <tr>
                             <th><div class="form-check form-check-md d-flex align-items-center justify-content-center"><input value="option1" type="checkbox" class="form-check-input" name="check_all" id="check_all_checkbox_product"></div></th>
-                            <th>Thao tác</th>
+                            <th class="text-center">Thao tác</th>
                             <th>Tên danh mục</th>
                             <th>Đường dẫn Icon</th>
                             <th>Ghi chú</th>
                         </tr>
                     </thead>
                     <tbody id="category_table"></tbody>
-                    <!-- <tfoot></tfoot> -->
+                    <tfoot>
+                        <tr>
+                            <td colspan="100">
+                                <div>
+                                    <button id="btnMultipleRemove" class="btn btn-danger" type="button">Xóa danh mục</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
             <div class="row align-items-center">
                 <div class="col-sm-12 col-md-5">
-                    <p>Hiển thị <span>0</span> từ <span>0</span> Kết quả</p>
+                    <p>Hiển thị <span id="itemsPerPage">0</span> từ <span id="totalItems">0</span> Kết quả</p>
                 </div>
-                <div class="col-sm-12 col-md-7"></div>
+                <div class="col-sm-12 col-md-7">
+                    <ul id="pagination_list" class="nav">
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

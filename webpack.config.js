@@ -1,3 +1,5 @@
+const { optimize } = require("webpack");
+
 module.exports = {
     entry: {
       main: './src/ts/main.ts',
@@ -30,5 +32,8 @@ module.exports = {
     output: {
       filename: '[name].bundle.js',
       path: __dirname + '/dist/js'
+    },
+    optimization:{
+      minimize: false
     }
   };

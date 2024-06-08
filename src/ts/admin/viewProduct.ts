@@ -19,6 +19,7 @@ $( async function () {
   $('#cboItemsPerPage').on('change',function(){
     let itemsPerPage:number = $(this).find('option:selected').val() as number;
     $('#itemsPerPage').text(itemsPerPage);
+    LoadPagination(1,itemsPerPage);
   })
   $('#txtSearchCategory').on('input',()=>{
     let categoryName:string = $('#txtSearchCategory').val() as string;
@@ -112,32 +113,58 @@ function LoadProduct(products:Product[]){
     CancelCheckAllHandler();
   }
 }
-async function LoadPagination(page:number){
+async function LoadPagination(page:number,itemsPerPage:number = 10){
   let totalItems:number = (await GetProducts()).length;
-  let itemsPerPage:number = 10;
+  $('#totalItems').text(totalItems.toString());
   try {
     itemsPerPage = Number($('#itemsPerPage').text());
   } catch (error) {
     
   }
   let totalPages:number = Math.ceil(totalItems/itemsPerPage);
-  if(totalPages>4){
-
-  }
   $('#pagination_list').empty();
   if(page === 1){
-    $('#pagination_list').append(` <li class="nav-item px-1"><button disable type="button" class="btn bg-gray"><i class="fa-solid fa-chevron-left"></i></button></li>`)
+    $('#pagination_list').append(` <li class="nav-item px-1"><button disable id="btnPreviousPage" type="button" class="btn bg-gray"><i class="fa-solid fa-chevron-left"></i></button></li>`)
   }else{
-    $('#pagination_list').append(` <li class="nav-item px-1"><button type="button" class="btn bg-gray"><i class="fa-solid fa-chevron-left"></i></button></li>`)
+    $('#pagination_list').append(` <li class="nav-item px-1"><button id="btnPreviousPage" type="button" class="btn bg-gray"><i class="fa-solid fa-chevron-left"></i></button></li>`)
   }
-  $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" class="btn bg-gray">1</button></li>`)
-  $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" class="btn bg-gray">${totalPages}</button></li>`)
+  for(let i = 1;i < page;i++){
+    if(i>1 && i < page -2){
+      $('#pagination_list').append(`<li class="nav-item px-1"><button disable type="button" class="btn bg-gray">...</button></li>`);
+      $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" target-page="${page-2}" class="btn bg-gray">${page-2}</button></li>`)
+      $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" target-page="${page-1}" class="btn bg-gray">${page-1}</button></li>`)
+      break;
+    }
+    $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" target-page="${i}" class="btn bg-gray">${i}</button></li>`)
+  }
+  $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" class="btn btn-active bg-gray">${page}</button></li>`)
+  for(let i = page+1;i<=totalPages;i++){
+    if(i > page + 2 && i < totalPages){
+      $('#pagination_list').append(`<li class="nav-item px-1"><button disable type="button" class="btn bg-gray">...</button></li>`);
+      $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" target-page="${totalPages}" class="btn bg-gray">${totalPages}</button></li>`);
+      break;
+    }
+    $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" target-page="${i}" class="btn bg-gray">${i}</button></li>`)
+  }
   if(page === totalPages){
-    $('#pagination_list').append(`<li class="nav-item px-1"><button disable type="button" class="btn bg-gray"><i class="fa-solid fa-chevron-right"></i></button></li>`)
+    $('#pagination_list').append(`<li class="nav-item px-1"><button disable id="btnNextPage" type="button" class="btn bg-gray"><i class="fa-solid fa-chevron-right"></i></button></li>`)
   }else{
-    $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" class="btn bg-gray"><i class="fa-solid fa-chevron-right"></i></button></li>`)
+    $('#pagination_list').append(`<li class="nav-item px-1"><button id="btnNextPage" type="button" class="btn bg-gray"><i class="fa-solid fa-chevron-right"></i></button></li>`)
   }
   LoadProduct(new List<Product>(await GetProducts()).Skip((page-1)*itemsPerPage).Take(itemsPerPage).ToArray());
+  $('#pagination_list #btnPreviousPage:not([disable])').on('click',()=>{
+    let currentPage:number = Number($('#pagination_list .btn-active').text());
+    LoadPagination(currentPage-1,itemsPerPage);
+  })
+  $('#pagination_list #btnNextPage:not([disable])').on('click',()=>{
+    let currentPage:number = Number($('#pagination_list .btn-active').text());
+    LoadPagination(currentPage+1,itemsPerPage);
+  })
+  for(const btnPage of $('#pagination_list button[target-page]')){
+    $(btnPage).on('click',()=>{
+      LoadPagination(Number($(btnPage).attr('target-page')),itemsPerPage);
+    })
+  }
 }
 function LoadProductHandler() {
   GetProducts().then((products) => {

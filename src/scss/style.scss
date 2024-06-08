@@ -135,7 +135,7 @@
   }
 }
 header {
-  background-image: url(dist/img/background_header.png);
+  background-image: url(../../dist/img/background_header.png);
 }
 a:hover {
   text-decoration: none;
@@ -237,6 +237,10 @@ img.header {
   }
 }
 .btn {
+  &-active{
+    background-color: $blue !important;
+    color: white !important;
+  }
   &-blue {
     background-color: $blue;
   }
@@ -315,7 +319,7 @@ img.header {
 }
 
 .slide-bar {
-  background-image: url(dist/img/background_slide.png);
+  background-image: url(../../dist/img/background_slide.png);
 }
 .carousel-item {
   transition: transform 0.6s ease;

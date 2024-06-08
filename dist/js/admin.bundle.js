@@ -1,1 +1,55 @@
-(()=>{"use strict";$((function(){!function(){for(const t of $(".slide-collapse"))$(t).on("click",(function(){$(this).toggleClass("show"),$()}))}(),function(){for(const t of $(".slide-item[routerLink]"))$(t).on("click",(function(){let t=$(this).attr("routerLink");for(const t of $(".slide-item[routerLink]"))$(t).removeClass("active");var e,n,o;$(this).addClass("active"),e=t,n=void 0,o=$(this).attr("src"),fetch(e).then((t=>t.text())).then((t=>{$(".app-content").empty(),null!=n&&null!=n&&$("head").append(`<link rel="stylesheet" href="${n}">`),$(".app-content").append(t),null!=o&&null!=o&&$(".app-content").append(`<script src="${o}"><\/script>`)})).catch((t=>{console.error("Lỗi khi lấy mẫu:",t)}))}))}()}))})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+
+;// CONCATENATED MODULE: ./src/ts/admin/adminLayoutHelper.ts
+function RenderViewMain(templateUrl, styleUrl, scriptUrl) {
+    fetch(templateUrl)
+        .then(response => response.text())
+        .then(template => {
+        // console.log(template);
+        // Thực hiện các thao tác với template đã lấy
+        $('.app-content').empty();
+        if (styleUrl != undefined && styleUrl != null) {
+            $('head').append(`<link rel="stylesheet" href="${styleUrl}">`);
+        }
+        $('.app-content').append(template);
+        if (scriptUrl != undefined && scriptUrl != null) {
+            $('.app-content').append(`<script src="${scriptUrl}"></script>`);
+        }
+    })
+        .catch(error => {
+        console.error('Lỗi khi lấy mẫu:', error);
+    });
+}
+
+;// CONCATENATED MODULE: ./src/ts/admin/admin.ts
+
+$(function () {
+    CollapseHandler();
+    SlideClickHandler();
+});
+function CollapseHandler() {
+    for (const btnCollsapse of $('.slide-collapse')) {
+        $(btnCollsapse).on('click', function () {
+            $(this).toggleClass('show');
+            const sub = $();
+        });
+    }
+}
+function SlideClickHandler() {
+    for (const route of $('.slide-item[routerLink]')) {
+        $(route).on('click', function () {
+            let routerLink = $(this).attr('routerLink');
+            for (const _route of $('.slide-item[routerLink]')) {
+                $(_route).removeClass('active');
+            }
+            $(this).addClass('active');
+            let src = $(this).attr('src');
+            RenderViewMain(routerLink, undefined, src);
+        });
+    }
+}
+
+/******/ })()
+;

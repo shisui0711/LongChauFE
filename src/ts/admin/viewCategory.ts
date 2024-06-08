@@ -2,7 +2,8 @@ import Swal from "sweetalert2";
 import { RenderViewMain } from "./adminLayoutHelper";
 import {
   DeleteCategory,
-  GetCategories
+  GetCategories,
+  GetCategory
 } from "../../services/CategoryService";
 import { List } from "linqts";
 import { Category } from "../../viewModels/CategoryVM";
@@ -49,7 +50,7 @@ function LoadCategory(categories:Category[]){
                 `;
       $("#category_table").append(row);
     });
-    // UpdateEventHanler();
+    UpdateEventHanler();
     RemoveEventHandler();
     CancelCheckAllHandler();
   }
@@ -63,10 +64,11 @@ function UpdateEventHanler() {
   for (const btnUpdate of $(".btn-update")) {
     $(btnUpdate).on("click", function () {
       const id = $(this).attr("data-id");
-      // RenderUpdateProductView(id);
+      RenderUpdateCategoryView(id);
     });
   }
 }
+
 function RemoveEventHandler() {
   for (const btnRemove of $(".btn-remove")) {
     $(btnRemove).on("click", function () {
@@ -119,6 +121,10 @@ function CheckAllHandler() {
       for (const checkbox of $('#category_table input[type="checkbox"]')) {
         $(checkbox).prop("checked", true);
       }
+    }else{
+      for (const checkbox of $('#category_table input[type="checkbox"]')) {
+        $(checkbox).prop("checked", false);
+      }
     }
   });
 }
@@ -133,26 +139,21 @@ function CancelCheckAllHandler() {
     });
   }
 }
-// function RenderUpdateCategoryView(id:string){
-//     fetch('/admin/page/updateCategory.html').then(response=>response.text().then(html=>{
-//       GetCategory(id).then(product=>{
-//         $('.app-content').empty();
-//         $('.app-content').append(html);
-//         let script:string = `<script>
-//         $('#productName').text("${product.name}");
-//         $('#txtProductName').val("${product.name}");
-//         $('#txtProductSalePrice').val(${product.salesUnitPrice});
-//         $('#txtProductDiscount').val(${product.discountPercent});
-//         $('#txtProductImportPrice').val(${product.importUnitPrice});
-//         $('#txtProductUnit').val("${product.unit}");
-//         $('#txtProductUnitExtend').val("${product.unitExtend}");
-//         $('#btnUpdateProduct').attr('data-id',"${product.id}");
-//         $('#imgProduct').attr('src',"${product.imageUrl}");
-//         </script>
-//         <script src="/dist/js/updateProduct.bundle.js"></script>
-//         `
-//         $('.app-content').append(script);
-//       })
+function RenderUpdateCategoryView(id:string){
+    fetch('/admin/page/updateCategory.html').then(response=>response.text().then(html=>{
+      GetCategory(id).then(category=>{
+        $('.app-content').empty();
+        $('.app-content').append(html);
+        let script:string = `<script>
+        $('#txtCategoryName').text("${category.name}");
+        $('#txtDescription').val("${category.description}");
+        $('#btnUpdate').attr('data-id',"${category.id}");
+        // $('#iconImageCategory').attr('src',"${category.iconUrl}");
+        </script>
+        <script src="/dist/js/updateCategory.bundle.js"></script>
+        `
+        $('.app-content').append(script);
+      })
 
-//     }))
-//   }
+    }))
+  }

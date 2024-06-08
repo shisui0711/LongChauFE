@@ -193,7 +193,7 @@ export let headerTemplate:string = ` <header>
       </div>
       <div class="login-backdrop"></div>
       <!-- End Login -->
-      <script src=".dist/js/header.bundle.js"></script>
+      <script src="dist/js/header.bundle.js"></script>
 </header>`
 export let footerTemplate:string = `<footer>
 <div class="bg-blue">
