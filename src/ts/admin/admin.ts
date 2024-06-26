@@ -11,7 +11,6 @@ function CollapseHandler():void{
     for(const btnCollsapse of $('.slide-collapse')){
         $(btnCollsapse).on('click', function(){
             $(this).toggleClass('show')
-            const sub = $()
         });
     }
 }

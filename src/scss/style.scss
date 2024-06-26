@@ -1,5 +1,9 @@
 @import "./custom_variable.scss";
 @import "./components/carousel.scss";
+@font-face {
+  font-family: "Inter";
+  src: url(/dist/fonts/Inter-Regular.ttf);
+}
 * {
   padding: 0px;
   margin: 0px;

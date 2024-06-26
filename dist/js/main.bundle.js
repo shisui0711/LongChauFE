@@ -247,13 +247,13 @@ function InputPhoneHandler() {
 /* harmony export */   R: () => (/* binding */ MyLocalStorage)
 /* harmony export */ });
 class MyLocalStorage {
-    SetSelectAllProduct() {
+    SetSelectAllProduct(value = true) {
         if (localStorage.getItem('cart') === null || localStorage.getItem('cart') === undefined) {
             return;
         }
         let cart = localStorage.getItem('cart');
         let cartObject = JSON.parse(cart);
-        cartObject.products.forEach(product => product.selected = true);
+        cartObject.products.forEach(product => product.selected = value);
         localStorage.setItem('cart', JSON.stringify(cartObject));
     }
     SetQuantityProduct(id, value) {
@@ -474,7 +474,7 @@ function CarouselHandler() {
 var header = __webpack_require__(647);
 ;// CONCATENATED MODULE: ./src/ts/layoutTemplate.ts
 // export headerTemplate:string;
-let headerTemplate = ` <header>
+let headerTemplate = `<header>
 <div class="container">
     <div class="row justify-content-between">
         <div class="col-7 mt-2">

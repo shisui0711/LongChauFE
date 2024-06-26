@@ -8,11 +8,17 @@ import {
 import { List } from "linqts";
 import { Category } from "../../viewModels/CategoryVM";
 $(function () {
-  LoadCategoryHandler();
+  LoadPagination();
   DirectAddHandler();
   CheckAllHandler();
+  $('#btnMultipleRemove').on('click',MultipleRemoveHandler)
   $('#btnReload').on('click',LoadCategoryHandler);
   $('#btnSearch').on('click',SearchCategoryHandler)
+  $('#cboItemsPerPage').on('change',function(){
+    let itemsPerPage:number = $(this).find('option:selected').val() as number;
+    $('#itemsPerPage').text(itemsPerPage);
+    LoadPagination(1,itemsPerPage);
+  })
 });
 async function SearchCategoryHandler(){
   GetCategories().then((categories) => {
@@ -56,9 +62,7 @@ function LoadCategory(categories:Category[]){
   }
 }
 function LoadCategoryHandler() {
-  GetCategories().then((categories) => {
-    LoadCategory(categories)
-  });
+  LoadPagination();
 }
 function UpdateEventHanler() {
   for (const btnUpdate of $(".btn-update")) {
@@ -144,11 +148,12 @@ function RenderUpdateCategoryView(id:string){
       GetCategory(id).then(category=>{
         $('.app-content').empty();
         $('.app-content').append(html);
+        console.log(category)
         let script:string = `<script>
-        $('#txtCategoryName').text("${category.name}");
-        $('#txtDescription').val("${category.description}");
+        $('#txtCategoryName').val("${category.name}");
+        $('#txtDescription').val("${category.description??""}");
         $('#btnUpdate').attr('data-id',"${category.id}");
-        // $('#iconImageCategory').attr('src',"${category.iconUrl}");
+        // $('#iconImageCategory').attr('src',"${category.iconUrl??""}");
         </script>
         <script src="/dist/js/updateCategory.bundle.js"></script>
         `
@@ -156,4 +161,82 @@ function RenderUpdateCategoryView(id:string){
       })
 
     }))
+  }
+  function MultipleRemoveHandler(){
+    let rowSelected:number = $('input[type="checkbox"]:checked[data-id]').length;
+    if(rowSelected <= 0){
+      Swal.fire("Thông báo", "Bạn chưa chọn danh mục nào", "warning");
+      return;
+    }
+    Swal.fire({
+      title: "Xác nhận xóa danh mục",
+      text: `Bạn có chắc chắn muốn xóa ${rowSelected} danh mục đã chọn ?`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Đồng ý",
+      cancelButtonText: "Hủy",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        for(const checkbox of $('input[type="checkbox"]:checked[data-id]')){
+          DeleteCategory(checkbox.getAttribute('data-id')).then((ok)=>{
+            LoadCategoryHandler();
+          })
+        }
+      }
+    });
+  }
+  async function LoadPagination(page:number = 1,itemsPerPage:number = 10){
+    let totalItems:number = (await GetCategories()).length;
+    $('#totalItems').text(totalItems.toString());
+    try {
+      itemsPerPage = Number($('#itemsPerPage').text());
+    } catch (error) {
+      
+    }
+    let totalPages:number = Math.ceil(totalItems/itemsPerPage);
+    $('#pagination_list').empty();
+    if(page === 1){
+      $('#pagination_list').append(` <li class="nav-item px-1"><button disable id="btnPreviousPage" type="button" class="btn bg-gray"><i class="fa-solid fa-chevron-left"></i></button></li>`)
+    }else{
+      $('#pagination_list').append(` <li class="nav-item px-1"><button id="btnPreviousPage" type="button" class="btn bg-gray"><i class="fa-solid fa-chevron-left"></i></button></li>`)
+    }
+    for(let i = 1;i < page;i++){
+      if(i>1 && i < page -2){
+        $('#pagination_list').append(`<li class="nav-item px-1"><button disable type="button" class="btn bg-gray">...</button></li>`);
+        $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" target-page="${page-2}" class="btn bg-gray">${page-2}</button></li>`)
+        $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" target-page="${page-1}" class="btn bg-gray">${page-1}</button></li>`)
+        break;
+      }
+      $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" target-page="${i}" class="btn bg-gray">${i}</button></li>`)
+    }
+    $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" class="btn btn-active bg-gray">${page}</button></li>`)
+    for(let i = page+1;i<=totalPages;i++){
+      if(i > page + 2 && i < totalPages){
+        $('#pagination_list').append(`<li class="nav-item px-1"><button disable type="button" class="btn bg-gray">...</button></li>`);
+        $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" target-page="${totalPages}" class="btn bg-gray">${totalPages}</button></li>`);
+        break;
+      }
+      $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" target-page="${i}" class="btn bg-gray">${i}</button></li>`)
+    }
+    if(page === totalPages){
+      $('#pagination_list').append(`<li class="nav-item px-1"><button disable id="btnNextPage" type="button" class="btn bg-gray"><i class="fa-solid fa-chevron-right"></i></button></li>`)
+    }else{
+      $('#pagination_list').append(`<li class="nav-item px-1"><button id="btnNextPage" type="button" class="btn bg-gray"><i class="fa-solid fa-chevron-right"></i></button></li>`)
+    }
+    LoadCategory(new List<Category>(await GetCategories()).Skip((page-1)*itemsPerPage).Take(itemsPerPage).ToArray());
+    $('#pagination_list #btnPreviousPage:not([disable])').on('click',()=>{
+      let currentPage:number = Number($('#pagination_list .btn-active').text());
+      LoadPagination(currentPage-1,itemsPerPage);
+    })
+    $('#pagination_list #btnNextPage:not([disable])').on('click',()=>{
+      let currentPage:number = Number($('#pagination_list .btn-active').text());
+      LoadPagination(currentPage+1,itemsPerPage);
+    })
+    for(const btnPage of $('#pagination_list button[target-page]')){
+      $(btnPage).on('click',()=>{
+        LoadPagination(Number($(btnPage).attr('target-page')),itemsPerPage);
+      })
+    }
   }

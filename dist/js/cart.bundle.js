@@ -4,13 +4,13 @@ var __webpack_exports__ = {};
 
 ;// CONCATENATED MODULE: ./src/ts/localStorage.ts
 class MyLocalStorage {
-    SetSelectAllProduct() {
+    SetSelectAllProduct(value = true) {
         if (localStorage.getItem('cart') === null || localStorage.getItem('cart') === undefined) {
             return;
         }
         let cart = localStorage.getItem('cart');
         let cartObject = JSON.parse(cart);
-        cartObject.products.forEach(product => product.selected = true);
+        cartObject.products.forEach(product => product.selected = value);
         localStorage.setItem('cart', JSON.stringify(cartObject));
     }
     SetQuantityProduct(id, value) {
@@ -95,7 +95,7 @@ class MyLocalStorage {
 
 ;// CONCATENATED MODULE: ./src/ts/layoutTemplate.ts
 // export headerTemplate:string;
-let headerTemplate = ` <header>
+let headerTemplate = `<header>
 <div class="container">
     <div class="row justify-content-between">
         <div class="col-7 mt-2">
@@ -1642,7 +1642,6 @@ $(function () {
     }
     LayoutRender();
     LoadProductInCart();
-    CartChangeHandler();
     OrderConfirmHandler();
 });
 function LoadProductInCart() {
@@ -1689,6 +1688,9 @@ function LoadProductInCart() {
     IncreaseAndDesceaseHandlder();
     InputQuantityHandler();
     RemoveOrderProductHandler();
+    if ($('input[target-product]:checked').length === cartObject.products.length) {
+        $('#checkAll').prop('checked', true);
+    }
 }
 function InputQuantityHandler() {
     for (const input of $('[productQuantity]')) {
@@ -1758,11 +1760,6 @@ function CalculateTotalProduct() {
     let totalProdcut = $('#order_container > :not(hr)').length;
     $('#totalProduct').text(totalProdcut);
 }
-function CartChangeHandler() {
-    $('#order_container').on('change', (event) => {
-        console.log("Order has been changed: ", event.target);
-    });
-}
 function CalculateTotalPrice() {
     let totalPrice = 0;
     for (const product of $('input[target-product]:checked')) {
@@ -1780,6 +1777,11 @@ function SelectProductHandler() {
         if ($('#checkAll').is(':checked')) {
             $('input[type="checkbox"][target-product]').prop('checked', true);
             myLocalStorage.SetSelectAllProduct();
+            CalculateTotalPrice();
+        }
+        else {
+            $('input[type="checkbox"][target-product]').prop('checked', false);
+            myLocalStorage.SetSelectAllProduct(false);
             CalculateTotalPrice();
         }
     });
@@ -1800,10 +1802,8 @@ function SelectProductHandler() {
 }
 function OrderConfirmHandler() {
     $('#btnOrderConfirm').on('click', () => {
-        for (const checkbox of $('input[type="checkbox"][target-product]:checked')) {
-            let targetProduct = checkbox.getAttribute('target-product');
-            myLocalStorage.SetSelectProduct(targetProduct.substring(1), true);
-        }
+        if ($('input[type="checkbox"][target-product]:checked').length == 0)
+            return;
         window.location.href = "./thanhtoan.html";
     });
 }

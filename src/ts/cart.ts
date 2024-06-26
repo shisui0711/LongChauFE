@@ -10,7 +10,6 @@ $(
         }
         LayoutRender();
         LoadProductInCart();
-        CartChangeHandler();
         OrderConfirmHandler();
     }
 )
@@ -58,6 +57,9 @@ function LoadProductInCart():void{
     IncreaseAndDesceaseHandlder();
     InputQuantityHandler();
     RemoveOrderProductHandler();
+    if($('input[target-product]:checked').length === cartObject.products.length){
+        $('#checkAll').prop('checked',true);
+    }
 }
 function InputQuantityHandler():void{
     for(const input of $('[productQuantity]')){
@@ -124,11 +126,6 @@ function CalculateTotalProduct():void{
     let totalProdcut:number = $('#order_container > :not(hr)').length;
     $('#totalProduct').text(totalProdcut);
 }
-function CartChangeHandler():void{
-    $('#order_container').on('change',(event)=>{
-        console.log("Order has been changed: ",event.target);
-    });
-}
 function CalculateTotalPrice():void{
     let totalPrice:number = 0;
     for(const product of $('input[target-product]:checked')){
@@ -146,6 +143,10 @@ function SelectProductHandler():void{
         if($('#checkAll').is(':checked')){
             $('input[type="checkbox"][target-product]').prop('checked',true);
             myLocalStorage.SetSelectAllProduct();
+            CalculateTotalPrice();
+        }else{
+            $('input[type="checkbox"][target-product]').prop('checked',false);
+            myLocalStorage.SetSelectAllProduct(false);
             CalculateTotalPrice();
         }
     })
@@ -165,10 +166,7 @@ function SelectProductHandler():void{
 }
 function OrderConfirmHandler():void{
     $('#btnOrderConfirm').on('click',()=>{
-        for(const checkbox of $('input[type="checkbox"][target-product]:checked')){
-            let targetProduct:string = checkbox.getAttribute('target-product');
-            myLocalStorage.SetSelectProduct(targetProduct.substring(1),true);
-        }
+        if($('input[type="checkbox"][target-product]:checked').length == 0) return;
         window.location.href = "./thanhtoan.html";
     })
 }

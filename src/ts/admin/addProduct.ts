@@ -26,14 +26,29 @@ $(
 )
 function ChoosePictureHandler(){
     const fileInput = $('#imageProduct') as JQuery<HTMLInputElement>;
+    let key = '7b01ffc71f98f9b012c2cd72aa4d92f2';
     fileInput.on('change',(event)=>{
         const file:File = event.target.files[0];
         if(!file) return;
-        console.log(file)
-        GetImageUrl(file).then(imageUrl=>{
-            console.log(imageUrl)
-            $('#imageDisplayProduct').attr('src',imageUrl);
-        })
+        const reader = new FileReader();
+        reader.onloadend = async () => {
+        const imgBase64 = (reader.result as string).split(',')[1];
+        try {
+            const formData = new FormData();
+            formData.append('image', imgBase64);
+
+            const res = await fetch(`https://api.imgbb.com/1/upload?key=${key}`, {
+                method: 'POST',
+                body: formData,
+            });
+
+            const data = await res.json();
+            $('#imageDisplayProduct').attr('src',data.data?.url);
+        } catch (error) {
+            console.error('Error uploading image:', error);
+        }
+    };
+    reader.readAsDataURL(file);
     })
 }
 function BackHandler(){

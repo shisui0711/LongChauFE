@@ -104,7 +104,7 @@
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    <img id="imageDisplayProduct" src="dist/img/upload.png" alt="Ảnh sản phẩm">
+                    <img id="imageDisplayProduct" src="../../dist/img/upload.png" alt="Ảnh sản phẩm">
                 </div>
             </div>
         </div>
@@ -112,7 +112,7 @@
             <div class="row box-white rounded-4 h-fit gap-2">
                 <div class="fw-semibold">Danh mục: <span class="text-danger">*</span></div>
                 <div class="col-12">
-                    <div class="input-dropdown-container">
+                    <div class="input-dropdown-container input-custom-group" validate="required">
                         <div class="input-dropdown" dropdown-target="#dropdownCategory">
                             <input id="txtCategoryName" type="text" readonly placeholder="Chọn danh mục">
                             <span class="input-dropdown-icon me-2">
@@ -135,6 +135,9 @@
                             </ul>
                         </div>
                     </div>
+                    <div hidden class="row input-error"><span class="text-danger">
+                        <span>Thông tin bắt buộc. Vui lòng nhập đầy đủ.</span>
+                    </span></div>
                 </div>
                 <div class="col-12">
                     <button id="btnAddProduct" type="button" class="btn btn-confirm bg-blue text-white text-semilarge fw-semibold w-100">Xác nhận</button>

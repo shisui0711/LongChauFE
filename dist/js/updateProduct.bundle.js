@@ -5408,6 +5408,9 @@ function TextChangeValidate() {
     }
 }
 function ErrorState(element, message) {
+    element.find('.input-dropdown:first')
+        .css('border', '1px solid red')
+        .css('background-color', 'rgb(254, 243, 242)');
     element.find('input:first')
         .css('border', '1px solid red')
         .css('background-color', 'rgb(254, 243, 242)');
@@ -5425,6 +5428,9 @@ function ErrorState(element, message) {
     }
 }
 function NormalState(element) {
+    element.find('.input-dropdown:first')
+        .css('border', '1px solid #86b7fe')
+        .css('background-color', 'white');
     element.find('input:first')
         .css('border', '1px solid #86b7fe')
         .css('background-color', 'white');

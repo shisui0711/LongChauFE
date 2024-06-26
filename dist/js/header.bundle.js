@@ -9,13 +9,13 @@
 /* harmony export */   R: () => (/* binding */ MyLocalStorage)
 /* harmony export */ });
 class MyLocalStorage {
-    SetSelectAllProduct() {
+    SetSelectAllProduct(value = true) {
         if (localStorage.getItem('cart') === null || localStorage.getItem('cart') === undefined) {
             return;
         }
         let cart = localStorage.getItem('cart');
         let cartObject = JSON.parse(cart);
-        cartObject.products.forEach(product => product.selected = true);
+        cartObject.products.forEach(product => product.selected = value);
         localStorage.setItem('cart', JSON.stringify(cartObject));
     }
     SetQuantityProduct(id, value) {

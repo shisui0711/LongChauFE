@@ -9,11 +9,10 @@ import { Product } from "../../viewModels/ProductVM";
 $( async function () {
   let categories =  await GetCategories();
   LoadCategories(categories);
-  LoadProductHandler();
   DirectAddHandler();
   CheckAllHandler();
   $('#btnMultipleRemove').on('click',MultipleRemoveHandler)
-  LoadPagination(1);
+  LoadPagination();
   $('#btnReload').on('click',LoadProductHandler)
   $('#btnSearch').on('click',SearchProductHandler)
   $('#cboItemsPerPage').on('change',function(){
@@ -113,7 +112,7 @@ function LoadProduct(products:Product[]){
     CancelCheckAllHandler();
   }
 }
-async function LoadPagination(page:number,itemsPerPage:number = 10){
+async function LoadPagination(page:number = 1,itemsPerPage:number = 10){
   let totalItems:number = (await GetProducts()).length;
   $('#totalItems').text(totalItems.toString());
   try {
@@ -167,15 +166,7 @@ async function LoadPagination(page:number,itemsPerPage:number = 10){
   }
 }
 function LoadProductHandler() {
-  GetProducts().then((products) => {
-    let itemsPerPage:number = 10;
-    try {
-      itemsPerPage = Number($('#itemsPerPage').text());
-    } catch (error) {
-      
-    }
-    LoadProduct(new List<Product>(products).Take(itemsPerPage).ToArray());
-  });
+  LoadPagination(1, Number($('#itemsPerPage').text()));
 }
 
 function DirectAddHandler() {

@@ -5965,11 +5965,17 @@ var src = __webpack_require__(186);
 
 
 $(function () {
-    LoadCategoryHandler();
+    LoadPagination();
     DirectAddHandler();
     CheckAllHandler();
+    $('#btnMultipleRemove').on('click', MultipleRemoveHandler);
     $('#btnReload').on('click', LoadCategoryHandler);
     $('#btnSearch').on('click', SearchCategoryHandler);
+    $('#cboItemsPerPage').on('change', function () {
+        let itemsPerPage = $(this).find('option:selected').val();
+        $('#itemsPerPage').text(itemsPerPage);
+        LoadPagination(1, itemsPerPage);
+    });
 });
 function SearchCategoryHandler() {
     return tslib_es6_awaiter(this, void 0, void 0, function* () {
@@ -6016,9 +6022,7 @@ function LoadCategory(categories) {
     }
 }
 function LoadCategoryHandler() {
-    GetCategories().then((categories) => {
-        LoadCategory(categories);
-    });
+    LoadPagination();
 }
 function UpdateEventHanler() {
     for (const btnUpdate of $(".btn-update")) {
@@ -6098,19 +6102,103 @@ function CancelCheckAllHandler() {
 function RenderUpdateCategoryView(id) {
     fetch('/admin/page/updateCategory.html').then(response => response.text().then(html => {
         GetCategory(id).then(category => {
+            var _a, _b;
             $('.app-content').empty();
             $('.app-content').append(html);
+            console.log(category);
             let script = `<script>
-        $('#txtCategoryName').text("${category.name}");
-        $('#txtDescription').val("${category.description}");
+        $('#txtCategoryName').val("${category.name}");
+        $('#txtDescription').val("${(_a = category.description) !== null && _a !== void 0 ? _a : ""}");
         $('#btnUpdate').attr('data-id',"${category.id}");
-        // $('#iconImageCategory').attr('src',"${category.iconUrl}");
+        // $('#iconImageCategory').attr('src',"${(_b = category.iconUrl) !== null && _b !== void 0 ? _b : ""}");
         </script>
         <script src="/dist/js/updateCategory.bundle.js"></script>
         `;
             $('.app-content').append(script);
         });
     }));
+}
+function MultipleRemoveHandler() {
+    let rowSelected = $('input[type="checkbox"]:checked[data-id]').length;
+    if (rowSelected <= 0) {
+        sweetalert2_all_default().fire("Thông báo", "Bạn chưa chọn danh mục nào", "warning");
+        return;
+    }
+    sweetalert2_all_default().fire({
+        title: "Xác nhận xóa danh mục",
+        text: `Bạn có chắc chắn muốn xóa ${rowSelected} danh mục đã chọn ?`,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Đồng ý",
+        cancelButtonText: "Hủy",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            for (const checkbox of $('input[type="checkbox"]:checked[data-id]')) {
+                DeleteCategory(checkbox.getAttribute('data-id')).then((ok) => {
+                    LoadCategoryHandler();
+                });
+            }
+        }
+    });
+}
+function LoadPagination(page = 1, itemsPerPage = 10) {
+    return tslib_es6_awaiter(this, void 0, void 0, function* () {
+        let totalItems = (yield GetCategories()).length;
+        $('#totalItems').text(totalItems.toString());
+        try {
+            itemsPerPage = Number($('#itemsPerPage').text());
+        }
+        catch (error) {
+        }
+        let totalPages = Math.ceil(totalItems / itemsPerPage);
+        $('#pagination_list').empty();
+        if (page === 1) {
+            $('#pagination_list').append(` <li class="nav-item px-1"><button disable id="btnPreviousPage" type="button" class="btn bg-gray"><i class="fa-solid fa-chevron-left"></i></button></li>`);
+        }
+        else {
+            $('#pagination_list').append(` <li class="nav-item px-1"><button id="btnPreviousPage" type="button" class="btn bg-gray"><i class="fa-solid fa-chevron-left"></i></button></li>`);
+        }
+        for (let i = 1; i < page; i++) {
+            if (i > 1 && i < page - 2) {
+                $('#pagination_list').append(`<li class="nav-item px-1"><button disable type="button" class="btn bg-gray">...</button></li>`);
+                $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" target-page="${page - 2}" class="btn bg-gray">${page - 2}</button></li>`);
+                $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" target-page="${page - 1}" class="btn bg-gray">${page - 1}</button></li>`);
+                break;
+            }
+            $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" target-page="${i}" class="btn bg-gray">${i}</button></li>`);
+        }
+        $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" class="btn btn-active bg-gray">${page}</button></li>`);
+        for (let i = page + 1; i <= totalPages; i++) {
+            if (i > page + 2 && i < totalPages) {
+                $('#pagination_list').append(`<li class="nav-item px-1"><button disable type="button" class="btn bg-gray">...</button></li>`);
+                $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" target-page="${totalPages}" class="btn bg-gray">${totalPages}</button></li>`);
+                break;
+            }
+            $('#pagination_list').append(`<li class="nav-item px-1"><button type="button" target-page="${i}" class="btn bg-gray">${i}</button></li>`);
+        }
+        if (page === totalPages) {
+            $('#pagination_list').append(`<li class="nav-item px-1"><button disable id="btnNextPage" type="button" class="btn bg-gray"><i class="fa-solid fa-chevron-right"></i></button></li>`);
+        }
+        else {
+            $('#pagination_list').append(`<li class="nav-item px-1"><button id="btnNextPage" type="button" class="btn bg-gray"><i class="fa-solid fa-chevron-right"></i></button></li>`);
+        }
+        LoadCategory(new src/* List */.B8(yield GetCategories()).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).ToArray());
+        $('#pagination_list #btnPreviousPage:not([disable])').on('click', () => {
+            let currentPage = Number($('#pagination_list .btn-active').text());
+            LoadPagination(currentPage - 1, itemsPerPage);
+        });
+        $('#pagination_list #btnNextPage:not([disable])').on('click', () => {
+            let currentPage = Number($('#pagination_list .btn-active').text());
+            LoadPagination(currentPage + 1, itemsPerPage);
+        });
+        for (const btnPage of $('#pagination_list button[target-page]')) {
+            $(btnPage).on('click', () => {
+                LoadPagination(Number($(btnPage).attr('target-page')), itemsPerPage);
+            });
+        }
+    });
 }
 
 })();

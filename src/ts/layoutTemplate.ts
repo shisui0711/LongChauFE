@@ -1,5 +1,5 @@
 // export headerTemplate:string;
-export let headerTemplate:string = ` <header>
+export let headerTemplate:string = `<header>
 <div class="container">
     <div class="row justify-content-between">
         <div class="col-7 mt-2">

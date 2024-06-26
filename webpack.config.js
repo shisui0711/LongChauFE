@@ -1,4 +1,4 @@
-const { optimize } = require("webpack");
+require("webpack");
 
 module.exports = {
     entry: {
@@ -14,7 +14,8 @@ module.exports = {
       addProduct:'./src/ts/admin/addProduct.ts',
       updateProduct: './src/ts/admin/updateProduct.ts',
       viewCategory: './src/ts/admin/viewCategory.ts',
-      addCategory: './src/ts/admin/addCategory.ts'
+      addCategory: './src/ts/admin/addCategory.ts',
+      updateCategory: './src/ts/admin/updateCategory.ts'
     },
     module: {
       rules: [

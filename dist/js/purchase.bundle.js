@@ -175,6 +175,9 @@ function TextChangeValidate() {
     }
 }
 function ErrorState(element, message) {
+    element.find('.input-dropdown:first')
+        .css('border', '1px solid red')
+        .css('background-color', 'rgb(254, 243, 242)');
     element.find('input:first')
         .css('border', '1px solid red')
         .css('background-color', 'rgb(254, 243, 242)');
@@ -192,6 +195,9 @@ function ErrorState(element, message) {
     }
 }
 function NormalState(element) {
+    element.find('.input-dropdown:first')
+        .css('border', '1px solid #86b7fe')
+        .css('background-color', 'white');
     element.find('input:first')
         .css('border', '1px solid #86b7fe')
         .css('background-color', 'white');
@@ -226,7 +232,7 @@ function StateChangeHandler() {
 
 ;// CONCATENATED MODULE: ./src/ts/layoutTemplate.ts
 // export headerTemplate:string;
-let headerTemplate = ` <header>
+let headerTemplate = `<header>
 <div class="container">
     <div class="row justify-content-between">
         <div class="col-7 mt-2">
@@ -1737,13 +1743,13 @@ function LayoutRender() {
 
 ;// CONCATENATED MODULE: ./src/ts/localStorage.ts
 class MyLocalStorage {
-    SetSelectAllProduct() {
+    SetSelectAllProduct(value = true) {
         if (localStorage.getItem('cart') === null || localStorage.getItem('cart') === undefined) {
             return;
         }
         let cart = localStorage.getItem('cart');
         let cartObject = JSON.parse(cart);
-        cartObject.products.forEach(product => product.selected = true);
+        cartObject.products.forEach(product => product.selected = value);
         localStorage.setItem('cart', JSON.stringify(cartObject));
     }
     SetQuantityProduct(id, value) {

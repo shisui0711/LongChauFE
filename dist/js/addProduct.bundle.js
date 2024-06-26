@@ -5302,6 +5302,9 @@ function TextChangeValidate() {
     }
 }
 function ErrorState(element, message) {
+    element.find('.input-dropdown:first')
+        .css('border', '1px solid red')
+        .css('background-color', 'rgb(254, 243, 242)');
     element.find('input:first')
         .css('border', '1px solid red')
         .css('background-color', 'rgb(254, 243, 242)');
@@ -5319,6 +5322,9 @@ function ErrorState(element, message) {
     }
 }
 function NormalState(element) {
+    element.find('.input-dropdown:first')
+        .css('border', '1px solid #86b7fe')
+        .css('background-color', 'white');
     element.find('input:first')
         .css('border', '1px solid #86b7fe')
         .css('background-color', 'white');
@@ -5440,36 +5446,7 @@ function GetCategories() {
     });
 }
 
-;// CONCATENATED MODULE: ./src/services/ImageService.ts
-
-function GetImageUrl(file) {
-    return tslib_es6_awaiter(this, void 0, void 0, function* () {
-        const formData = new FormData();
-        formData.append('image', file);
-        formData.append('type', 'file');
-        try {
-            const response = yield fetch("https://api.imgur.com/3/image", {
-                method: "POST",
-                headers: {
-                    "Authorization": "Client-ID 3e09a670e34c454",
-                },
-                body: formData
-            });
-            console.log(response);
-            if (!response.ok)
-                return "";
-            const responseJson = yield response.json();
-            return responseJson.data.link;
-        }
-        catch (error) {
-            console.log(error);
-            return "";
-        }
-    });
-}
-
 ;// CONCATENATED MODULE: ./src/ts/admin/addProduct.ts
-
 
 
 
@@ -5496,15 +5473,30 @@ $(function () {
 });
 function ChoosePictureHandler() {
     const fileInput = $('#imageProduct');
+    let key = '7b01ffc71f98f9b012c2cd72aa4d92f2';
     fileInput.on('change', (event) => {
         const file = event.target.files[0];
         if (!file)
             return;
-        console.log(file);
-        GetImageUrl(file).then(imageUrl => {
-            console.log(imageUrl);
-            $('#imageDisplayProduct').attr('src', imageUrl);
+        const reader = new FileReader();
+        reader.onloadend = () => tslib_es6_awaiter(this, void 0, void 0, function* () {
+            var _a;
+            const imgBase64 = reader.result.split(',')[1];
+            try {
+                const formData = new FormData();
+                formData.append('image', imgBase64);
+                const res = yield fetch(`https://api.imgbb.com/1/upload?key=${key}`, {
+                    method: 'POST',
+                    body: formData,
+                });
+                const data = yield res.json();
+                $('#imageDisplayProduct').attr('src', (_a = data.data) === null || _a === void 0 ? void 0 : _a.url);
+            }
+            catch (error) {
+                console.error('Error uploading image:', error);
+            }
         });
+        reader.readAsDataURL(file);
     });
 }
 function BackHandler() {

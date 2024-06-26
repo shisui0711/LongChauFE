@@ -86,7 +86,7 @@ function CarouselHandler() {
 
 ;// CONCATENATED MODULE: ./src/ts/layoutTemplate.ts
 // export headerTemplate:string;
-let headerTemplate = ` <header>
+let headerTemplate = `<header>
 <div class="container">
     <div class="row justify-content-between">
         <div class="col-7 mt-2">

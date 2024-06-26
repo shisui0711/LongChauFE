@@ -2,13 +2,13 @@ import Cart from "../models/CartModel";
 import Product from "../models/ProductModel";
 import { PriceRender, ToCurrency } from "./Helper";
 export class MyLocalStorage{
-    public SetSelectAllProduct() {
+    public SetSelectAllProduct(value:boolean = true) {
         if(localStorage.getItem('cart') === null || localStorage.getItem('cart') === undefined){
             return;
         }
         let cart:string = localStorage.getItem('cart');
         let cartObject:Cart = JSON.parse(cart);
-        cartObject.products.forEach(product=>product.selected = true);
+        cartObject.products.forEach(product=>product.selected = value);
         localStorage.setItem('cart',JSON.stringify(cartObject)
         );
     }
